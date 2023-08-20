@@ -1,9 +1,6 @@
 import NextAuth, { type NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-
-import { prisma } from '../../../../lib/prisma/prisma';
-import { compare } from 'bcrypt';
-
+import { authorizeUser } from '../../../../lib/auth-functions/customAuth';
 export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
@@ -24,34 +21,7 @@ export const authOptions: NextAuthOptions = {
           return null; // tell next auth NO ERROR just user mistake
         }
 
-        const user = await prisma.user.findUnique({
-          where: {
-            email: credentials.email,
-          },
-        });
-
-        if (!user) {
-          return null; // say no error, just user mistake
-        }
-
-        if (!user.activated) {
-          throw new Error('User is not active');
-        }
-
-        const isPasswordValid = await compare(
-          credentials.password,
-          user.password
-        );
-
-        if (!isPasswordValid) {
-          return null;
-        }
-
-        return {
-          id: user.id + '',
-          email: user.email,
-          name: user.name,
-        };
+        return await authorizeUser(credentials);
       },
     }),
   ],

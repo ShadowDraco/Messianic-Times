@@ -26,7 +26,7 @@ export async function GET(request, params) {
   });
 
   if (!user) {
-    throw new Error('Invalid token');
+    return NextResponse.redirect(new URL('/magic-error', request.url), 303);
   }
 
   await prisma.user.update({
@@ -47,5 +47,5 @@ export async function GET(request, params) {
     },
   });
 
-  return NextResponse.redirect('/products');
+  return NextResponse.redirect(new URL('/api/auth/signin', request.url));
 }

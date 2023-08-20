@@ -1,19 +1,22 @@
-import formData from 'form-data';
-import Mailgun from 'mailgun.js';
+import { mailgunClient } from './mailgun';
 
-const API_KEY = process.env.MAILGUN_SECRET_KEY || '';
-const DOMAIN = process.env.MAILGUN_DOMAIN || '';
+const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN || '';
 
 export default async function sendVerificationEmail(user, token) {
-  const mailgun = new Mailgun(formData);
-  const client = mailgun.client({ username: 'api', key: API_KEY });
-  console.log('send email has user and token::::', user, token);
   const messageData = {
-    from: `Example Email <hello@MessianicWebServices>`,
+    from: `Verify for MWS <Messianic@WebServices>`,
     to: user.email,
     subject: 'Please Activate your account',
-    text: `Hello ${user.name}, please activate your account by clicking this link: http://localhost:3000/api/activate/${token.token}`,
+    html: `<div>
+    <h4>Hello ${user.name},</h4>
+    <br></br>
+    <p>please activate your account by clicking this link:</p> 
+    <a href="http://localhost:3000/api/activate/${token.token}">
+    <button>Verify my email!</button>
+    </a>
+    </div>
+    `,
   };
 
-  await client.messages.create(DOMAIN, messageData);
+  await mailgunClient.messages.create(MAILGUN_DOMAIN, messageData);
 }

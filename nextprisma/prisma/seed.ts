@@ -14,8 +14,6 @@ async function main() {
       password: `$2b$04$F/Hb1j74R16A6aqCkZvrlu7Kg39o58.BSvmvKI6tpfRxIiVVLh0Si`,
     },
   });
-
-  console.log('user created during seed process! : ', user.name);
 }
 
 // call the seed function and disconnect

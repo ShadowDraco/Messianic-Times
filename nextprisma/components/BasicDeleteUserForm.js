@@ -11,7 +11,6 @@ export default function BasicDeleteUserForm() {
     });
 
     if (response?.statusText) {
-      console.log(response.statusText);
       setSuccessMessage(response.statusText);
     }
   };

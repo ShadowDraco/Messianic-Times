@@ -6,7 +6,7 @@ import { hashPassword } from '../../../../../../../lib/auth-functions/passwords'
 
 import sendVerificationEmail from '../../../../../../../lib/mailgun/sendVerificationEmail';
 export async function POST(request) {
-  const session = await getServerSession(authOptions);
+  //const session = await getServerSession(authOptions);
 
   /*if (!session) {
     return new NextResponse(JSON.stringify({ error: 'unauthorized' }), {
@@ -22,17 +22,12 @@ export async function POST(request) {
     name: cutUrl[2],
     password: hashedPassword,
   };
-
+  let createdUser;
+  let createdToken;
   try {
-    let createdUser = await createUser(newUser);
-  
-    let createdToken = await createToken(createdUser.id);
-   
-    await sendVerificationEmail(createdUser, createdToken);
-    
+    createdUser = await createUser(newUser);
+    createdToken = await createToken(createdUser.id);
   } catch (error) {
-    console.log(error.meta);
-
     return new NextResponse(
       JSON.stringify({
         error: 'user could not be created',
@@ -47,8 +42,27 @@ export async function POST(request) {
     );
   }
 
+  try {
+    await sendVerificationEmail(createdUser, createdToken);
+  } catch (error) {
+    console.log(error);
+    return new NextResponse(
+      JSON.stringify({
+        error:
+          'verification email could not be sent, please contact the owner to have this fixed',
+        success: 'email failed',
+      }),
+      {
+        status: 500,
+        statusText: error.message
+          ? error.message
+          : 'The verification email could not be sent.',
+      }
+    );
+  }
+
   return NextResponse.json(
-    { success: 'success!', message: 'User created' },
+    { success: 'success!', message: 'User created, email sent' },
     { status: 200, statusText: 'success!' }
   );
 }
