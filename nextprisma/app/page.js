@@ -1,7 +1,7 @@
 import { prisma } from '../lib/prisma/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]/route';
-import Link from 'next/link';
+import AuthButtons from '../components/AuthButtons';
 import BasicDeleteUserForm from '../components/BasicDeleteUserForm';
 import BasicCreateUserForm from '../components/BasicCreateUserForm';
 
@@ -17,13 +17,17 @@ export default async function Home() {
     <main>
       Hello {user?.name}
       <pre>{JSON.stringify(session)}</pre>
-      <Link href='/api/auth/signin'>signin</Link>
       <br></br>
+      <AuthButtons />
       <br></br>
       <BasicDeleteUserForm />
       <br></br>
       <br></br>
       <BasicCreateUserForm />
+      <br></br>
+      <a href='/products'>
+        <button>Products</button>
+      </a>
     </main>
   );
 }

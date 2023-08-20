@@ -1,9 +1,10 @@
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
 import { authOptions } from '../../../../../auth/[...nextauth]/route';
-import { createUser } from '../../../../../../../lib/prisma/crud';
+import { createToken, createUser } from '../../../../../../../lib/prisma/crud';
 import { hashPassword } from '../../../../../../../lib/auth-functions/passwords';
 
+import sendVerificationEmail from '../../../../../../../lib/mailgun/sendVerificationEmail';
 export async function POST(request) {
   const session = await getServerSession(authOptions);
 
@@ -22,10 +23,13 @@ export async function POST(request) {
     password: hashedPassword,
   };
 
-  console.log(newUser);
   try {
-    let created = await createUser(newUser);
-    console.log(created);
+    let createdUser = await createUser(newUser);
+  
+    let createdToken = await createToken(createdUser.id);
+   
+    await sendVerificationEmail(createdUser, createdToken);
+    
   } catch (error) {
     console.log(error.meta);
 

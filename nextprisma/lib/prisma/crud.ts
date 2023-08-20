@@ -1,10 +1,27 @@
 import { prisma } from './prisma';
+import { randomUUID } from 'crypto';
 
 export const createUser = async fields => {
-  console.log(fields, prisma.user);
-  let newUser = await prisma.user.create({ data: fields });
+  let newUser = await prisma.user.create({
+    data: {
+      email: fields.email,
+      name: fields.name,
+      password: fields.password,
+    },
+  });
   if (!newUser) return null;
   return newUser;
+};
+
+export const createToken = async userId => {
+  let token = prisma.activateToken.create({
+    data: {
+      token: `${randomUUID()}${randomUUID()}`.replace(/-/g, ''),
+      userId,
+    },
+  });
+  if (!token) return null;
+  return token;
 };
 
 export const deleteUser = async email => {

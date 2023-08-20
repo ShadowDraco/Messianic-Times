@@ -34,6 +34,10 @@ export const authOptions: NextAuthOptions = {
           return null; // say no error, just user mistake
         }
 
+        if (!user.activated) {
+          throw new Error('User is not active');
+        }
+
         const isPasswordValid = await compare(
           credentials.password,
           user.password
