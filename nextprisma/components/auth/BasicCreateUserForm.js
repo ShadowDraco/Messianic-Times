@@ -13,7 +13,7 @@ export default function BasicCreateUserForm() {
     const password = passwordRef.current.value;
 
     let response = await fetch(
-      `/api/user/create/${email}/${name}/${password}`,
+      `/api/database/user/create/${email}/${name}/${password}`,
       {
         method: 'POST',
       }

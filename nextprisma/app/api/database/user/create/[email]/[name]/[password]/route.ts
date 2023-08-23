@@ -45,7 +45,7 @@ export async function POST(request) {
   try {
     await sendVerificationEmail(createdUser, createdToken);
   } catch (error) {
-    console.log(error);
+    console.error('ERROR SENDING VERIFICATION EMAIL', error);
     return new NextResponse(
       JSON.stringify({
         error:

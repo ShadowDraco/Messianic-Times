@@ -1,21 +1,24 @@
-'use client'
-import * as React from 'react'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardHeader from '@mui/material/CardHeader'
-import CssBaseline from '@mui/material/CssBaseline'
-import Grid from '@mui/material/Grid'
-import StarIcon from '@mui/icons-material/StarBorder'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import Link from '@mui/material/Link'
-import GlobalStyles from '@mui/material/GlobalStyles'
-import Container from '@mui/material/Container'
+'use client';
+import * as React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import Container from '@mui/material/Container';
+import BuyItemButton from './BuyItemButton';
+
+import { signIn } from 'next-auth/react';
 
 function Copyright(props) {
   return (
@@ -26,13 +29,16 @@ function Copyright(props) {
       {...props}
     >
       {'Copyright © '}
-      <Link color='inherit' href='https://mui.com/'>
+      <Link
+        color='inherit'
+        href='https://mui.com/'
+      >
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-  )
+  );
 }
 
 const footers = [
@@ -63,51 +69,55 @@ const footers = [
     title: 'Legal',
     description: ['Privacy policy', 'Terms of use'],
   },
-]
+];
+
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
 
 // TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme()
+const defaultTheme = createTheme();
 
 export default function Pricing({ prices }) {
   const tiers = [
     {
       title: 'Free',
-      price: '0',
+      price: '$0.00',
+      description: ['1 Free Paper', 'Try and subscribe later!'],
+    },
+    {
+      title: 'Auto Renew',
+      price: formatter.format(prices[0].unit_amount / 100),
       description: [
-        '10 users included',
-        '2 GB of storage',
-        'Help center access',
-        'Email support',
+        'Access to all papers',
+        'Access to all articles',
+        '8% discount!',
+        'Auto renew once a year',
+        'Always have access to the Times!',
       ],
-      buttonText: 'Sign up for free',
-      buttonVariant: 'outlined',
     },
     {
       title: '1 Year',
       subheader: 'Most popular',
-      price: prices[0],
-      description: [
-        '20 users included',
-        '10 GB of storage',
-        'Help center access',
-        'Priority email support',
-      ],
-      buttonText: 'Get started',
-      buttonVariant: 'contained',
+      price: formatter.format(prices[1].unit_amount / 100),
+      description: ['Access to all papers', 'Access to all articles'],
     },
     {
       title: '2 Year',
-      price: prices[1],
-      description: [
-        '50 users included',
-        '30 GB of storage',
-        'Help center access',
-        'Phone & email support',
-      ],
-      buttonText: 'Contact us',
-      buttonVariant: 'outlined',
+      price: formatter.format(prices[2].unit_amount / 100),
+      description: ['Access to all papers', 'Access to all articles'],
     },
-  ]
+    {
+      title: '3 Year',
+      subheader: 'Most Value',
+      price: formatter.format(prices[3].unit_amount / 100),
+      description: ['Access to all papers', 'Access to all articles'],
+    },
+  ];
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -122,17 +132,22 @@ export default function Pricing({ prices }) {
         sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant='h6' color='inherit' noWrap sx={{ flexGrow: 1 }}>
-            Company name
+          <Typography
+            variant='h6'
+            color='inherit'
+            noWrap
+            sx={{ flexGrow: 1 }}
+          >
+            Messianic Times
           </Typography>
           <nav>
             <Link
               variant='button'
               color='text.primary'
-              href='#'
+              href='/'
               sx={{ my: 1, mx: 1.5 }}
             >
-              Features
+              HOME
             </Link>
             <Link
               variant='button'
@@ -151,7 +166,13 @@ export default function Pricing({ prices }) {
               Support
             </Link>
           </nav>
-          <Button href='#' variant='outlined' sx={{ my: 1, mx: 1.5 }}>
+          <Button
+            onClick={() => {
+              signIn();
+            }}
+            variant='outlined'
+            sx={{ my: 1, mx: 1.5 }}
+          >
             Login
           </Button>
         </Toolbar>
@@ -172,21 +193,18 @@ export default function Pricing({ prices }) {
         >
           Pricing
         </Typography>
-        <Typography
-          variant='h5'
-          align='center'
-          color='text.secondary'
-          component='p'
-        >
-          Quickly build an effective pricing table for your potential customers
-          with this layout. It&apos;s built with default MUI components with
-          little customization.
-        </Typography>
       </Container>
       {/* End hero unit */}
-      <Container maxWidth='md' component='main'>
-        <Grid container spacing={5} alignItems='flex-end'>
-          {tiers.map(tier => (
+      <Container
+        maxWidth='md'
+        component='main'
+      >
+        <Grid
+          container
+          spacing={5}
+          alignItems='flex-end'
+        >
+          {tiers.map((tier, tIndex) => (
             // Enterprise card is full width at sm breakpoint
             <Grid
               item
@@ -225,10 +243,7 @@ export default function Pricing({ prices }) {
                       variant='h3'
                       color='text.primary'
                     >
-                      ${tier.price}
-                    </Typography>
-                    <Typography variant='h6' color='text.secondary'>
-                      /mo
+                      {tier.price}
                     </Typography>
                   </Box>
                   <ul>
@@ -245,9 +260,21 @@ export default function Pricing({ prices }) {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant}>
-                    {tier.buttonText}
-                  </Button>
+                  {tIndex > 0 ? (
+                    <BuyItemButton
+                      price={prices[tIndex - 1]}
+                      index={tIndex}
+                    />
+                  ) : (
+                    <Button
+                      fullWidth
+                      onClick={() => {
+                        signIn();
+                      }}
+                    >
+                      Sign up!
+                    </Button>
+                  )}
                 </CardActions>
               </Card>
             </Grid>
@@ -264,16 +291,33 @@ export default function Pricing({ prices }) {
           py: [3, 6],
         }}
       >
-        <Grid container spacing={4} justifyContent='space-evenly'>
+        <Grid
+          container
+          spacing={4}
+          justifyContent='space-evenly'
+        >
           {footers.map(footer => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant='h6' color='text.primary' gutterBottom>
+            <Grid
+              item
+              xs={6}
+              sm={3}
+              key={footer.title}
+            >
+              <Typography
+                variant='h6'
+                color='text.primary'
+                gutterBottom
+              >
                 {footer.title}
               </Typography>
               <ul>
                 {footer.description.map(item => (
                   <li key={item}>
-                    <Link href='#' variant='subtitle1' color='text.secondary'>
+                    <Link
+                      href='#'
+                      variant='subtitle1'
+                      color='text.secondary'
+                    >
                       {item}
                     </Link>
                   </li>
@@ -286,5 +330,5 @@ export default function Pricing({ prices }) {
       </Container>
       {/* End footer */}
     </ThemeProvider>
-  )
+  );
 }

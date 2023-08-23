@@ -6,6 +6,7 @@ const STRIPE_DOMAIN = 'http://localhost:3000';
 export async function POST(request) {
   let data = await request.json();
   let priceId = data.priceId;
+  let isSubscription = data.isSubscription;
 
   const session = await stripe.checkout.sessions.create({
     line_items: [
@@ -15,7 +16,7 @@ export async function POST(request) {
         quantity: 1,
       },
     ],
-    mode: 'subscription',
+    mode: isSubscription ? 'subscription' : 'payment',
     success_url: STRIPE_DOMAIN + '/products',
     cancel_url: STRIPE_DOMAIN + '/products',
   });

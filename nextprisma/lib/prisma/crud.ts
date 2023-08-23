@@ -1,3 +1,4 @@
+import wait from '../wait';
 import { prisma } from './prisma';
 import { randomUUID } from 'crypto';
 
@@ -12,6 +13,18 @@ export const createUser = async fields => {
   if (!newUser) return null;
   return newUser;
 };
+
+export const findUser = async (email, ms) => {
+  const user = await prisma.user.findFirst({
+    where: {
+      email: 'test@test.com',
+    },
+  });
+
+  if (ms) await wait(ms)
+
+  return user
+}
 
 export const createToken = async userId => {
   let token = prisma.activateToken.create({

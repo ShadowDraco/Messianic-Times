@@ -1,17 +1,15 @@
 import { prisma } from '../lib/prisma/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]/route';
-import AuthButtons from '../components/AuthButtons';
-import BasicDeleteUserForm from '../components/BasicDeleteUserForm';
-import BasicCreateUserForm from '../components/BasicCreateUserForm';
+import AuthButtons from '../components/auth/AuthButtons';
+import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm';
+import BasicCreateUserForm from '../components/auth/BasicCreateUserForm';
+import { findUser } from '../lib/prisma/crud';
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  const user = await prisma.user.findFirst({
-    where: {
-      email: 'test@test.com',
-    },
-  });
+
+  const user = await findUser('test@test.com', 2000);
 
   return (
     <main>
