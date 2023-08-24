@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
-import { authOptions } from '../../../auth/[...nextauth]/route';
-import { deleteUser } from '../../../../../lib/prisma/crud';
+import { authOptions } from '../../../../auth/[...nextauth]/route';
+import { deleteUser } from '../../../../../../lib/prisma/crud';
 
 export async function POST(request) {
   const session = await getServerSession(authOptions);

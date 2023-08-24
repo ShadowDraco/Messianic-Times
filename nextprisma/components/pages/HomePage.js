@@ -10,13 +10,25 @@ import AdminDashLinks from '../icons/AdminDashLinks';
 export default function HomePage({ session }) {
   return (
     <Box className={'text-[#211] bg-[#B5DBFF] mt-0 p-3'}>
-      <Typography
-        variant='h3'
-        component='h3'
-        my={3}
-      >
-        Hello{session.user?.name ? ` ${session.user.name}` : ', please log in'}{' '}
-      </Typography>
+      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+        <Typography
+          variant='h3'
+          component='h3'
+          my={3}
+        >
+          Hello{session?.user?.name ? ` ${session.user.name}` : ', please log in'}{' '}
+        </Typography>
+
+        <Link href='https://donate.stripe.com/test_6oEcQG1oM0hHd2M144'>
+          <Button
+            size='large'
+            variant='contained'
+            sx={{mr: 8}}
+          >
+            Donate
+          </Button>
+        </Link>
+      </Box>
 
       <Container className='py-2 my-2'>
         <BasicDeleteUserForm />

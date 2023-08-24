@@ -1,10 +1,13 @@
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
-import { authOptions } from '../../../../../auth/[...nextauth]/route';
-import { createToken, createUser } from '../../../../../../../lib/prisma/crud';
-import { hashPassword } from '../../../../../../../lib/auth-functions/passwords';
+import { authOptions } from '../../../../../../auth/[...nextauth]/route';
+import {
+  createToken,
+  createUser,
+} from '../../../../../../../../lib/prisma/crud';
+import { hashPassword } from '../../../../../../../../lib/auth-functions/passwords';
 
-import sendVerificationEmail from '../../../../../../../lib/mailgun/sendVerificationEmail';
+import sendVerificationEmail from '../../../../../../../../lib/mailgun/sendVerificationEmail';
 export async function POST(request) {
   //const session = await getServerSession(authOptions);
 

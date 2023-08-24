@@ -14,7 +14,7 @@ export default function BasicDeleteUserForm() {
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleDeleteUser = async email => {
-    let response = await fetch(`/api/user/delete/${email}`, {
+    let response = await fetch(`/api/database/user/delete/${email}`, {
       method: 'POST',
     });
 
@@ -30,7 +30,7 @@ export default function BasicDeleteUserForm() {
         <FormControl>
           <InputLabel htmlFor='delete-email'>Email: </InputLabel>{' '}
           <Input
-            ref={emailRef}
+            inputRef={emailRef}
             id='delete-email'
             placeholder='email'
           />

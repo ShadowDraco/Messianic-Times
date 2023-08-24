@@ -37,7 +37,7 @@ export default function BasicCreateUserForm() {
         <FormControl>
           <InputLabel htmlFor='create-email'>Email: </InputLabel>{' '}
           <Input
-            ref={emailRef}
+            inputRef={emailRef}
             id='create-email'
             placeholder='email'
           />
@@ -45,7 +45,7 @@ export default function BasicCreateUserForm() {
         <FormControl>
           <InputLabel htmlFor='create-name'>Name: </InputLabel>{' '}
           <Input
-            ref={nameRef}
+            inputRef={nameRef}
             id='create-name'
             placeholder='name'
           />
@@ -53,7 +53,7 @@ export default function BasicCreateUserForm() {
         <FormControl>
           <InputLabel htmlFor='create-password'>Password: </InputLabel>{' '}
           <Input
-            ref={passwordRef}
+            inputRef={passwordRef}
             id='create-password'
             placeholder='password'
           />
