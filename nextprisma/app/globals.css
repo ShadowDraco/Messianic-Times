@@ -8,6 +8,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+html {
+  background-color: rgb(24, 46, 66);
+}
+
 input {
   color: black !important;
 }

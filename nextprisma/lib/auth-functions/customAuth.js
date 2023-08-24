@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { prisma } from '../../lib/prisma/prisma';
+import prisma  from '../../lib/prisma/prisma';
 
 export const authorizeUser = async credentials => {
   const user = await prisma.user.findUnique({

@@ -1,12 +1,15 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client"
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient }
+let prisma
 
-// export prisma ONCE as a singleton, or create it
-export const prisma =
-  globalForPrisma.prisma ||
-  new PrismaClient({
-    log: ['query'],
-  })
+if (process.env.NODE_ENV === "production") {
+  prisma = new PrismaClient()
+} else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient()
+  }
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma
+  prisma = global.prisma
+}
+
+export default prisma;

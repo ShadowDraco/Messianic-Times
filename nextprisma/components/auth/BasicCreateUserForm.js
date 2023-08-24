@@ -1,6 +1,13 @@
 'use client';
 import React, { useState, useRef } from 'react';
-
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  Input,
+  Button,
+  Typography,
+} from '@mui/material';
 export default function BasicCreateUserForm() {
   const emailRef = useRef(null);
   const nameRef = useRef(null);
@@ -24,35 +31,44 @@ export default function BasicCreateUserForm() {
   };
 
   return (
-    <div>
-      <label htmlFor='create-email'>Email: </label>{' '}
-      <input
-        ref={emailRef}
-        id='create-email'
-        placeholder='email'
-      />
-      <label htmlFor='create-name'>Name: </label>{' '}
-      <input
-        ref={nameRef}
-        id='create-name'
-        placeholder='name'
-      />
-      <label htmlFor='create-password'>Password: </label>{' '}
-      <input
-        ref={passwordRef}
-        id='create-password'
-        placeholder='password'
-      />
-      <button
-        onClick={() => {
-          handleCreateUser();
-        }}
-      >
-        Create
-      </button>
-      <p color={successMessage === 'success!' ? 'green' : 'red'}>
-        {successMessage}
-      </p>
-    </div>
+    <Box className='my-2'>
+      <Typography variant='body2'>Create a User</Typography>
+      <Box className='flex align-middle'>
+        <FormControl>
+          <InputLabel htmlFor='create-email'>Email: </InputLabel>{' '}
+          <Input
+            ref={emailRef}
+            id='create-email'
+            placeholder='email'
+          />
+        </FormControl>
+        <FormControl>
+          <InputLabel htmlFor='create-name'>Name: </InputLabel>{' '}
+          <Input
+            ref={nameRef}
+            id='create-name'
+            placeholder='name'
+          />
+        </FormControl>
+        <FormControl>
+          <InputLabel htmlFor='create-password'>Password: </InputLabel>{' '}
+          <Input
+            ref={passwordRef}
+            id='create-password'
+            placeholder='password'
+          />
+        </FormControl>
+        <Button
+          onClick={() => {
+            handleCreateUser();
+          }}
+        >
+          Create
+        </Button>
+        <Typography color={successMessage === 'success!' ? 'green' : 'red'}>
+          {successMessage}
+        </Typography>
+      </Box>
+    </Box>
   );
 }

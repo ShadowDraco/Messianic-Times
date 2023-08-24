@@ -1,5 +1,5 @@
 import wait from '../wait';
-import { prisma } from './prisma';
+import prisma from './prisma';
 import { randomUUID } from 'crypto';
 
 export const createUser = async fields => {
@@ -21,10 +21,10 @@ export const findUser = async (email, ms) => {
     },
   });
 
-  if (ms) await wait(ms)
+  if (ms) await wait(ms);
 
-  return user
-}
+  return user;
+};
 
 export const createToken = async userId => {
   let token = prisma.activateToken.create({
@@ -44,5 +44,5 @@ export const deleteUser = async email => {
 };
 
 export const deleteUserCascade = async email => {
-  let deletedUser = await prisma.user.delete({where: email})
-}
+  let deletedUser = await prisma.user.delete({ where: email });
+};

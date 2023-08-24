@@ -13,10 +13,10 @@ export const myTheme = buildLegacyTheme({
   '--white': props['--white'],
 
   '--gray': '#777',
-  '--gray-base': '#222',
+  '--gray-base': '#555',
 
-  '--component-bg': props['--black'],
-  '--component-text-color': props['--white'],
+  '--component-bg': props['--white'],
+  '--component-text-color': props['--black'],
 
   '--brand-primary': props['--brand'],
   '--default-button-color': '#333',

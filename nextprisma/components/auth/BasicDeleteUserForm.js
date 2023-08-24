@@ -1,4 +1,12 @@
 'use client';
+import {
+  Box,
+  FormControl,
+  Typography,
+  Input,
+  InputLabel,
+  Button,
+} from '@mui/material';
 import React, { useState, useRef } from 'react';
 
 export default function BasicDeleteUserForm() {
@@ -16,23 +24,28 @@ export default function BasicDeleteUserForm() {
   };
 
   return (
-    <div>
-      <label htmlFor='delete-by-email'>Delete user: </label>{' '}
-      <input
-        ref={emailRef}
-        id='delete-by-email'
-        placeholder='email'
-      />
-      <button
-        onClick={e => {
-          handleDeleteUser(emailRef.current.value);
-        }}
-      >
-        Delete
-      </button>
-      <p color={successMessage === 'success!' ? 'green' : 'red'}>
-        {successMessage}
-      </p>
-    </div>
+    <Box className='my-2'>
+      <Typography variant='body2'>Delete a User</Typography>
+      <Box className='flex align-middle'>
+        <FormControl>
+          <InputLabel htmlFor='delete-email'>Email: </InputLabel>{' '}
+          <Input
+            ref={emailRef}
+            id='delete-email'
+            placeholder='email'
+          />
+        </FormControl>
+        <Button
+          onClick={e => {
+            handleDeleteUser(emailRef.current.value);
+          }}
+        >
+          Delete
+        </Button>
+        <Typography color={successMessage === 'success!' ? 'green' : 'red'}>
+          {successMessage}
+        </Typography>
+      </Box>
+    </Box>
   );
 }
