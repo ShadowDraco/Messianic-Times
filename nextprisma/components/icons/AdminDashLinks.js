@@ -37,8 +37,12 @@ export default function AdminDashLinks() {
       </Link>
 
       <Link
-        href='/'
+        href={
+          process.env.USER_DASHBOARD_URL ||
+          'https://cloud.prisma.io/ShadowDraco/pre-messianic-times/production/databrowser'
+        }
         className=''
+        target='_blank'
       >
         <Box className='hidden md:flex items-center gap-2 mx-2 p-3 text-[#faaa55]'>
           <Typography>User Dashboard</Typography>

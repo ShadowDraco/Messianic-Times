@@ -9,16 +9,24 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
 model User {
   id Int @id @default(autoincrement())
   email String @unique
   password String
   name String?
+  phoneNumber String? 
+  emailPreferences Boolean @default(false)
+  phonePreferences Boolean @default(false)
   activated Boolean @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
   ActivateToken ActivateToken[]
+  subscribedAt DateTime?
+  subscriptionType String @default("None")
+  endSubscriptionDate DateTime?
+  donatedOnce Boolean @default(false)
+  hasFreePaper Boolean @default(false)
+  whichFreePaper String?
 }
 
 model ActivateToken {
