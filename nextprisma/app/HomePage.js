@@ -24,7 +24,7 @@ export default function HomePage({ session }) {
             : ', please log in'}{' '}
         </Typography>
 
-        <Link href='https://donate.stripe.com/test_6oEcQG1oM0hHd2M144'>
+        <Link href='/donate'>
           <Button
             size='large'
             variant='contained'
