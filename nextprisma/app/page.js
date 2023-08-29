@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-const HomePage = dynamic(() => import('../components/pages/HomePage'), {
+const HomePage = dynamic(() => import('./HomePage'), {
   ssr: false,
 });
 import { getServerSession } from 'next-auth';

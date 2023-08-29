@@ -22,8 +22,9 @@ import { myTheme } from './themes/sanityThemes';
 // Customize this function to show the correct URL based on the current document
 function getPreviewUrl(doc: SanityDocument, schemaType: string) {
   //! process.env.SANITY_PREVIEW_URL
+
   return doc?.slug?.current
-    ? `http://localhost:3000/${schemaType}/${doc.slug.current}`
+    ? `http://localhost:3000/previews/${schemaType}/${doc._id}`
     : window.location.host;
 }
 

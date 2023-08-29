@@ -3,10 +3,13 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { stripe } from '../../lib/stripe/stripe';
 
-import BuyItemButton from '../../components/products/BuyItemButton';
-import Pricing from '../../components/products/Pricing';
+import dynamic from 'next/dynamic';
+
 import { getProducts } from '../api/stripe/products/route';
 export default async function ProductPage() {
+  const Pricing = dynamic(() => import('./Pricing'), {
+    ssr: false,
+  });
   const session = await getServerSession(authOptions);
 
   if (!session) return 'You are not authorized to view this page';

@@ -1,29 +1,34 @@
 'use client';
 import { Box, Container, Button, Typography, Input } from '@mui/material';
 import Link from 'next/link';
-import AuthButtons from '../auth/AuthButtons';
-import BasicDeleteUserForm from '../auth/BasicDeleteUserForm';
-import BasicCreateUserForm from '../auth/BasicCreateUserForm';
-import { Paper, Shop } from '../icons/Icons';
-import AdminDashLinks from '../icons/AdminDashLinks';
+import AuthButtons from '../components/auth/AuthButtons';
+import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm';
+import BasicCreateUserForm from '../components/auth/BasicCreateUserForm';
+import { Paper, Shop } from '../components/icons/Icons';
+import AdminDashLinks from '../components/icons/AdminDashLinks';
 
 export default function HomePage({ session }) {
   return (
     <Box className={'text-[#211] bg-[#B5DBFF] mt-0 p-3'}>
-      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+      <Box
+        sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}
+      >
         <Typography
           variant='h3'
           component='h3'
           my={3}
         >
-          Hello{session?.user?.name ? ` ${session.user.name}` : ', please log in'}{' '}
+          Hello
+          {session?.user?.name
+            ? ` ${session.user.name}`
+            : ', please log in'}{' '}
         </Typography>
 
         <Link href='https://donate.stripe.com/test_6oEcQG1oM0hHd2M144'>
           <Button
             size='large'
             variant='contained'
-            sx={{mr: 8}}
+            sx={{ mr: 8 }}
           >
             Donate
           </Button>
@@ -54,6 +59,15 @@ export default function HomePage({ session }) {
             endIcon={<Paper />}
           >
             Studio
+          </Button>
+        </Link>
+        <Link href='/posts'>
+          <Button
+            variant='outlined'
+            color='warning'
+            endIcon={<Paper />}
+          >
+            Posts
           </Button>
         </Link>
       </Container>
