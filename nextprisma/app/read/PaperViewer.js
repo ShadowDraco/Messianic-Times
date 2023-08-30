@@ -47,6 +47,7 @@ export default function PaperViewer() {
         {Newspaper1.map((image, i) => {
           return (
             <Page
+            key={i}
               number={`${i}`}
               image={image}
             />
