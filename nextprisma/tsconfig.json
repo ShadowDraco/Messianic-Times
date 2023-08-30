@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -31,9 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/BasicDeleteUserForm.js",
-    "app/api/preview/route.js"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "app/api/preview/route.js",
+    "lib/stripe/stripe.js"
+, "sanity.config.js"  ],
+  "exclude": ["node_modules"]
 }

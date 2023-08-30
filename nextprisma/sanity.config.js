@@ -20,7 +20,7 @@ import { schema } from './sanity/schema';
 import { myTheme } from './themes/sanityThemes';
 
 // Customize this function to show the correct URL based on the current document
-function getPreviewUrl(doc: SanityDocument, schemaType: string) {
+function getPreviewUrl(doc, schemaType) {
   //! process.env.SANITY_PREVIEW_URL
 
   return doc?.slug?.current
@@ -51,7 +51,7 @@ const defaultDocumentNode = (S, { schemaType }) => {
     S.view
       .component(Iframe)
       .options({
-        url: (doc: SanityDocument) => getPreviewUrl(doc, schemaType),
+        url: doc => getPreviewUrl(doc, schemaType),
         reload: {
           button: true, // default `undefined`
           // revision: 2000, boolean | number. default `undefined`. If a number is provided, add a delay (in ms) before the automatic reload on document revision. If `true` then a curated delay is used. Use `0` to have zero delay.`

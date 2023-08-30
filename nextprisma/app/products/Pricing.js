@@ -17,6 +17,7 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import BuyItemButton from './BuyItemButton';
+import { Star } from '../../components/icons/Icons';
 
 import { signIn } from 'next-auth/react';
 
@@ -218,7 +219,7 @@ export default function Pricing({ prices }) {
                   title={tier.title}
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  action={tier.title === 'Pro' ? <Star /> : null}
                   subheaderTypographyProps={{
                     align: 'center',
                   }}

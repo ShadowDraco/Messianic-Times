@@ -16,7 +16,7 @@ export default function PayPalButtonsWrapper() {
       <PayPalButtons
         style={{
           shape: 'rect',
-          color: 'gold',
+          color: 'silver',
           layout: 'vertical', //default value. Can be changed to horizontal
         }}
         createOrder={async () => {

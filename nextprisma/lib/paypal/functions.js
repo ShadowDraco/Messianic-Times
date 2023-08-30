@@ -23,6 +23,7 @@ export const generateAccessToken = async () => {
     });
 
     const data = await response.json();
+    console.log('ACCESS TOKEN CREATED: ', data.access_token);
     return data.access_token;
   } catch (error) {
     console.error('Failed to generate Access Token:', error);

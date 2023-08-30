@@ -1,11 +1,9 @@
 import React from 'react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
-import { stripe } from '../../lib/stripe/stripe';
-
 import dynamic from 'next/dynamic';
 
-import { getProducts } from '../api/stripe/products/route';
+import { getProducts } from '../../lib/stripe/stripe';
 export default async function ProductPage() {
   const Pricing = dynamic(() => import('./Pricing'), {
     ssr: false,

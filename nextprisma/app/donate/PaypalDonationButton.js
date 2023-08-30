@@ -1,6 +1,6 @@
-
-import React from 'react'
-
+import React from 'react';
+import PayPalDonate from '../../components/assets/PayPalDonate.png';
+import Image from 'next/image';
 export default async function PaypalDonationButton() {
   return (
     <form
@@ -25,13 +25,15 @@ export default async function PaypalDonationButton() {
       />
       <input
         type='image'
-        src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'
+        src={PayPalDonate.src}
+        width={100}
+        height={50}
         border='0'
         name='submit'
         title='PayPal - The safer, easier way to pay online!'
         alt='Donate with PayPal button'
       />
-      <img
+      <Image
         alt=''
         border='0'
         src='https://www.paypal.com/en_US/i/scr/pixel.gif'
