@@ -4,7 +4,7 @@ import Link from 'next/link';
 import AuthButtons from '../components/auth/AuthButtons';
 import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm';
 import BasicCreateUserForm from '../components/auth/BasicCreateUserForm';
-import { Paper, Shop } from '../components/icons/Icons';
+import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons';
 import AdminDashLinks from '../components/icons/AdminDashLinks';
 
 export default function HomePage({ session }) {
@@ -29,6 +29,7 @@ export default function HomePage({ session }) {
             size='large'
             variant='contained'
             sx={{ mr: 8 }}
+            endIcon={<Heart />}
           >
             Donate
           </Button>
@@ -56,7 +57,7 @@ export default function HomePage({ session }) {
           <Button
             variant='outlined'
             color='primary'
-            endIcon={<Paper />}
+            endIcon={<Table />}
           >
             Studio
           </Button>
@@ -68,6 +69,24 @@ export default function HomePage({ session }) {
             endIcon={<Paper />}
           >
             Posts
+          </Button>
+        </Link>
+        <Link href='/read'>
+          <Button
+            variant='outlined'
+            color='primary'
+            endIcon={<Book />}
+          >
+            Read
+          </Button>
+        </Link>
+        <Link href='/about'>
+          <Button
+            variant='outlined'
+            color='error'
+            endIcon={<At />}
+          >
+            About
           </Button>
         </Link>
       </Container>

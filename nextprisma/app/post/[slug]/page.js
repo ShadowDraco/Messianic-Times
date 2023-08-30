@@ -6,7 +6,7 @@ import DefaultAuthorView from '../../../components/sanity/Content/Authors/Defaul
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
 
-export const revalidate = 30; // revalidate every 30 second
+export const revalidate = 60*60*24; // revalidate every 1 day 
 
 // get all slugs for posts to statically generate them and reduce api requests to sanity
 export async function generateStaticParams() {
