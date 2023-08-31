@@ -1,7 +1,7 @@
 import { stripe } from '../../../../lib/stripe/stripe';
 import { NextResponse, NextRequest } from 'next/server';
 
-const STRIPE_DOMAIN = 'http://localhost:3000';
+const STRIPE_DOMAIN = process.env.WEBSITE_URL;
 
 export async function POST(request) {
   let data = await request.json();
