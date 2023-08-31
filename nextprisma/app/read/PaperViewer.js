@@ -1,16 +1,16 @@
-'use client';
-import React, { useCallback, useRef } from 'react';
-import HTMLFlipBook from 'react-pageflip';
-import Page from './PaperPage';
-import PageCover from './PaperCover';
-import { Box, Container, Typography, Button } from '@mui/material';
-import { Newspaper1 } from '../../components/assets/papers/NewspaperScreenshots/Newspaper';
+'use client'
+import React, { useCallback, useRef } from 'react'
+import HTMLFlipBook from 'react-pageflip'
+import Page from './PaperPage'
+import PageCover from './PaperCover'
+import { Box, Container, Typography, Button } from '@mui/material'
+import { Newspaper1 } from '../../assets/papers/NewspaperScreenshots/Newspaper'
 export default function PaperViewer() {
-  const book = useRef(null);
+  const book = useRef(null)
 
   const onFlip = useCallback(e => {
     // do something
-  }, []);
+  }, [])
 
   return (
     <Container>
@@ -39,24 +39,18 @@ export default function PaperViewer() {
         mobileScrollSupport={true}
         className='demo-book'
         onFlip={e => {
-          onFlip(e);
+          onFlip(e)
         }}
         ref={book}
       >
         <PageCover>FRONT PAGE</PageCover>
         {Newspaper1.map((image, i) => {
-          return (
-            <Page
-            key={i}
-              number={`${i}`}
-              image={image}
-            />
-          );
+          return <Page key={i} number={`${i}`} image={image} />
         })}
         <PageCover>LAST PAGE</PageCover>
       </HTMLFlipBook>
     </Container>
-  );
+  )
 }
 
 /*

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import MTLogoImage from '../assets/MTLogo.png';
+import MTLogoImage from '../../assets/MTLogo.png';
 
 export default function Logo() {
   return (

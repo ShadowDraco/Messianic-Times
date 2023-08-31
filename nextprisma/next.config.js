@@ -4,8 +4,8 @@ const nextConfig = {
     serverComponentsExternalPackages: ['@prisma/client', 'bcrypt'],
   },
   images: {
-    domains: [''],
+    domains: ['www.paypal.com'],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
