@@ -1,6 +1,6 @@
-import wait from '../wait';
-import prisma from './prisma';
-import { randomUUID } from 'crypto';
+import wait from '../wait'
+import prisma from './prisma'
+import { randomUUID } from 'crypto'
 
 export const createUser = async fields => {
   let newUser = await prisma.user.create({
@@ -9,22 +9,22 @@ export const createUser = async fields => {
       name: fields.name,
       password: fields.password,
     },
-  });
-  if (!newUser) return null;
-  return newUser;
-};
+  })
+  if (!newUser) return null
+  return newUser
+}
 
 export const findUser = async (email, ms) => {
   const user = await prisma.user.findFirst({
     where: {
-      email: 'test@test.com',
+      email: email,
     },
-  });
+  })
 
-  if (ms) await wait(ms);
+  if (ms) await wait(ms)
 
-  return user;
-};
+  return user
+}
 
 export const createToken = async userId => {
   let token = prisma.activateToken.create({
@@ -32,17 +32,17 @@ export const createToken = async userId => {
       token: `${randomUUID()}${randomUUID()}`.replace(/-/g, ''),
       userId,
     },
-  });
-  if (!token) return null;
-  return token;
-};
+  })
+  if (!token) return null
+  return token
+}
 
 export const deleteUser = async email => {
-  let deletedUser = await prisma.user.delete({ where: { email } });
-  if (!deletedUser) return null;
-  return deletedUser;
-};
+  let deletedUser = await prisma.user.delete({ where: { email } })
+  if (!deletedUser) return null
+  return deletedUser
+}
 
 export const deleteUserCascade = async email => {
-  let deletedUser = await prisma.user.delete({ where: email });
-};
+  let deletedUser = await prisma.user.delete({ where: email })
+}

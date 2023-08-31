@@ -1,12 +1,8 @@
-import React from 'react';
-import { Box } from '@mui/material';
+import React from 'react'
+import { Box } from '@mui/material'
 const PageCover = React.forwardRef((props, ref) => {
   return (
-    <div
-      className='page page-cover'
-      ref={ref}
-      data-density='hard'
-    >
+    <div className='page page-cover' ref={ref} data-density='hard'>
       <Box
         sx={{
           backgroundColor: 'white',
@@ -20,7 +16,8 @@ const PageCover = React.forwardRef((props, ref) => {
         <h2>{props.children}</h2>
       </Box>
     </div>
-  );
-});
+  )
+})
 
-export default PageCover;
+PageCover.displayName = 'PageCover'
+export default PageCover
