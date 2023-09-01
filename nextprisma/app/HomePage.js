@@ -6,7 +6,7 @@ import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm';
 import BasicCreateUserForm from '../components/auth/BasicCreateUserForm';
 import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons';
 import AdminDashLinks from '../components/icons/AdminDashLinks';
-
+import BreathWrapper from '../components/motion/breath/BreathWrapper';
 export default function HomePage({ session }) {
   return (
     <Box className={'text-[#211] bg-[#B5DBFF] mt-0 p-3'}>
@@ -23,16 +23,20 @@ export default function HomePage({ session }) {
             ? ` ${session.user.name}`
             : ', please log in'}{' '}
         </Typography>
-
-        <Link href='/donate'>
-          <Button
-            size='large'
-            variant='contained'
-            sx={{ mr: 8 }}
-            endIcon={<Heart />}
-          >
-            Donate
-          </Button>
+        <Link
+          href='/donate'
+          style={{ width: 'fit-content' }}
+        >
+          <BreathWrapper>
+            <Button
+              size='large'
+              variant='contained'
+              sx={{ mr: 8 }}
+              endIcon={<Heart />}
+            >
+              Donate
+            </Button>
+          </BreathWrapper>
         </Link>
       </Box>
 

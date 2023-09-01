@@ -7,6 +7,7 @@ checkout.session.async_payment_succeeded
 checkout.session.completed
 */
 import { NextResponse, NextRequest } from 'next/server';
+import { buffer } from 'micro';
 import { headers } from 'next/headers';
 import {
   handleCustomerSubscriptionCreated,
@@ -15,20 +16,29 @@ import {
 } from './handlers';
 import { stripe } from '../../../../lib/stripe/stripe';
 
+//TODO
+//? stripe listen --forward-to http://localhost:3000/api/stripe/confirm
+//? stripe trigger subscription.payment_succeeded
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export async function POST(request) {
   //? This is your Stripe CLI webhook secret for testing your endpoint locally.
   const endpointSecret =
-    'whsec_0a601e125b3f022c3c08fe08a60c5a39c125aea0b9d877d14dabe1d49a15e235';
+    process.env.STRIPE_WEBHOOK_SECRET || '';
   const headersList = headers();
+  const bodyBuffer = await buffer(request);
   const sig = headersList.get('stripe-signature') || '';
   let event;
 
+  console.log(bodyBuffer);
+
   try {
-    event = stripe.webhooks.constructEvent(
-      JSON.stringify(await request.json()),
-      sig,
-      endpointSecret
-    );
+    event = stripe.webhooks.constructEvent(bodyBuffer, sig, endpointSecret);
     console.log('EVENT', event);
   } catch (err) {
     console.log(`Webhook Error: ${err}`);
