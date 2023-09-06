@@ -42,7 +42,3 @@ export const deleteUser = async email => {
   if (!deletedUser) return null
   return deletedUser
 }
-
-export const deleteUserCascade = async email => {
-  let deletedUser = await prisma.user.delete({ where: email })
-}

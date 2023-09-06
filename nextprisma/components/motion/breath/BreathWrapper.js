@@ -7,7 +7,7 @@ export default function BreathWrapper({ children }) {
       initial={{ opacity: 1, scale: 1 }}
       animate={{ opacity: 0.8, scale: 0.9 }}
       transition={{ duration: 2, repeatType: 'reverse', repeat: Infinity }}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1 }}
       whileTap={{ scale: 0.9 }}
     >
       {children}
