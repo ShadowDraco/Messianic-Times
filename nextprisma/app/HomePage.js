@@ -8,7 +8,6 @@ import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons';
 import AdminDashLinks from '../components/icons/AdminDashLinks';
 import BreathWrapper from '../components/motion/breath/BreathWrapper';
 export default function HomePage({ session }) {
- 
   return (
     <Box className={'text-[#211] bg-[#B5DBFF] mt-0 p-3'}>
       <Box
@@ -98,6 +97,9 @@ export default function HomePage({ session }) {
       <Box className='bg-[#002540]'>
         <AdminDashLinks />
       </Box>
+      <Typography>
+        {session?.user ? JSON.stringify(session.user) : 'user not logged in'}
+      </Typography>
     </Box>
   );
 }

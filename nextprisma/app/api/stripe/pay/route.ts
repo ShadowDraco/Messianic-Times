@@ -17,7 +17,7 @@ export async function POST(request) {
       },
     ],
     mode: isSubscription ? 'subscription' : 'payment',
-    success_url: STRIPE_DOMAIN + '/products',
+    success_url: STRIPE_DOMAIN + '/',
     cancel_url: STRIPE_DOMAIN + '/products',
   });
 

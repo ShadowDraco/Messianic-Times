@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { authorizeUser } from '../../../../lib/auth-functions/customAuth';
+import { updateUser } from '../../../../lib/prisma/crud';
 export const authOptions = {
   session: {
     strategy: 'jwt',
@@ -26,18 +27,64 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, account }) {
+    async jwt({ token, user, session, trigger }) {
+
+      // if user being updated by client
+      if (trigger === 'update' && session) {
+        //? validate
+        if (session.name) {
+          token.name = session.name;
+          //user.name = session.name;
+        }
+        if (session.phoneNumber) {
+          token.phoneNumber = session.phoneNumber;
+          //user.phoneNumber = session.phoneNumber;
+        }
+        if (session.phonePreferences) {
+          token.phonePreferences = session.phonePreferences;
+          //user.phonePreferences = session.phonePreferences;
+        }
+
+        if (session.emailPreferences) {
+          token.phoneEmailPreferences = session.emailPreferences;
+          //user.phoneEmailPreferences = session.emailPreferences;
+        }
+
+        await updateUser(token.email, {
+          name: token.name,
+          phoneNumber: token.phoneNumber,
+          phonePreferences: token.phonePreferences,
+          emailPreferences: token.emailPreferences,
+        });
+      }
+
       // Persist the OAuth access_token to the token right after signin
-      if (account) {
-        token.accessToken = account.access_token;
+      if (user) {
+        return {
+          ...token,
+          ...user,
+        };
       }
       return token;
     },
     async session({ session, token, user }) {
+      // pass info to the session and return the updated session
+  
       // Send properties to the client, like an access_token from a provider.
-      session.accessToken = token.accessToken;
 
-      return session;
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          name: token.name,
+          email: token.email,
+          phoneNumber: token.phoneNumber,
+          subscriptionType: token.subscriptionType,
+          whichFreePaper: token.whichFreePaper,
+          subscribedAt: token.subscribedAt,
+          endSubscriptionDate: token.endSubscriptionDate,
+        },
+      };
     },
   },
 };

@@ -9,9 +9,8 @@ checkout.session.completed
 import { NextResponse, NextRequest } from 'next/server';
 import { headers } from 'next/headers';
 import {
-  handleCustomerSubscriptionCreated,
+  handleCustomerSubscriptionDeleted,
   handleCheckoutSessionCompleted,
-  handleCheckoutSessionAsyncPaymentSucceeded,
 } from './handlers';
 import { stripe } from '../../../../lib/stripe/stripe';
 import { getServerSession } from 'next-auth';
@@ -44,12 +43,12 @@ export async function POST(request) {
 
   // Handle the event
   switch (event.type) {
-    /* case 'checkout.session.async_payment_succeeded':
-      const checkoutSessionAsyncPaymentSucceeded = event.data.object;
-      handleCheckoutSessionAsyncPaymentSucceeded(
-        checkoutSessionAsyncPaymentSucceeded,
+     case 'customer.subscription.deleted':
+      const  customerSubscriptionDeleted = event.data.object;
+      handleCustomerSubscriptionDeleted(
+        customerSubscriptionDeleted
       );
-      break;*/
+      break;
     case 'checkout.session.completed':
       const checkoutSessionCompleted = event.data.object;
       handleCheckoutSessionCompleted(checkoutSessionCompleted);

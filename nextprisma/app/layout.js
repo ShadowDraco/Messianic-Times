@@ -10,14 +10,17 @@ export const metadata = {
     'Using Prisma, Next Auth, Stripe and so much more for the first time!',
 };
 
-export default function RootLayout({ children }) {
+import { getServerSession } from 'next-auth';
+import { authOptions } from './api/auth/[...nextauth]/route';
+
+export default async function RootLayout({ children }) {
+  const session = await getServerSession(authOptions);
+
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <Providers>
-          {children}
-        </Providers>
-      </body>
+      <Providers session={session}>
+        <body className={inter.className}>{children}</body>
+      </Providers>
     </html>
   );
 }
