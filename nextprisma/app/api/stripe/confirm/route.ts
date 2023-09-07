@@ -20,12 +20,6 @@ import { authOptions } from '../../auth/[...nextauth]/route';
 //? stripe listen --forward-to http://localhost:3000/api/stripe/confirm
 //? stripe trigger subscription.payment_succeeded
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 export async function POST(request) {
   //? This is your Stripe CLI webhook secret for testing your endpoint locally.
   const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
@@ -43,11 +37,9 @@ export async function POST(request) {
 
   // Handle the event
   switch (event.type) {
-     case 'customer.subscription.deleted':
-      const  customerSubscriptionDeleted = event.data.object;
-      handleCustomerSubscriptionDeleted(
-        customerSubscriptionDeleted
-      );
+    case 'customer.subscription.deleted':
+      const customerSubscriptionDeleted = event.data.object;
+      handleCustomerSubscriptionDeleted(customerSubscriptionDeleted);
       break;
     case 'checkout.session.completed':
       const checkoutSessionCompleted = event.data.object;

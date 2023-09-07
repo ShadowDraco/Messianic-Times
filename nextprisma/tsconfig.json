@@ -29,6 +29,6 @@
     "components/BasicDeleteUserForm.js",
     "app/api/preview/route.js",
     "lib/stripe/stripe.js"
-, "sanity.config.js", "app/api/auth/[...nextauth]/route.js"  ],
+, "sanity.config.js", "app/api/auth/[...nextauth]/route.js", "app/api/database/user/delete/[email]/route.js"  ],
   "exclude": ["node_modules"]
 }

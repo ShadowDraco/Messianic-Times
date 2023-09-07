@@ -87,6 +87,7 @@ export default function DonationPage() {
                 src={VenmoQR.src}
                 width={200}
                 height={500}
+                alt='venmo qr code'
               />
             </Box>
           </Fade>

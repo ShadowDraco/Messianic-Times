@@ -28,7 +28,6 @@ export const authOptions = {
   ],
   callbacks: {
     async jwt({ token, user, session, trigger }) {
-
       // if user being updated by client
       if (trigger === 'update' && session) {
         //? validate
@@ -69,7 +68,7 @@ export const authOptions = {
     },
     async session({ session, token, user }) {
       // pass info to the session and return the updated session
-  
+
       // Send properties to the client, like an access_token from a provider.
 
       return {
