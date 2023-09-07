@@ -7,7 +7,10 @@ import BasicCreateUserForm from '../components/auth/BasicCreateUserForm';
 import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons';
 import AdminDashLinks from '../components/icons/AdminDashLinks';
 import BreathWrapper from '../components/motion/breath/BreathWrapper';
-export default function HomePage({ session }) {
+import { useSession } from 'next-auth/react'
+export default function HomePage() {
+  const { data: session, status, update} = useSession()
+
   return (
     <Box className={'text-[#211] bg-[#B5DBFF] mt-0 p-3'}>
       <Box

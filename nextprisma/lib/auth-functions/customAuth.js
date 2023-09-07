@@ -24,8 +24,7 @@ export const authorizeUser = async credentials => {
   if (!isPasswordValid) {
     return null;
   }
-  console.log('AUTHORIZE Function: ', user);
-
+  
   return {
     id: user.id + '',
     email: user.email,

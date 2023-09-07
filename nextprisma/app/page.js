@@ -27,7 +27,7 @@ export default function HomePage() {
         </Typography>
         <Button
           onClick={() => {
-            update({ name: 'Paul'});
+            update({ name: 'John'});
           }}
         >
           Update

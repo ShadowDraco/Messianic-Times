@@ -9,7 +9,7 @@ import { stripe } from '../../../../lib/stripe/stripe';
 export const handleCheckoutSessionCompleted = async event => {
   console.log(`\nEVENT - ${event.object} !!\n`, event);
 
-  if (event.type === 'subscription') {
+  if (event.mode === 'subscription') {
     console.log('Handling SUBSCRIPTION');
     const date1 = new Date(event.created * 1000);
     const date2 = new Date(event.expires_at * 1000);
@@ -41,10 +41,15 @@ export const handleCheckoutSessionCompleted = async event => {
       subscribedAt: subscribedAt,
       endSubscriptionDate: endSubscriptionDate,
     });
-  } else if (event.type === 'payment') {
+  } else if (event.mode === 'payment') {
     console.log('Handling PAYMENT');
+
+    //!! Handle payment based on price to determine subscription
+
     if (event.intent === 'donation') {
+      ////?????? //!!!!!
       console.log('Handling DONATION');
+      //!! Unlock recipes and other donator only stuff here
     }
   }
 };
