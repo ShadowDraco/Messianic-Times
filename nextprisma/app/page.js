@@ -1,25 +1,23 @@
-'use client';
-import { Box, Container, Button, Typography, Input } from '@mui/material';
-import Link from 'next/link';
-import AuthButtons from '../components/auth/AuthButtons';
-import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm';
-import BasicCreateUserForm from '../components/auth/BasicCreateUserForm';
-import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons';
-import AdminDashLinks from '../components/icons/AdminDashLinks';
-import BreathWrapper from '../components/motion/breath/BreathWrapper';
-import { useSession } from 'next-auth/react';
+'use client'
+import { Box, Container, Button, Typography, Input } from '@mui/material'
+import Link from 'next/link'
+import AuthButtons from '../components/auth/AuthButtons'
+import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm'
+import BasicCreateUserForm from '../components/auth/BasicCreateUserForm'
+import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons'
+import AdminDashLinks from '../components/icons/AdminDashLinks'
+import BreathWrapper from '../components/motion/breath/BreathWrapper'
+import { useSession } from 'next-auth/react'
+import AudioPlayer from '../components/audio/AudioPlayer'
 export default function HomePage() {
-  const { data: session, status, update } = useSession();
+  const { data: session, status, update } = useSession()
   return (
     <Box className={'text-[#211] bg-[#B5DBFF] mt-0 p-3'}>
+      <AudioPlayer />
       <Box
         sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}
       >
-        <Typography
-          variant='h3'
-          component='h3'
-          my={3}
-        >
+        <Typography variant='h3' component='h3' my={3}>
           Hello
           {session?.user?.name
             ? ` ${session.user.name}`
@@ -27,15 +25,12 @@ export default function HomePage() {
         </Typography>
         <Button
           onClick={() => {
-            update({ name: 'John'});
+            update({ name: 'John' })
           }}
         >
           Update
         </Button>
-        <Link
-          href='/donate'
-          style={{ width: 'fit-content' }}
-        >
+        <Link href='/donate' style={{ width: 'fit-content' }}>
           <BreathWrapper>
             <Button
               size='large'
@@ -45,6 +40,9 @@ export default function HomePage() {
             >
               Donate
             </Button>
+          </BreathWrapper>
+          <BreathWrapper>
+            <Typography variant='h2'>Read the latest issue</Typography>
           </BreathWrapper>
         </Link>
       </Box>
@@ -58,47 +56,27 @@ export default function HomePage() {
       <Container className={'flex gap-2 my-2 py-2'}>
         <AuthButtons />
         <Link href='/products'>
-          <Button
-            variant='outlined'
-            color='success'
-            endIcon={<Shop />}
-          >
+          <Button variant='outlined' color='success' endIcon={<Shop />}>
             Products
           </Button>
         </Link>
         <Link href='/studio'>
-          <Button
-            variant='outlined'
-            color='primary'
-            endIcon={<Table />}
-          >
+          <Button variant='outlined' color='primary' endIcon={<Table />}>
             Studio
           </Button>
         </Link>
         <Link href='/posts'>
-          <Button
-            variant='outlined'
-            color='warning'
-            endIcon={<Paper />}
-          >
+          <Button variant='outlined' color='warning' endIcon={<Paper />}>
             Posts
           </Button>
         </Link>
         <Link href='/read'>
-          <Button
-            variant='outlined'
-            color='primary'
-            endIcon={<Book />}
-          >
+          <Button variant='outlined' color='primary' endIcon={<Book />}>
             Read
           </Button>
         </Link>
         <Link href='/about'>
-          <Button
-            variant='outlined'
-            color='error'
-            endIcon={<At />}
-          >
+          <Button variant='outlined' color='error' endIcon={<At />}>
             About
           </Button>
         </Link>
@@ -110,5 +88,5 @@ export default function HomePage() {
         {session?.user ? JSON.stringify(session.user) : 'user not logged in'}
       </Typography>
     </Box>
-  );
+  )
 }
