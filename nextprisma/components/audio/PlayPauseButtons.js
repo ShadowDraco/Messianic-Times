@@ -1,7 +1,12 @@
 import React from 'react'
-import { IconButton } from '@mui/material'
-import { Play, Pause } from '../icons/Icons'
-export default function PlayPauseButtons({ paused, playAudio, pauseAudio }) {
+import { Icon, IconButton } from '@mui/material'
+import { Play, Pause, Shuffle } from '../icons/Icons'
+export default function PlayPauseButtons({
+  paused,
+  playAudio,
+  pauseAudio,
+  playRandomSong,
+}) {
   return (
     <>
       {paused ? (
@@ -21,6 +26,14 @@ export default function PlayPauseButtons({ paused, playAudio, pauseAudio }) {
           <Pause />
         </IconButton>
       )}
+
+      <IconButton
+        onClick={() => {
+          playRandomSong()
+        }}
+      >
+        <Shuffle />
+      </IconButton>
     </>
   )
 }
