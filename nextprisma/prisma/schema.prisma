@@ -45,4 +45,5 @@ model Ticket {
   description String
   email String
   name String
+  important Boolean?
 }

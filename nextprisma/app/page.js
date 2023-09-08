@@ -8,12 +8,11 @@ import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons'
 import AdminDashLinks from '../components/icons/AdminDashLinks'
 import BreathWrapper from '../components/motion/breath/BreathWrapper'
 import { useSession } from 'next-auth/react'
-import AudioPlayer from '../components/audio/AudioPlayer'
+
 export default function HomePage() {
   const { data: session, status, update } = useSession()
   return (
     <Box className={'text-[#211] bg-[#B5DBFF] mt-0 p-3'}>
-      <AudioPlayer />
       <Box
         sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}
       >
