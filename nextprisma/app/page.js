@@ -54,31 +54,43 @@ export default function HomePage() {
 
       <Container className={'flex gap-2 my-2 py-2'}>
         <AuthButtons />
-        <Link href='/products'>
-          <Button variant='outlined' color='success' endIcon={<Shop />}>
-            Products
-          </Button>
-        </Link>
-        <Link href='/studio'>
-          <Button variant='outlined' color='primary' endIcon={<Table />}>
-            Studio
-          </Button>
-        </Link>
-        <Link href='/posts'>
-          <Button variant='outlined' color='warning' endIcon={<Paper />}>
-            Posts
-          </Button>
-        </Link>
-        <Link href='/read'>
-          <Button variant='outlined' color='primary' endIcon={<Book />}>
-            Read
-          </Button>
-        </Link>
-        <Link href='/about'>
-          <Button variant='outlined' color='error' endIcon={<At />}>
-            About
-          </Button>
-        </Link>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+          <Link href='/products'>
+            <Button variant='outlined' color='success' endIcon={<Shop />}>
+              Products
+            </Button>
+          </Link>
+          <Link href='/studio'>
+            <Button variant='outlined' color='primary' endIcon={<Table />}>
+              Studio
+            </Button>
+          </Link>
+          <Link href='/posts'>
+            <Button variant='outlined' color='warning' endIcon={<Paper />}>
+              Posts
+            </Button>
+          </Link>
+          <Link href='/read'>
+            <Button variant='outlined' color='primary' endIcon={<Book />}>
+              Read
+            </Button>
+          </Link>
+          <Link href='/about'>
+            <Button variant='outlined' color='error' endIcon={<At />}>
+              About
+            </Button>
+          </Link>
+          <Link href='/sendTicket'>
+            <Button variant='outlined' color='success' endIcon={<At />}>
+              Contact us
+            </Button>
+          </Link>
+          <Link href='/tickets'>
+            <Button variant='outlined' color='primary' endIcon={<Paper />}>
+              View tickets
+            </Button>
+          </Link>
+        </Box>
       </Container>
       <Box className='bg-[#002540]'>
         <AdminDashLinks />
