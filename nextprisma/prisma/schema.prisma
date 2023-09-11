@@ -27,6 +27,8 @@ model User {
   donatedOnce Boolean @default(false)
   hasFreePaper Boolean @default(false)
   whichFreePaper String?
+  autoPlay Boolean @default(true)
+  volume Int @default(50)
 }
 
 model ActivateToken {
@@ -45,5 +47,6 @@ model Ticket {
   description String
   email String
   name String
-  important Boolean?
+  important Boolean
+  realEmail Boolean
 }
