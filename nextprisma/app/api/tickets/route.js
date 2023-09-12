@@ -24,8 +24,18 @@ export async function POST(request) {
       console.log('Ticket created successfully')
       const emailUser = realEmail ? user : { email: req.email, name: req.name }
       await sendTicketEmail(emailUser, ticket)
+      console.log('Email send successfully')
+
+      return NextResponse.json({
+        message: 'successful ticket and email',
+        success: true,
+      })
     }
   } catch (error) {
     console.error('ERROR CREATING TICKET', error)
+    return NextResponse.json({
+      message: 'UNsuccessful ticket and email',
+      success: false,
+    })
   }
 }

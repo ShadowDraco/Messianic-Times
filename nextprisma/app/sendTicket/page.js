@@ -11,6 +11,7 @@ import {
   InputLabel,
 } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
+import ReceiptIcon from '@mui/icons-material/Receipt'
 export default function page() {
   const titleRef = useRef(null)
   const descRef = useRef(null)
@@ -35,7 +36,6 @@ export default function page() {
     const name = nameRef.current.value
     const important = importantRef.current.checked
 
-    console.log({ title, desc, email, name })
     if (title && desc && email && name) {
       let ticketRequest = await fetch('/api/tickets', {
         method: 'POST',
@@ -97,6 +97,7 @@ export default function page() {
       <LoadingButton
         loading={loading}
         loadingPosition='end'
+        endIcon={<ReceiptIcon />}
         onClick={e => {
           submitTicket()
         }}
