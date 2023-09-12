@@ -12,16 +12,14 @@ export const metadata = {
 
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
-import AudioPlayer from '../components/audio/AudioPlayer'
-
+import MainHeader from '../components/PageHeader/MainHeader'
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions)
-
   return (
     <html lang='en'>
       <Providers session={session}>
         <body className={inter.className}>
-          <AudioPlayer />
+          <MainHeader />
           {children}
         </body>
       </Providers>

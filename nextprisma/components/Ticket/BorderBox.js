@@ -1,9 +1,15 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-export default function BorderBox({ children, wide, med }) {
-  let boxWidth = '4em'
-  if (wide) boxWidth = '30%'
-  if (med) boxWidth = '15%'
+export default function BorderBox({
+  children,
+  wide,
+  med,
+  table = false,
+  overflowX = 'none',
+}) {
+  let boxWidth = '12%'
+  if (wide) boxWidth = '40%'
+  if (med) boxWidth = '20%'
 
   return (
     <Box
@@ -12,6 +18,8 @@ export default function BorderBox({ children, wide, med }) {
         paddingX: 1,
         paddingY: 2,
         width: boxWidth,
+        height: 'fit-content',
+        overflowX: table ? 'none' : overflowX,
       }}
     >
       {children}

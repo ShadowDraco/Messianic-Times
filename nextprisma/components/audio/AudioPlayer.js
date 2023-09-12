@@ -57,7 +57,7 @@ const AudioPlayer = () => {
         src={playlist[song]}
         autoPlay
         onEnded={() => {
-          playRandomSong
+          playRandomSong()
         }}
         volume={volume / 100}
       />
