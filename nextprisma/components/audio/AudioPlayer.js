@@ -10,15 +10,15 @@ import {
   Stack,
   Slider,
 } from '@mui/material'
-import { VolumeDown, VolumeUp } from '@mui/icons-material'
+import { VolumeUp } from '@mui/icons-material'
 
 import PlayPauseButtons from './PlayPauseButtons'
 
 const AudioPlayer = () => {
   const audioRef = useRef()
-  const [muted, setMuted] = useState(true)
+
   const [volume, setVolume] = useState(50)
-  const [visible, setVisible] = useState(false)
+
   const [paused, setPaused] = useState(false)
   const [song, setSong] = useState(Math.floor(Math.random() * 3))
 

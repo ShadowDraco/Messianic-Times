@@ -1,16 +1,17 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { Box, Button } from '@mui/material'
 import Image from 'next/image'
 import timesArt from '../../public/assets/timesArt.png'
 import SharingFaith from '../../public/assets/SharingFaith.png'
 import CelebratingFaith from '../../public/assets/CelebratingFaith.png'
-import IntersetingFaith from '../../public/assets/IntersectingFaith.png'
+import IntersectingFaith from '../../public/assets/IntersectingFaith.png'
 import CommunityFaith from '../../public/assets/CommunityFaith.png'
-import BreathWrapper from '../motion/breath/BreathWrapper'
+import SyncedBreath from '../motion/breath/SyncedBreath'
+import AudioPlayer from '../../components/audio/AudioPlayer'
 export default function MainHeader() {
-  const AudioPlayer = dynamic(() => import('../audio/AudioPlayer'))
+  const audioRef = useRef(null)
 
   return (
     <Box
@@ -19,6 +20,7 @@ export default function MainHeader() {
         display: 'flex ',
         justifyContent: 'center',
         flexDirection: 'column',
+        mb: 3,
       }}
     >
       <Image
@@ -27,6 +29,7 @@ export default function MainHeader() {
         height={timesArt.height}
         alt='Messianic Times Art'
         priority
+        style={{ marginBottom: 5 }}
       />
       <Box display={'flex'} justifyContent={'space-evenly'}>
         <Button size='large' variant='contained' color='error'>
@@ -47,16 +50,41 @@ export default function MainHeader() {
       </Box>
 
       <Box display={'flex'} justifyContent={'space-evenly'}>
-        <BreathWrapper>
+        <SyncedBreath>
           <Image
             src={SharingFaith.src}
-            width={SharingFaith.width}
-            height={SharingFaith.width}
+            width={100}
+            height={100}
             alt={'Sharing Faith link'}
           />
-        </BreathWrapper>
+        </SyncedBreath>
+        <SyncedBreath>
+          <Image
+            src={CelebratingFaith.src}
+            width={100}
+            height={100}
+            alt={'Celebrating Faith link'}
+          />
+        </SyncedBreath>
+        <SyncedBreath>
+          <Image
+            src={IntersectingFaith.src}
+            width={100}
+            height={100}
+            alt={'Intersecting Faith link'}
+          />
+        </SyncedBreath>
+        <SyncedBreath>
+          <Image
+            src={CommunityFaith.src}
+            width={100}
+            height={100}
+            alt={'Community Faith link'}
+          />
+        </SyncedBreath>
       </Box>
-      <AudioPlayer />
+
+      <AudioPlayer ref={audioRef} />
     </Box>
   )
 }
