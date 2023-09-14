@@ -18,7 +18,6 @@ const AudioPlayer = () => {
   const audioRef = useRef()
 
   const [volume, setVolume] = useState(50)
-
   const [paused, setPaused] = useState(false)
   const [song, setSong] = useState(Math.floor(Math.random() * 3))
 
@@ -51,7 +50,7 @@ const AudioPlayer = () => {
   }
 
   return (
-    <Box width='50%' sx={{ display: 'flex' }}>
+    <Box width='fit-content' sx={{ display: 'flex' }}>
       <audio
         ref={audioRef}
         src={playlist[song]}
@@ -70,7 +69,7 @@ const AudioPlayer = () => {
       <Stack
         spacing={1}
         direction='row'
-        sx={{ mx: 1, mb: 1, width: '30%' }}
+        sx={{ mx: 1, mb: 1, width: '8rem' }}
         alignItems='center'
       >
         <Slider

@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Providers from './Providers'
-
+import Providers, { WindowContext } from './Providers'
+import Box from '@mui/material/Box'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -13,6 +13,8 @@ export const metadata = {
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
 import MainHeader from '../components/PageHeader/MainHeader'
+import MainFooter from '../components/PageFooter/MainFooter'
+
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions)
   return (
@@ -20,7 +22,10 @@ export default async function RootLayout({ children }) {
       <Providers session={session}>
         <body className={inter.className}>
           <MainHeader />
-          {children}
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            {children}
+          </Box>
+          <MainFooter />
         </body>
       </Providers>
     </html>
