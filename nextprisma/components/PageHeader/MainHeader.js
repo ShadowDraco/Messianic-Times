@@ -1,7 +1,7 @@
 'use client'
 import { useWindowContext } from '../../app/Providers'
 import React from 'react'
-
+import Link from 'next/link'
 import { Box, Typography, Skeleton } from '@mui/material'
 import LargeButtons from './NavButtons/LargeButtons'
 import SmallButtons from './NavButtons/SmallButtons'
@@ -12,7 +12,7 @@ import timesArt from '../../public/assets/timesArt.png'
 export default function MainHeader() {
   const { timesWidth, timesHeight } = useWindowContext()
 
-  return timesWidth !== 100 ? (
+  return (
     <Box
       sx={{
         width: '100%',
@@ -21,22 +21,21 @@ export default function MainHeader() {
     >
       <Box
         sx={{
-          margin: 'auto',
           display: 'flex',
           justifyContent: 'center',
           width: '100%',
-          maxWidth: '1350px',
-          backgroundColor: '#26C8F4',
         }}
       >
-        <Image
-          src={timesArt.src}
-          width={timesWidth}
-          height={timesHeight}
-          alt='Messianic Times Art'
-          priority
-          style={{ marginBottom: 5 }}
-        />
+        <Link href='/'>
+          <Image
+            src={timesArt.src}
+            width={timesWidth}
+            height={timesHeight}
+            alt='Messianic Times Art'
+            priority
+            style={{ marginBottom: 5 }}
+          />
+        </Link>
       </Box>
 
       {/*//? Faith Images */}
@@ -79,32 +78,6 @@ export default function MainHeader() {
       >
         <SmallButtons />
       </Box>
-
-      {/*//? Page Title */}
-      <Box
-        sx={{
-          width: '100%',
-          paddingY: 1,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          maxWidth: '1350px',
-          margin: 'auto',
-        }}
-      >
-        <Typography
-          variant='h4'
-          fontWeight={'bold'}
-          color='whitesmoke'
-          textAlign={'center'}
-          maxWidth='1350px'
-          margin='auto'
-        >
-          The leading Messianic Newspaper since 1990
-        </Typography>
-      </Box>
     </Box>
-  ) : (
-    <Skeleton variant='rectangular' width='2000' height='500'></Skeleton>
   )
 }

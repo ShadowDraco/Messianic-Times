@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
 html {
+  background-color: rgb(24, 46, 66);
+}
+
+body {
+  margin: auto;
+  max-width: 1300px;
+  width: 90%;
   background-color: rgb(24, 46, 66);
 }
 

@@ -16,6 +16,7 @@ import LatestIssue from '../public/assets/LatestIssue.png'
 import LatestPreview from '../public/assets/LatestPreview.png'
 import { useWindowContext } from './Providers'
 import { useEffect } from 'react'
+import PageTitle from '../components/PageHeader/PageTitle'
 export default function HomePage() {
   const { timesWidth, timesHeight } = useWindowContext()
   const [imageWidth, setImageWidth] = useState(timesWidth)
@@ -29,7 +30,8 @@ export default function HomePage() {
   const { data: session, status, update } = useSession()
   return (
     <>
-      <Box sx={{ paddingY: 3, backgroundColor: '#45B0FF', maxWidth: '1250px' }}>
+      <PageTitle title='The leading Messianic Paper since 1990' />
+      <Box sx={{ paddingY: 0, backgroundColor: '#45B0FF', maxWidth: '1300px' }}>
         <Box sx={{ paddingY: 3, backgroundColor: '#0D99FF' }}>
           <Typography
             variant='h5'
