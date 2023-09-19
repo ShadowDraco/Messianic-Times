@@ -1,28 +1,27 @@
-'use client';
-import React from 'react';
-import { Box, Typography } from '@mui/material';
-import Link from 'next/link';
-import { UTurnLeft, Table, Pay, Users } from '../icons/Icons';
+'use client'
+import React from 'react'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
+import Link from 'next/link'
+import { UTurnLeft, Table, Pay, Users } from '../icons/Icons'
 
 export default function AdminDashLinks() {
   return (
-    <Box className='flex gap-2'>
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: '100%',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+    >
       <Link href='/'>
-        <Box className='hidden md:flex items-center gap-2 mx-2 p-3 text-[#faaa55]'>
-          <Typography>Go To Website</Typography>
-          <UTurnLeft />
-        </Box>
+        <Button endIcon={<UTurnLeft />}>Website</Button>
       </Link>
 
-      <Link
-        href='https://www.sanity.io/manage'
-        className=''
-        target='_blank'
-      >
-        <Box className='hidden md:flex items-center gap-2 mx-2 p-3 text-[#faaa55]'>
-          <Typography>Sanity Dashboard</Typography>
-          <Table />
-        </Box>
+      <Link href='https://www.sanity.io/manage' className='' target='_blank'>
+        <Button endIcon={<Table />}>Sanity</Button>
       </Link>
 
       <Link
@@ -30,10 +29,7 @@ export default function AdminDashLinks() {
         className=''
         target='_blank'
       >
-        <Box className='hidden md:flex items-center gap-2 mx-2 p-3 text-[#faaa55]'>
-          <Typography>Stripe Dashboard</Typography>
-          <Pay />
-        </Box>
+        <Button endIcon={<Pay />}>Stripe</Button>
       </Link>
 
       <Link
@@ -44,11 +40,8 @@ export default function AdminDashLinks() {
         className=''
         target='_blank'
       >
-        <Box className='hidden md:flex items-center gap-2 mx-2 p-3 text-[#faaa55]'>
-          <Typography>User Dashboard</Typography>
-          <Users />
-        </Box>
+        <Button endIcon={<Users />}>Database</Button>
       </Link>
     </Box>
-  );
+  )
 }
