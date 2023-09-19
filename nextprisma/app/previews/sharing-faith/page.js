@@ -17,16 +17,28 @@ export default function page() {
         width={timesWidth}
         height={timesHeight}*/
       />
-      <Box sx={{ backgroundColor: 'white', padding: 3 }}>
-        <Image
-          src={SharingOurFaithPreview.src}
-          width={timesWidth * 0.7}
-          height={timesWidth / 4}
-          alt={'preview of sharing our faith page'}
-        />
-        <Link href='/products'>
-          <Button>Full Story?</Button>
-        </Link>
+      <Box
+        sx={{
+          width: '100%',
+          margin: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Box>
+          <Image
+            src={SharingOurFaithPreview.src}
+            width={timesWidth * 0.8}
+            height={timesHeight * 2}
+            alt={'preview of sharing our faith page'}
+            priority
+          />
+
+          <Link href='/products'>
+            <Button color='info'>Full Story?</Button>
+          </Link>
+        </Box>
       </Box>
     </>
   )

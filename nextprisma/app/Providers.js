@@ -5,20 +5,31 @@ import { SessionProvider } from 'next-auth/react'
 export const WindowContext = createContext(null)
 
 export default function Providers({ children, session }) {
-  const [timesWidth, setTimesWidth] = useState(1000)
+  const [timesWidth, setTimesWidth] = useState(320)
   const [timesHeight, setTimesHeight] = useState(timesWidth / 9)
 
   // Get window size once on mount
   useEffect(() => {
-    setTimesWidth(window.innerWidth - window.innerWidth * 0.02)
-    setTimesHeight((window.innerWidth - window.innerWidth * 0.02) / 9)
+    if (window.innerWidth > 500) {
+      setTimesWidth(window.innerWidth - window.innerWidth * 0.02)
+      setTimesHeight((window.innerWidth - window.innerWidth * 0.02) / 9)
+    } else {
+      setTimesWidth(window.innerWidth - window.innerWidth * 0.1)
+      setTimesHeight((window.innerWidth - window.innerWidth * 0.1) / 9)
+    }
   }, [])
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setTimesWidth(window.innerWidth - window.innerWidth * 0.02)
-      setTimesHeight((window.innerWidth - window.innerWidth * 0.02) / 9)
+      if (window.innerWidth > 500) {
+        setTimesWidth(window.innerWidth - window.innerWidth * 0.02)
+        setTimesHeight((window.innerWidth - window.innerWidth * 0.02) / 9)
+      } else {
+        setTimesWidth(window.innerWidth - window.innerWidth * 0.1)
+        setTimesHeight((window.innerWidth - window.innerWidth * 0.1) / 9)
+      }
     }
+    console.log(timesWidth, timesHeight)
 
     window.addEventListener('resize', handleWindowResize)
 
