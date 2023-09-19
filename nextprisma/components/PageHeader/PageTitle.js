@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
-export default function PageTitle({ title, img }) {
+import Image from 'next/image'
+export default function PageTitle({ title, img, width, height }) {
   return (
     <>
       {/*//? Page Title */}
@@ -18,8 +19,8 @@ export default function PageTitle({ title, img }) {
         {img ? (
           <Image
             src={img.src}
-            width={img.width}
-            height={img.height}
+            width={width}
+            height={height}
             alt='Page Title'
           />
         ) : (

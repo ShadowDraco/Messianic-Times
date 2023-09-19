@@ -8,6 +8,7 @@ import SmallButtons from './NavButtons/SmallButtons'
 import FaithImages from './FaithImages/FaithImages'
 import Image from 'next/image'
 import timesArt from '../../public/assets/timesArt.png'
+import { motion } from 'framer-motion'
 
 export default function MainHeader() {
   const { timesWidth, timesHeight } = useWindowContext()
@@ -24,18 +25,26 @@ export default function MainHeader() {
           display: 'flex',
           justifyContent: 'center',
           width: '100%',
+          maxWidth: '1350px',
+          margin: 'auto',
         }}
       >
-        <Link href='/'>
-          <Image
-            src={timesArt.src}
-            width={timesWidth}
-            height={timesHeight}
-            alt='Messianic Times Art'
-            priority
-            style={{ marginBottom: 5 }}
-          />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Link href='/'>
+            <Image
+              src={timesArt.src}
+              width={timesWidth}
+              height={timesHeight}
+              alt='Messianic Times Art'
+              priority
+              style={{ marginBottom: 5, maxWidth: '1350px' }}
+            />
+          </Link>
+        </motion.div>
       </Box>
 
       {/*//? Faith Images */}

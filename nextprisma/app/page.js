@@ -31,7 +31,14 @@ export default function HomePage() {
   return (
     <>
       <PageTitle title='The leading Messianic Paper since 1990' />
-      <Box sx={{ paddingY: 0, backgroundColor: '#45B0FF', maxWidth: '1300px' }}>
+      <Box
+        sx={{
+          paddingY: 0,
+          backgroundColor: '#45B0FF',
+          width: '100%',
+          maxWidth: '1300px',
+        }}
+      >
         <Box sx={{ paddingY: 3, backgroundColor: '#0D99FF' }}>
           <Typography
             variant='h5'
@@ -51,11 +58,16 @@ export default function HomePage() {
           >
             <Image
               src={University.src}
-              width={270}
-              height={200}
+              width={timesWidth / 3}
+              height={timesWidth / 4}
               alt='Kings University'
             />
-            <Image src={MJAA.src} width={270} height={200} alt='MJAA' />
+            <Image
+              src={MJAA.src}
+              width={timesWidth / 3}
+              height={timesWidth / 4}
+              alt='MJAA'
+            />
           </Box>
         </Box>
 
