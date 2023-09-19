@@ -1,5 +1,5 @@
-'use client';
-import React, { useState } from 'react';
+'use client'
+import React, { useState } from 'react'
 import {
   IconButton,
   Box,
@@ -8,38 +8,34 @@ import {
   Button,
   Fade,
   Popper,
-} from '@mui/material';
-import Link from 'next/link';
-import Image from 'next/image';
+} from '@mui/material'
+import Link from 'next/link'
+import Image from 'next/image'
 import {
   Credit,
   Venmo,
   GooglePay,
   CashApp,
   PayPal,
-} from '../../components/icons/Icons';
+} from '../../components/icons/Icons'
 
-import VenmoQR from '../../assets/payments/qr.png';
+import VenmoQR from '../../public/assets/payments/qr.png'
 
 export default function DonationPage() {
-  const [open, setOpen] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [open, setOpen] = React.useState(false)
+  const [anchorEl, setAnchorEl] = React.useState(null)
 
   const handleVenmoPopper = event => {
-    setAnchorEl(event.currentTarget);
-    setOpen(previousOpen => !previousOpen);
-  };
+    setAnchorEl(event.currentTarget)
+    setOpen(previousOpen => !previousOpen)
+  }
 
-  const canBeOpen = open && Boolean(anchorEl);
-  const id = canBeOpen ? 'transition-popper' : undefined;
+  const canBeOpen = open && Boolean(anchorEl)
+  const id = canBeOpen ? 'transition-popper' : undefined
 
   return (
     <Container>
-      <Typography
-        variant='h4'
-        component='h1'
-        gutterBottom
-      >
+      <Typography variant='h4' component='h1' gutterBottom>
         Romans 11:26 - All Israel will be saved...
         <br></br>
         Help us reach the Jewish People
@@ -66,22 +62,14 @@ export default function DonationPage() {
       <IconButton
         color='primary'
         onClick={e => {
-          handleVenmoPopper(e);
+          handleVenmoPopper(e)
         }}
       >
         <Venmo />
       </IconButton>
-      <Popper
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        transition
-      >
+      <Popper id={id} open={open} anchorEl={anchorEl} transition>
         {({ TransitionProps }) => (
-          <Fade
-            {...TransitionProps}
-            timeout={350}
-          >
+          <Fade {...TransitionProps} timeout={350}>
             <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
               <Image
                 src={VenmoQR.src}
@@ -94,5 +82,5 @@ export default function DonationPage() {
         )}
       </Popper>
     </Container>
-  );
+  )
 }

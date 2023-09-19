@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import Image from 'next/image';

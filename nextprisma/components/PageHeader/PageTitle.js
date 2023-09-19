@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 export default function PageTitle({ title, img, width, height }) {
   return (
@@ -17,12 +18,7 @@ export default function PageTitle({ title, img, width, height }) {
         }}
       >
         {img ? (
-          <Image
-            src={img.src}
-            width={width}
-            height={height}
-            alt='Page Title'
-          />
+          <Image src={img.src} width={width} height={height} alt='Page Title' />
         ) : (
           <Typography
             variant='h4'

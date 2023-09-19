@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Providers, { WindowContext } from './Providers'
+import Providers from './Providers'
 import Box from '@mui/material/Box'
 const inter = Inter({ subsets: ['latin'] })
 

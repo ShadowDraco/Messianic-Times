@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useContext, createContext } from 'react'
 import { SessionProvider } from 'next-auth/react'
+import { LazyMotion, domAnimation } from 'framer-motion'
 
 export const WindowContext = createContext(null)
 
@@ -40,7 +41,7 @@ export default function Providers({ children, session }) {
   return (
     <SessionProvider session={session}>
       <WindowContext.Provider value={{ timesWidth, timesHeight }}>
-        {children}
+        <LazyMotion features={domAnimation}>{children}</LazyMotion>
       </WindowContext.Provider>
     </SessionProvider>
   )

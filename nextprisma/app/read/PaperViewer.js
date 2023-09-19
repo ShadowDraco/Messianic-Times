@@ -4,7 +4,7 @@ import HTMLFlipBook from 'react-pageflip'
 import Page from './PaperPage'
 import PageCover from './PaperCover'
 import { Box, Container, Typography, Button } from '@mui/material'
-import { Newspaper1 } from '../../assets/papers/NewspaperScreenshots/Newspaper'
+import { Newspaper1 } from '../../public/assets/papers/NewspaperScreenshots/Newspaper'
 export default function PaperViewer() {
   const book = useRef(null)
 

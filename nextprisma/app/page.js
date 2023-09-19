@@ -1,6 +1,9 @@
 'use client'
 import { useState } from 'react'
-import { Box, Container, Button, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
 import Link from 'next/link'
 import AuthButtons from '../components/auth/AuthButtons'
 import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm'
@@ -10,13 +13,15 @@ import AdminDashLinks from '../components/icons/AdminDashLinks'
 import BreathWrapper from '../components/motion/breath/BreathWrapper'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
-import University from '../public/assets/University.png'
-import MJAA from '../public/assets/MJAA.png'
-import LatestIssue from '../public/assets/LatestIssue.png'
-import LatestPreview from '../public/assets/LatestPreview.png'
+import University from '../public/assets/adverts/University.png'
+import MJAA from '../public/assets/adverts/MJAA.png'
+
+import LatestIssue from '../public/assets/previews/LatestIssue.png'
+import LatestPreview from '../public/assets/previews/LatestPreview.png'
 import { useWindowContext } from './Providers'
 import { useEffect } from 'react'
 import PageTitle from '../components/PageHeader/PageTitle'
+
 export default function HomePage() {
   const { timesWidth, timesHeight } = useWindowContext()
   const [imageWidth, setImageWidth] = useState(timesWidth)

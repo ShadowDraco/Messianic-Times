@@ -2,13 +2,13 @@
 import { useWindowContext } from '../../app/Providers'
 import React from 'react'
 import Link from 'next/link'
-import { Box, Typography, Skeleton } from '@mui/material'
+import Box from '@mui/material/Box'
 import LargeButtons from './NavButtons/LargeButtons'
 import SmallButtons from './NavButtons/SmallButtons'
 import FaithImages from './FaithImages/FaithImages'
 import Image from 'next/image'
-import timesArt from '../../public/assets/timesArt.png'
-import { motion } from 'framer-motion'
+import timesArt from '../../public/assets/messianic-times/timesArt.png'
+import { m } from 'framer-motion'
 
 export default function MainHeader() {
   const { timesWidth, timesHeight } = useWindowContext()
@@ -29,7 +29,7 @@ export default function MainHeader() {
           margin: 'auto',
         }}
       >
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -44,7 +44,7 @@ export default function MainHeader() {
               style={{ marginBottom: 5, maxWidth: '1350px' }}
             />
           </Link>
-        </motion.div>
+        </m.div>
       </Box>
 
       {/*//? Faith Images */}

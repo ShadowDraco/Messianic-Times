@@ -1,15 +1,6 @@
 'use client'
 import React, { useState, useRef } from 'react'
-import {
-  Box,
-  Container,
-  Skeleton,
-  Button,
-  IconButton,
-  LinearProgress,
-  Stack,
-  Slider,
-} from '@mui/material'
+import { Box, Stack, Slider } from '@mui/material'
 import { VolumeUp } from '@mui/icons-material'
 
 import PlayPauseButtons from './PlayPauseButtons'

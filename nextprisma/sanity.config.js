@@ -1,23 +1,23 @@
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `\app\studio\[[...index]]\page.tsx` route
  */
-import { dashboardTool } from '@sanity/dashboard';
-import { visionTool } from '@sanity/vision';
-import { defineConfig } from 'sanity';
-import StudioNavbar from './components/sanity/StudioNavbar';
-import Logo from './components/sanity/Logo';
-import { deskTool } from 'sanity/desk';
-import Iframe from 'sanity-plugin-iframe-pane';
-import { SanityDocument } from 'sanity';
-import { vercelWidget } from 'sanity-plugin-dashboard-widget-vercel';
-import { scheduledPublishing } from '@sanity/scheduled-publishing';
-import { media } from 'sanity-plugin-media';
-import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash';
+import { dashboardTool } from '@sanity/dashboard'
+import { visionTool } from '@sanity/vision'
+import { defineConfig } from 'sanity'
+import StudioNavbar from './components/sanity/StudioNavbar'
+import Logo from './components/sanity/Logo'
+import { deskTool } from 'sanity/desk'
+import Iframe from 'sanity-plugin-iframe-pane'
+import { SanityDocument } from 'sanity'
+import { vercelWidget } from 'sanity-plugin-dashboard-widget-vercel'
+import { scheduledPublishing } from '@sanity/scheduled-publishing'
+import { media } from 'sanity-plugin-media'
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import { apiVersion, dataset, projectId } from './sanity/env';
-import { schema } from './sanity/schema';
-import { myTheme } from './themes/sanityThemes';
+import { apiVersion, dataset, projectId } from './sanity/env'
+import { schema } from './sanity/schema'
+import { myTheme } from './themes/sanityThemes'
 
 // Customize this function to show the correct URL based on the current document
 function getPreviewUrl(doc, schemaType) {
@@ -25,7 +25,7 @@ function getPreviewUrl(doc, schemaType) {
 
   return doc?.slug?.current
     ? `http://localhost:3000/previews/${schemaType}/${doc._id}`
-    : window.location.host;
+    : window.location.host
 }
 
 const defaultDocumentNode = (S, { schemaType }) => {
@@ -58,8 +58,8 @@ const defaultDocumentNode = (S, { schemaType }) => {
         },
       })
       .title('Preview'),
-  ]);
-};
+  ])
+}
 
 export default defineConfig({
   basePath: '/studio',
@@ -90,4 +90,4 @@ export default defineConfig({
     },
   },
   theme: myTheme,
-});
+})

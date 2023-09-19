@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Box,
-  Typography,
-  Button,
-  IconButton,
-  LoadingButton,
-} from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import BorderBox from '../../components/Ticket/BorderBox'
 
 export default function Ticket({
