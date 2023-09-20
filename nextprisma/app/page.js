@@ -100,14 +100,16 @@ export default function HomePage() {
             src={LatestIssue.src}
             width={imageWidth * imageSize}
             height={imageWidth * (imageSize + 0.1)}
-            layout='responsive'
+            layout={timesWidth < 600 ? 'responsive' : ''}
+            style={{ maxWidth: '300px' }}
             alt='Contents of latest issue'
           />
           <Image
             src={LatestPreview.src}
             width={imageWidth}
             height={imageWidth * (imageSize + 0.1)}
-            layout='responsive'
+            layout={timesWidth < 600 ? 'responsive' : ''}
+            style={{ maxWidth: '700px' }}
             alt='Preview of latest issue'
           />
         </Box>
