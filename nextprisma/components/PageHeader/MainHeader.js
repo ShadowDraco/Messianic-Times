@@ -9,7 +9,7 @@ import LargeButtons from './NavButtons/LargeButtons'
 import SmallButtons from './NavButtons/SmallButtons'
 import FaithImages from './FaithImages/FaithImages'
 import Image from 'next/image'
-import timesArt from '../../public/assets/messianic-times/timesArt.png'
+import timesArt from '../../public/assets/messianic-times/timesArt.webp'
 import { m } from 'framer-motion'
 
 export default function MainHeader() {
@@ -23,7 +23,7 @@ export default function MainHeader() {
     }
   }, [timesWidth])
   return (
-    <Container
+    <Box
       className='MainHeaderWrapper'
       sx={{
         width: '100%',
@@ -106,6 +106,6 @@ export default function MainHeader() {
       >
         <SmallButtons />
       </Box>
-    </Container>
+    </Box>
   )
 }

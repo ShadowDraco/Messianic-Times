@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Image from 'next/image'
 import Link from 'next/link'
-import SharingOurFaithPreview from '../../../public/assets/faith-images/SharingOurFaithPreview.png'
+import SharingOurFaithPreview from '../../../public/assets/faith-images/SharingOurFaithPreview.webp'
 import { useWindowContext } from '../../Providers'
 import PageTitle from '../../../components/PageHeader/PageTitle'
 export default function page() {

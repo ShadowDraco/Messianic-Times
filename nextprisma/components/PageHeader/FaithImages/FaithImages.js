@@ -1,8 +1,8 @@
 import React from 'react'
-import SharingFaith from '../../../public/assets/faith-images/SharingFaith.png'
-import CelebratingFaith from '../../../public/assets/faith-images/CelebratingFaith.png'
-import IntersectingFaith from '../../../public/assets/faith-images/IntersectingFaith.png'
-import CommunityFaith from '../../../public/assets/faith-images/CommunityFaith.png'
+import SharingFaith from '../../../public/assets/faith-images/SharingFaith.webp'
+import CelebratingFaith from '../../../public/assets/faith-images/CelebratingFaith.webp'
+import IntersectingFaith from '../../../public/assets/faith-images/IntersectingFaith.webp'
+import CommunityFaith from '../../../public/assets/faith-images/CommunityFaith.webp'
 import FaithImage from './FaithImage'
 import Link from 'next/link'
 export default function FaithImages({ size }) {

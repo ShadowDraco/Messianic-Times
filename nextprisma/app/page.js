@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
@@ -8,34 +8,24 @@ import Link from 'next/link'
 import AuthButtons from '../components/auth/AuthButtons'
 import BasicDeleteUserForm from '../components/auth/BasicDeleteUserForm'
 import BasicCreateUserForm from '../components/auth/BasicCreateUserForm'
-import { Paper, Shop, Book, At, Heart, Table } from '../components/icons/Icons'
+import { Heart } from '../components/icons/Icons'
 import AdminDashLinks from '../components/icons/AdminDashLinks'
 import BreathWrapper from '../components/motion/breath/BreathWrapper'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
-import University from '../public/assets/adverts/University.png'
-import MJAA from '../public/assets/adverts/MJAA.png'
+import University from '../public/assets/adverts/University.webp'
+import MJAA from '../public/assets/adverts/MJAA.webp'
 
-import LatestIssue from '../public/assets/previews/LatestIssue.png'
-import LatestPreview from '../public/assets/previews/LatestPreview.png'
+import LatestIssue from '../public/assets/previews/LatestIssue.webp'
+import LatestPreview from '../public/assets/previews/LatestPreview.webp'
 import { useWindowContext } from './Providers'
-import { useEffect } from 'react'
+
 import PageTitle from '../components/PageHeader/PageTitle'
 
 export default function HomePage() {
   const { timesWidth, timesHeight } = useWindowContext()
-  const [imageWidth, setImageWidth] = useState(timesWidth)
-  const [imageSize, setImageSize] = useState(0.8)
-  useEffect(() => {
-    if (timesWidth * 0.5 < 351) {
-      setImageWidth(timesWidth * 0.5)
-      setImageSize(0.5)
-    } else {
-      setImageWidth(350)
-      setImageSize(0.8)
-    }
-  }, [timesWidth])
-  const { data: session, status, update } = useSession()
+
+  const { data: session, update } = useSession()
   return (
     <>
       <PageTitle title='The leading Messianic Paper since 1990' />
@@ -93,23 +83,24 @@ export default function HomePage() {
             display: 'flex',
             justifyContent: 'space-evenly',
             paddingY: 2,
-            flexWrap: 'wrap',
           }}
         >
-          <Image
-            src={LatestIssue.src}
-            width={imageWidth * imageSize}
-            height={imageWidth * (imageSize + 0.1)}
-            layout={timesWidth < 600 ? 'responsive' : ''}
-            style={{ maxWidth: '300px' }}
-            alt='Contents of latest issue'
-          />
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Image
+              src={LatestIssue.src}
+              width={timesWidth}
+              height={timesHeight}
+              layout='responsive'
+              style={{ maxWidth: '300px' }}
+              alt='Contents of latest issue'
+            />
+          </Box>
           <Image
             src={LatestPreview.src}
-            width={imageWidth}
-            height={imageWidth * (imageSize + 0.1)}
-            layout={timesWidth < 600 ? 'responsive' : ''}
-            style={{ maxWidth: '700px' }}
+            width={timesWidth}
+            height={timesHeight}
+            layout='responsive'
+            style={{ maxWidth: timesWidth > 1000 ? '700px' : '500px' }}
             alt='Preview of latest issue'
           />
         </Box>

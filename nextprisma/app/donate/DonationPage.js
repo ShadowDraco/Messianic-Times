@@ -19,7 +19,7 @@ import {
   PayPal,
 } from '../../components/icons/Icons'
 
-import VenmoQR from '../../public/assets/payments/qr.png'
+import VenmoQR from '../../public/assets/payments/qr.webp'
 
 export default function DonationPage() {
   const [open, setOpen] = React.useState(false)

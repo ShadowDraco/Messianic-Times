@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import MTLogoImage from '../../public/assets/messianic-times/MTLogo.png'
+import MTLogoImage from '../../public/assets/messianic-times/MTLogo.webp'
 
 export default function Logo() {
   return (

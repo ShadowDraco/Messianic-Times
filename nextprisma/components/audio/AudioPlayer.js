@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Box, Stack, Slider } from '@mui/material'
 import { VolumeUp } from '@mui/icons-material'
 
@@ -40,6 +40,9 @@ const AudioPlayer = () => {
     audioRef.current.volume = newValue / 100
   }
 
+  useEffect(() => {
+    playAudio()
+  }, [])
   return (
     <Box width='fit-content' sx={{ display: 'flex' }}>
       <audio
