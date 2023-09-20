@@ -50,7 +50,7 @@ export default function MainHeader() {
               height={timesHeight}
               alt='Messianic Times Art'
               priority
-              style={{ marginBottom: 5, maxWidth: '1300px' }}
+              style={{ marginBottom: 5, maxWidth: '1350px' }}
             />
           </Link>
         </m.div>
