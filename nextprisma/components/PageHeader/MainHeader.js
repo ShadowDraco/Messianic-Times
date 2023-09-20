@@ -4,6 +4,7 @@ import { useWindowContext } from '../../app/Providers'
 import React from 'react'
 import Link from 'next/link'
 import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 import LargeButtons from './NavButtons/LargeButtons'
 import SmallButtons from './NavButtons/SmallButtons'
 import FaithImages from './FaithImages/FaithImages'
@@ -22,7 +23,7 @@ export default function MainHeader() {
     }
   }, [timesWidth])
   return (
-    <Box
+    <Container
       className='MainHeaderWrapper'
       sx={{
         width: '100%',
@@ -43,32 +44,40 @@ export default function MainHeader() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          <Link href='/'>
+          <Link href={'/'}>
             <Image
               src={timesArt.src}
               width={timesWidth}
               height={timesHeight}
               alt='Messianic Times Art'
+              layout='responsive'
               priority
-              style={{ marginBottom: 5, maxWidth: '1350px' }}
+              style={{ marginBottom: 5, maxWidth: '1350px', margin: 'auto' }}
             />
           </Link>
         </m.div>
       </Box>
 
       {/*//? Faith Images */}
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: spaceType,
-          width: '100%',
-          paddingY: 1,
-          maxWidth: '1350px',
-          margin: 'auto',
-        }}
+      <m.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
       >
-        <FaithImages size={timesWidth} />
-      </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: spaceType,
+
+            paddingY: 1,
+            maxWidth: '1350px',
+            margin: 'auto',
+            width: '100%',
+          }}
+        >
+          <FaithImages size={timesWidth} />
+        </Box>
+      </m.div>
 
       {/*//? Nav Buttons */}
       <Box
@@ -80,7 +89,6 @@ export default function MainHeader() {
           display: { xs: 'none', md: 'flex' },
           maxWidth: '1330px',
           margin: 'auto',
-          width: timesWidth,
         }}
       >
         <LargeButtons />
@@ -92,12 +100,12 @@ export default function MainHeader() {
           justifyContent: 'space-evenly',
           paddingY: 1,
           display: { xs: 'flex', md: 'none' },
-          maxWidth: '1350px',
+          maxWidth: '1330px',
           margin: 'auto',
         }}
       >
         <SmallButtons />
       </Box>
-    </Box>
+    </Container>
   )
 }

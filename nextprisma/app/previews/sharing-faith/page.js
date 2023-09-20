@@ -31,6 +31,7 @@ export default function page() {
             src={SharingOurFaithPreview.src}
             width={timesWidth * 0.8}
             height={timesHeight * 2}
+            layout='responsive'
             alt={'preview of sharing our faith page'}
             priority
           />

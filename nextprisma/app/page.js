@@ -93,18 +93,21 @@ export default function HomePage() {
             display: 'flex',
             justifyContent: 'space-evenly',
             paddingY: 2,
+            flexWrap: 'wrap',
           }}
         >
           <Image
             src={LatestIssue.src}
             width={imageWidth * imageSize}
             height={imageWidth * (imageSize + 0.1)}
+            layout='responsive'
             alt='Contents of latest issue'
           />
           <Image
             src={LatestPreview.src}
             width={imageWidth}
             height={imageWidth * (imageSize + 0.1)}
+            layout='responsive'
             alt='Preview of latest issue'
           />
         </Box>
