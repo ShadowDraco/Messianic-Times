@@ -25,11 +25,14 @@ import PageTitle from '../components/PageHeader/PageTitle'
 export default function HomePage() {
   const { timesWidth, timesHeight } = useWindowContext()
   const [imageWidth, setImageWidth] = useState(timesWidth)
+  const [imageSize, setImageSize] = useState(0.8)
   useEffect(() => {
     if (timesWidth * 0.5 < 351) {
       setImageWidth(timesWidth * 0.5)
+      setImageSize(0.5)
     } else {
       setImageWidth(350)
+      setImageSize(0.8)
     }
   }, [timesWidth])
   const { data: session, status, update } = useSession()
@@ -63,14 +66,14 @@ export default function HomePage() {
           >
             <Image
               src={University.src}
-              width={timesWidth / 3}
-              height={timesWidth / 4}
+              width={timesWidth / 4}
+              height={timesWidth / 5}
               alt='Kings University'
             />
             <Image
               src={MJAA.src}
-              width={timesWidth / 3}
-              height={timesWidth / 4}
+              width={timesWidth / 4}
+              height={timesWidth / 5}
               alt='MJAA'
             />
           </Box>
@@ -94,14 +97,14 @@ export default function HomePage() {
         >
           <Image
             src={LatestIssue.src}
-            width={imageWidth * 0.7}
-            height={imageWidth * 0.8}
+            width={imageWidth * imageSize}
+            height={imageWidth * (imageSize + 0.1)}
             alt='Contents of latest issue'
           />
           <Image
             src={LatestPreview.src}
             width={imageWidth}
-            height={imageWidth * 0.8}
+            height={imageWidth * (imageSize + 0.1)}
             alt='Preview of latest issue'
           />
         </Box>

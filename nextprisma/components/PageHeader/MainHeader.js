@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { useWindowContext } from '../../app/Providers'
 import React from 'react'
 import Link from 'next/link'
@@ -12,9 +13,17 @@ import { m } from 'framer-motion'
 
 export default function MainHeader() {
   const { timesWidth, timesHeight } = useWindowContext()
-
+  const [spaceType, setSpaceType] = useState('space-between')
+  useEffect(() => {
+    if (timesWidth < 500) {
+      setSpaceType('space-evenly')
+    } else {
+      setSpaceType('space-between')
+    }
+  }, [timesWidth])
   return (
     <Box
+      className='MainHeaderWrapper'
       sx={{
         width: '100%',
         textAlign: 'center',
@@ -41,7 +50,7 @@ export default function MainHeader() {
               height={timesHeight}
               alt='Messianic Times Art'
               priority
-              style={{ marginBottom: 5, maxWidth: '1350px' }}
+              style={{ marginBottom: 5, maxWidth: '1300px' }}
             />
           </Link>
         </m.div>
@@ -51,7 +60,8 @@ export default function MainHeader() {
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: spaceType,
+          width: '100%',
           paddingY: 1,
           maxWidth: '1350px',
           margin: 'auto',
@@ -70,6 +80,7 @@ export default function MainHeader() {
           display: { xs: 'none', md: 'flex' },
           maxWidth: '1330px',
           margin: 'auto',
+          width: timesWidth,
         }}
       >
         <LargeButtons />

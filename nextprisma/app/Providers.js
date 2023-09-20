@@ -12,11 +12,11 @@ export default function Providers({ children, session }) {
   // Get window size once on mount
   useEffect(() => {
     if (window.innerWidth > 500) {
-      setTimesWidth(window.innerWidth - window.innerWidth * 0.02)
-      setTimesHeight((window.innerWidth - window.innerWidth * 0.02) / 9)
+      setTimesWidth(window.innerWidth - window.innerWidth * 0.05)
+      setTimesHeight((window.innerWidth - window.innerWidth * 0.05) / 9)
     } else {
-      setTimesWidth(window.innerWidth - window.innerWidth * 0.1)
-      setTimesHeight((window.innerWidth - window.innerWidth * 0.1) / 9)
+      setTimesWidth(window.innerWidth - window.innerWidth * 0.2)
+      setTimesHeight((window.innerWidth - window.innerWidth * 0.2) / 9)
     }
   }, [])
 

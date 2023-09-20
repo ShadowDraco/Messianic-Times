@@ -3,7 +3,16 @@ import React from 'react'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Link from 'next/link'
-import { UTurnLeft, Table, Pay, Users } from '../icons/Icons'
+import {
+  UTurnLeft,
+  Table,
+  Pay,
+  Users,
+  Star,
+  Heart,
+  Globe,
+  At,
+} from '../icons/Icons'
 
 export default function AdminDashLinks() {
   return (
@@ -16,8 +25,11 @@ export default function AdminDashLinks() {
         alignItems: 'center',
       }}
     >
-      <Link href='/'>
-        <Button endIcon={<UTurnLeft />}>Website</Button>
+      <Link href='/studio'>
+        <Button endIcon={<Star />}>Studio</Button>
+      </Link>
+      <Link href='/tickets'>
+        <Button endIcon={<At />}>Tickets</Button>
       </Link>
 
       <Link href='https://www.sanity.io/manage' className='' target='_blank'>
@@ -41,6 +53,9 @@ export default function AdminDashLinks() {
         target='_blank'
       >
         <Button endIcon={<Users />}>Database</Button>
+      </Link>
+      <Link href='/'>
+        <Button endIcon={<UTurnLeft />}>Website</Button>
       </Link>
     </Box>
   )
