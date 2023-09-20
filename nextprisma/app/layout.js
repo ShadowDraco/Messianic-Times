@@ -22,7 +22,7 @@ export default async function RootLayout({ children }) {
       <Providers session={session}>
         <body className={inter.className}>
           <MainHeader />
-          <Box sx={{ width: '90%', maxWidth: '1300', margin: 'auto' }}>
+          <Box sx={{ width: '95%', maxWidth: '1300', margin: 'auto' }}>
             {children}
           </Box>
 
