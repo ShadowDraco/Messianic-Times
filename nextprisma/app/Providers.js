@@ -30,7 +30,6 @@ export default function Providers({ children, session }) {
         setTimesHeight((window.innerWidth - window.innerWidth * 0.1) / 9)
       }
     }
-    console.log(timesWidth, timesHeight)
 
     window.addEventListener('resize', handleWindowResize)
 

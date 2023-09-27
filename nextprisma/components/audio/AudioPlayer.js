@@ -30,8 +30,6 @@ const AudioPlayer = () => {
   const playRandomSong = async () => {
     setSong(Math.floor(Math.random() * 3))
     audioRef.current.src = playlist[song]
-    console.log(song)
-    await audioRef.current.load()
     audioRef.current.play()
   }
 
@@ -41,7 +39,7 @@ const AudioPlayer = () => {
   }
 
   useEffect(() => {
-    playAudio()
+    playRandomSong()
   }, [])
   return (
     <Box width='fit-content' sx={{ display: 'flex' }}>

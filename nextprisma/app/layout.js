@@ -11,8 +11,7 @@ export const metadata = {
 }
 
 import { getServerSession } from 'next-auth'
-import { authOptions } from './api/auth/[...nextauth]/route'
-import MainHeader from '../components/PageHeader/MainHeader'
+import { authOptions } from '../app/api/auth/[...nextauth]/route'
 import MainFooter from '../components/PageFooter/MainFooter'
 
 export default async function RootLayout({ children }) {
@@ -21,7 +20,6 @@ export default async function RootLayout({ children }) {
     <html lang='en'>
       <Providers session={session}>
         <body className={inter.className}>
-          <MainHeader />
           <Box sx={{ width: '95%', maxWidth: '1300', margin: 'auto' }}>
             {children}
           </Box>
