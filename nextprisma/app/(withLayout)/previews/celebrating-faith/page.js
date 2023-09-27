@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Image from 'next/image'
 import Link from 'next/link'
-import SharingOurFaithPreview from '../../../../public/assets/faith-images/SharingOurFaithPreview.webp'
+import CelebratingFaithPreview from '../../../../public/assets/faith-images/CelebratingFaithPreview.webp'
 import { useWindowContext } from '../../../Providers'
 import PageTitle from '../../../../components/PageHeader/PageTitle'
 export default function page() {
@@ -12,7 +12,7 @@ export default function page() {
   return (
     <>
       <PageTitle
-        title="This issue's Sharing our Faith"
+        title="This issue's Celebrating our Faith"
         /*img={SharingOurFaith}
         width={timesWidth}
         height={timesHeight}*/
@@ -28,11 +28,11 @@ export default function page() {
       >
         <Box>
           <Image
-            src={SharingOurFaithPreview.src}
+            src={CelebratingFaithPreview.src}
             width={timesWidth * 0.8}
             height={timesHeight * 2}
             layout='responsive'
-            alt={'preview of sharing our faith page'}
+            alt={'preview of Celebrating our Faith page'}
             priority
           />
 

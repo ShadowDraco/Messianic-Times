@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
-import BorderBox from '../../components/Ticket/BorderBox'
+import BorderBox from '../../../components/Ticket/BorderBox'
 
 export default function Ticket({
   ticket,

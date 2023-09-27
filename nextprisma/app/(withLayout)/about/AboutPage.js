@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Box, Typography, Button } from '@mui/material'
 import BoardMemberCard from './BoardMemberCard'
-import PaulImage from '../../public/assets/board-members/Paul.webp'
+import PaulImage from '../../../public/assets/board-members/Paul.webp'
 import Link from 'next/link'
 export default function AboutPage() {
   return (

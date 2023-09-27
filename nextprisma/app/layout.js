@@ -13,7 +13,7 @@ export const metadata = {
 import { getServerSession } from 'next-auth'
 import { authOptions } from '../app/api/auth/[...nextauth]/route'
 import MainFooter from '../components/PageFooter/MainFooter'
-
+import PageFooter from '../components/PageFooter/PageFooter'
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions)
   return (
@@ -24,6 +24,7 @@ export default async function RootLayout({ children }) {
             {children}
           </Box>
 
+          <PageFooter />
           <MainFooter />
         </body>
       </Providers>
