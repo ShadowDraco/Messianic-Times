@@ -1,5 +1,13 @@
 import React from 'react'
-import { Container, Box, Typography, Button, Stack, List, ListItem } from '@mui/material'
+import {
+  Container,
+  Box,
+  Typography,
+  Button,
+  Stack,
+  List,
+  ListItem,
+} from '@mui/material'
 import BoardMemberCard from './BoardMemberCard'
 import PaulCard from './PaulCard'
 import PaulImage from '../../../public/assets/board-members/Paul.webp'
@@ -24,14 +32,19 @@ export default function AboutPage() {
       }}
     >
       <Box sx={{ backgroundColor: '#B5DBFF', py: 4 }}>
-        <Typography variant='h3' color='black' textAlign={'center'} mb={2}>
+        <Typography
+          variant='h3'
+          color='rgb(24, 46, 66)'
+          textAlign={'center'}
+          mb={2}
+        >
           We're more than a newspaper!
         </Typography>
         <LitePlayer />
       </Box>
 
-      <Box sx={{ backgroundColor: 'rgb(24, 46, 66)', py: 3 }}>
-        <Typography variant='h3' color='white' textAlign={'center'}>
+      <Box sx={{ backgroundColor: 'white', py: 3 }}>
+        <Typography variant='h3' color='black' textAlign={'center'}>
           Our Vision
         </Typography>
       </Box>
@@ -54,8 +67,33 @@ export default function AboutPage() {
           Messianic Times is a coalition of culture, resources, and information
           for the Community of Faith.
         </Typography>
+      </Box>
 
-       
+      <Box sx={{ backgroundColor: 'white', py: 1 }}>
+        <Typography variant='h4' color='rgb(24, 46, 66)' textAlign={'center'}>
+          What we do
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          pt: 3,
+          pb: 3,
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 2,
+          flexWrap: 'wrap',
+        }}
+      >
+        <Button variant='contained'>Prison ministry</Button>
+
+        <Button variant='contained'>Connect many Congregations</Button>
+        <Button variant='contained'>
+          Scholarship fund for messianic Jewish leaders
+        </Button>
+        <Button variant='contained'>
+          Give a voice for messianic Judaism from various backgrounds
+        </Button>
       </Box>
 
       <Box sx={{ backgroundColor: 'rgb(24, 46, 66)', py: 3 }}>
@@ -126,7 +164,7 @@ export default function AboutPage() {
             gap: 3,
             justifyContent: 'space-between',
             alignItems: 'center',
-            my: 2,
+            my: 4,
           }}
         >
           <PaulCard
@@ -153,7 +191,6 @@ export default function AboutPage() {
             Messiah Yeshua (Jesus).
           </Typography>
         </Box>
-
         <Box
           sx={{
             my: 2,
@@ -201,6 +238,11 @@ export default function AboutPage() {
               'MJAA, IAMCS, JVMC, ReachII, MI',
             ]}
           />
+        </Box>
+        <Box sx={{ backgroundColor: 'white', pt: 4 }}>
+          <Typography variant='h5' color='black'>
+            General Inquiries: office@messianictimes.com
+          </Typography>
         </Box>
       </Container>
     </Box>
