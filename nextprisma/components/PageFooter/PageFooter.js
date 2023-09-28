@@ -5,36 +5,25 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import { Copyright } from '@mui/icons-material'
 import Link from 'next/link'
-import Image from 'next/image'
-import BackgroundImage from '../../public/assets/messianic-times/Background.webp'
+
 import { useWindowContext } from '../../app/Providers'
 const footers = [
   {
     title: 'The Messianic Times',
-    description: ['Team', 'History', 'Contact us', 'Location'],
+    description: ['About us', 'Contact us'],
     url: '/about',
   },
   {
     title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
-    ],
+    description: ['Paper', 'Recipes', 'Account'],
     url: '/account',
   },
   {
     title: 'Messianic Directories',
-    description: [
-      'Resource',
-      'Resource name',
-      'Another resource',
-      'Final resource',
-    ],
+    description: ['Churches', ''],
     url: '/congregations',
   },
   /*  {
@@ -48,12 +37,14 @@ export default function PageFooter() {
   return (
     <>
       <Container
-        maxWidth='md'
+        maxWidth='1350'
+        width='95%'
         component='footer'
         sx={{
-          borderTop: `1px solid gray`,
-          py: [3, 6],
-          color: 'white',
+          borderTop: `1px solid black`,
+          py: 2,
+          mt: 2,
+          backgroundColor: '#3499D9',
         }}
       >
         <Grid container spacing={4} justifyContent='space-evenly'>
@@ -82,7 +73,15 @@ export default function PageFooter() {
             </Grid>
           ))}
         </Grid>
-        <Copyright sx={{ mt: 5 }} />
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 2,
+            alignItems: 'center',
+          }}
+        >
+          <Copyright /> <Typography>Messianic Times</Typography>
+        </Box>
       </Container>
     </>
   )

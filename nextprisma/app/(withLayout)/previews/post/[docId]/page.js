@@ -1,7 +1,7 @@
 import React from 'react';
 import { groq } from 'next-sanity';
 import dynamic from 'next/dynamic';
-import { previewClient } from '../../../../sanity/lib/client';
+import { previewClient } from '../../../../../sanity/lib/client';
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
 import { getServerSession } from 'next-auth';

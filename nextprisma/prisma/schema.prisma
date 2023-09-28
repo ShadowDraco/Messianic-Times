@@ -28,7 +28,7 @@ model User {
   hasFreePaper Boolean @default(false)
   whichFreePaper String?
   autoPlay Boolean @default(true)
-  volume Int @default(50)
+  volume Int @default(20)
 }
 
 model ActivateToken {

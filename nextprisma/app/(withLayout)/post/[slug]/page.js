@@ -1,8 +1,8 @@
 import React from 'react';
 import { groq } from 'next-sanity';
 import dynamic from 'next/dynamic';
-import { client } from '../../../sanity/lib/client';
-import DefaultAuthorView from '../../../components/sanity/Content/Authors/DefaultAuthorView';
+import { client } from '../../../../sanity/lib/client';
+import DefaultAuthorView from '../../../../components/sanity/Content/Authors/DefaultAuthorView';
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
 

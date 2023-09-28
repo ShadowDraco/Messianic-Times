@@ -8,7 +8,7 @@ import PlayPauseButtons from './PlayPauseButtons'
 const AudioPlayer = () => {
   const audioRef = useRef()
 
-  const [volume, setVolume] = useState(50)
+  const [volume, setVolume] = useState(20)
   const [paused, setPaused] = useState(false)
   const [song, setSong] = useState(Math.floor(Math.random() * 3))
 
