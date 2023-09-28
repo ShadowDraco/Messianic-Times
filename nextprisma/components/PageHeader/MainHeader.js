@@ -9,7 +9,7 @@ import LargeButtons from './NavButtons/LargeButtons'
 import SmallButtons from './NavButtons/SmallButtons'
 import FaithImages from './FaithImages/FaithImages'
 import Image from 'next/image'
-import timesArt from '../../public/assets/messianic-times/timesArt.webp'
+import timesArt from '../../public/assets/messianic-times/timesArt2.webp'
 import { m } from 'framer-motion'
 
 export default function MainHeader() {
@@ -82,7 +82,7 @@ export default function MainHeader() {
       {/*//? Nav Buttons */}
       <Box
         sx={{
-          backgroundColor: '#3499D9',
+          backgroundColor: '#0D99FF',
           display: 'flex',
           justifyContent: 'space-between',
           padding: 1,

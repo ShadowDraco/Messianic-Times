@@ -3,9 +3,8 @@ html {
 }
 
 body {
+  width: 100vw;
   margin: auto;
-  max-width: 1350px;
-  background-color: rgb(24, 46, 66);
 }
 
 input {

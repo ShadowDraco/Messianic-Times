@@ -36,11 +36,12 @@ export default function HomePage() {
           backgroundColor: '#45B0FF',
           width: '100%',
           maxWidth: '1300px',
+          margin: 'auto',
         }}
       >
         <Box sx={{ paddingY: 3, backgroundColor: '#0D99FF' }}>
           <Typography
-            variant='h5'
+            variant='h4'
             color='white'
             fontWeight={'bold'}
             textAlign={'center'}
@@ -60,12 +61,14 @@ export default function HomePage() {
               width={timesWidth / 4}
               height={timesWidth / 5}
               alt='Kings University'
+              style={{ maxWidth: 350, maxHeight: 250 }}
             />
             <Image
               src={MJAA.src}
               width={timesWidth / 4}
               height={timesWidth / 5}
               alt='MJAA'
+              style={{ maxWidth: 350, maxHeight: 250 }}
             />
           </Box>
         </Box>
@@ -76,6 +79,7 @@ export default function HomePage() {
           fontWeight={'bold'}
           textAlign={'center'}
           paddingBottom={2}
+          marginTop={1}
         >
           <BreathWrapper>Read the latest issue!</BreathWrapper>
         </Typography>

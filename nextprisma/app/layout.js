@@ -5,9 +5,8 @@ import Box from '@mui/material/Box'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'TestingFeatures',
-  description:
-    'Using Prisma, Next Auth, Stripe and so much more for the first time!',
+  title: 'The Messianic Times',
+  description: 'The leading Messianic Paper since 1990',
 }
 
 import { getServerSession } from 'next-auth'
@@ -20,11 +19,10 @@ export default async function RootLayout({ children }) {
     <html lang='en'>
       <Providers session={session}>
         <body className={inter.className}>
-          <Box sx={{ width: '95%', maxWidth: '1300', margin: 'auto' }}>
+       
             {children}
-          </Box>
+          
 
-          <PageFooter />
           <MainFooter />
         </body>
       </Providers>

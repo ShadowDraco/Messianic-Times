@@ -15,6 +15,7 @@ export default function PageTitle({ title, img, width, height }) {
           justifyContent: 'center',
           maxWidth: '1350px',
           margin: 'auto',
+          my:2
         }}
       >
         {img ? (
