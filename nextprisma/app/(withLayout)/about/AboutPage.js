@@ -17,6 +17,7 @@ import JoelImage from '../../../public/assets/board-members/Joel.webp'
 import SusanImage from '../../../public/assets/board-members/Susan2.webp'
 import LitePlayer from '../../../components/videoPlayer/LitePlayer'
 import Link from 'next/link'
+const apos = '&#39;'
 
 export default function AboutPage() {
   return (
@@ -38,7 +39,7 @@ export default function AboutPage() {
           textAlign={'center'}
           mb={2}
         >
-          We're more than a newspaper!
+          We are more than a newspaper!
         </Typography>
         <LitePlayer />
       </Box>
@@ -173,7 +174,7 @@ export default function AboutPage() {
             description={[
               'Messianic Rabbi Joel Liberman, D.Min',
               'President, Messianic Jewish Alliance of America',
-              "Int'l Alliance of Messianic Con's & Synagogues",
+              `Int\'l Alliance of Messianic Con\'s & Synagogues`,
               'Tree of Life Messianic Jewish Congregation',
             ]}
           />
@@ -206,7 +207,7 @@ export default function AboutPage() {
             description={[
               'Rabbi, Tree of Life Messianic Jewish Congregation,',
               'President, Messianic Jewish Alliance of America',
-              "Int'l Alliance of Messianic Cong's & Synagogues",
+              `Int\'l Alliance of Messianic Cong\'s & Synagogues`,
             ]}
           />
           <BoardMemberCard
