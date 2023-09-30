@@ -47,32 +47,6 @@ export default function PageFooter() {
           backgroundColor: '#3499D9',
         }}
       >
-        <Grid container spacing={4} justifyContent='space-evenly'>
-          {footers.map(footer => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant='h6' color='text.primary' gutterBottom>
-                {footer.title}
-              </Typography>
-              <Stack style={{ listStyle: 'none' }} spacing={1.5}>
-                {footer.description.map(item => (
-                  <li key={item}>
-                    <Button color='warning' variant='text'>
-                      <Link href={footer.url}>
-                        <Typography
-                          variant='subtitle1'
-                          color='text.secondary'
-                          sx={{ textDecoration: 'none' }}
-                        >
-                          {item}
-                        </Typography>
-                      </Link>
-                    </Button>
-                  </li>
-                ))}
-              </Stack>
-            </Grid>
-          ))}
-        </Grid>
         <Box
           sx={{
             display: 'flex',

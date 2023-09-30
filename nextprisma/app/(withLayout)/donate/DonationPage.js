@@ -70,11 +70,19 @@ export default function DonationPage() {
       <Popper id={id} open={open} anchorEl={anchorEl} transition>
         {({ TransitionProps }) => (
           <Fade {...TransitionProps} timeout={350}>
-            <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+            <Box
+              sx={{
+                border: 1,
+                p: 1,
+                bgcolor: 'background.paper',
+                maxWidth: '50%',
+              }}
+            >
               <Image
                 src={VenmoQR.src}
-                width={200}
-                height={500}
+                width={VenmoQR.width / 3}
+                height={VenmoQR.height / 3}
+                layout='responsive'
                 alt='venmo qr code'
               />
             </Box>
