@@ -41,6 +41,7 @@ const AudioPlayer = () => {
   useEffect(() => {
     playRandomSong()
     audioRef.current.volume = volume / 100
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <Box width='fit-content' sx={{ display: 'flex' }}>

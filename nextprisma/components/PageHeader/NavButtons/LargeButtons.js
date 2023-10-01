@@ -75,6 +75,7 @@ export default function LargeButtons() {
               >
                 {pages.map((page, i) => (
                   <Link
+                    key={i}
                     href={pageUrls[i]}
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
@@ -86,16 +87,28 @@ export default function LargeButtons() {
               </Menu>
             </Box>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: 'none', md: 'flex' },
+                justifyContent: 'space-evenly',
+              }}
+            >
               {pages.map((page, i) => (
                 <Link
+                  key={i}
                   href={pageUrls[i]}
                   style={{ textDecoration: 'none', color: 'black' }}
                 >
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: 'white', display: 'block' }}
+                    variant='contained'
+                    sx={{
+                      my: 2,
+                      color: 'rgb(200, 100, 100)',
+                      display: 'block',
+                    }}
                   >
                     {page}
                   </Button>
@@ -103,20 +116,25 @@ export default function LargeButtons() {
               ))}
             </Box>
 
-            <Button
-              sx={{ marginRight: 3 }}
-              size='large'
-              variant='contained'
-              color='error'
-              endIcon={<Heart />}
-            >
-              Donate
-            </Button>
+            <Link href='/donate'>
+              <Button
+                sx={{ marginRight: 3 }}
+                size='large'
+                variant='contained'
+                color='error'
+                endIcon={<Heart />}
+              >
+                Donate
+              </Button>
+            </Link>
 
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title='Open settings'>
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
+                  <Avatar
+                    alt='Settings Avatar'
+                    src='/assets/messianic-times/avatar.webp'
+                  />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -135,10 +153,12 @@ export default function LargeButtons() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map(setting => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign='center'>{setting}</Typography>
-                  </MenuItem>
+                {settings.map((setting, i) => (
+                  <Link key={i} href={settingUrls[i]}>
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                      <Typography textAlign='center'>{setting}</Typography>
+                    </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </Box>
