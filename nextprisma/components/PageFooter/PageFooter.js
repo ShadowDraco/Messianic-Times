@@ -54,7 +54,13 @@ export default function PageFooter() {
             alignItems: 'center',
           }}
         >
-          <Copyright /> <Typography>Messianic Times</Typography>
+          <Typography variant={'body1'} color={'white'}>
+            With the Messianic Times you can: read news from the worldwide
+            Messianic community, Israeli current events and analysis, opinion
+            pieces, book, music and film reviews, informative articles and a
+            directory of Messianic Jewish congregations.
+          </Typography>
+          <Typography>Copyright © 2023 Messianic Times</Typography>
         </Box>
       </Container>
     </>

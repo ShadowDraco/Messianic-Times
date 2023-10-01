@@ -37,6 +37,7 @@ export default function MainHeader() {
           width: '100%',
           maxWidth: '1350px',
           margin: 'auto',
+          my: 0
         }}
       >
         <m.div
@@ -52,7 +53,7 @@ export default function MainHeader() {
               alt='Messianic Times Art'
               layout='responsive'
               priority
-              style={{ marginBottom: 5, maxWidth: '1350px', margin: 'auto' }}
+              style={{ maxWidth: '1350px', margin: 'auto', my: 0 }}
             />
           </Link>
         </m.div>
@@ -63,6 +64,7 @@ export default function MainHeader() {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
+        style={{ margin: 0}}
       >
         <Box
           sx={{
@@ -73,6 +75,7 @@ export default function MainHeader() {
             maxWidth: '1350px',
             margin: 'auto',
             width: '100%',
+            my: 0
           }}
         >
           <FaithImages size={timesWidth} />
