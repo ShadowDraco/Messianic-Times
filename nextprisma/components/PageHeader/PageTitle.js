@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 export default function PageTitle({ title, img, width, height }) {
-  console.log(img)
+
   return (
     <>
       {/*//? Page Title */}

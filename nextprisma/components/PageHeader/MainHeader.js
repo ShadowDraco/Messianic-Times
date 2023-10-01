@@ -89,25 +89,11 @@ export default function MainHeader() {
           display: 'flex',
           justifyContent: 'space-between',
           padding: 1,
-          display: { xs: 'none', md: 'flex' },
           maxWidth: '1330px',
           margin: 'auto',
         }}
       >
         <LargeButtons />
-      </Box>
-      <Box
-        sx={{
-          backgroundColor: '#3499D9',
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          paddingY: 1,
-          display: { xs: 'flex', md: 'none' },
-          maxWidth: '1330px',
-          margin: 'auto',
-        }}
-      >
-        <SmallButtons />
       </Box>
     </Box>
   )

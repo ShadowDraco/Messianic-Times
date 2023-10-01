@@ -40,6 +40,7 @@ const AudioPlayer = () => {
 
   useEffect(() => {
     playRandomSong()
+    audioRef.current.volume = volume / 100
   }, [])
   return (
     <Box width='fit-content' sx={{ display: 'flex' }}>

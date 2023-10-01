@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '@mui/material/Button'
+import { Heart } from '../../icons/Icons'
 export default function SmallButtons() {
   return (
     <>
@@ -7,11 +8,15 @@ export default function SmallButtons() {
         Home
       </Button>
       <Button size='small' variant='contained' color='error'>
-        About Us
-      </Button>
-
-      <Button size='small' variant='contained' color='error'>
         Get Involved
+      </Button>
+      <Button
+        size='small'
+        variant='contained'
+        color='error'
+        endIcon={<Heart />}
+      >
+        Donate
       </Button>
     </>
   )
