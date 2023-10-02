@@ -161,7 +161,7 @@ export default function AboutPage() {
       <Container sx={{ my: 3 }}>
         <Box
           sx={{
-            display: 'flex',
+            display: { xs: 'block', md: 'flex' },
             gap: 3,
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -177,12 +177,14 @@ export default function AboutPage() {
               `Int\'l Alliance of Messianic Con\'s & Synagogues`,
               'Tree of Life Messianic Jewish Congregation',
             ]}
+            marginAuto
           />
           <Typography
             textAlign='center'
             color='black'
             variant='h5'
             maxWidth='65%'
+            margin='auto'
           >
             We believe the Biblical drama intends that the Jewish people will be
             back in the Land of Israel living in peace. This will happen through

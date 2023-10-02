@@ -1,10 +1,12 @@
 html {
   background-color: rgb(24, 46, 66);
+  scrollbar-gutter: stable;
 }
 
 body {
   width: 100vw;
   margin: auto;
+  scrollbar-gutter: stable;
 }
 
 input {

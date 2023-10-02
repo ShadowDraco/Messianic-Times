@@ -124,18 +124,11 @@ export default function Pricing({ prices }) {
               >
                 HOME
               </Link>
+            
               <Link
                 variant='button'
                 color='text.primary'
-                href='#'
-                sx={{ my: 1, mx: 1.5 }}
-              >
-                Enterprise
-              </Link>
-              <Link
-                variant='button'
-                color='text.primary'
-                href='#'
+                href='/sendTicket'
                 sx={{ my: 1, mx: 1.5 }}
               >
                 Support
@@ -166,7 +159,7 @@ export default function Pricing({ prices }) {
             color='text.primary'
             gutterBottom
           >
-            Pricing
+            Subscriptions
           </Typography>
         </Container>
         {/* End hero unit */}

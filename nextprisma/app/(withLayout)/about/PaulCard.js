@@ -9,10 +9,20 @@ import {
 } from '@mui/material'
 import Image from 'next/image'
 
-export default function BoardMemberCard({ image, description, name }) {
+export default function BoardMemberCard({
+  image,
+  description,
+  name,
+  marginAuto,
+}) {
   return (
     <Card
-      sx={{ maxWidth: 350, minWidth: 150, backgroundColor: 'rgb(24, 46, 66)' }}
+      sx={{
+        maxWidth: 350,
+        minWidth: 150,
+        backgroundColor: 'rgb(24, 46, 66)',
+        margin: marginAuto ? 'auto' : '',
+      }}
     >
       <CardActionArea>
         <Image

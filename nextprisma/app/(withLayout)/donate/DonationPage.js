@@ -44,13 +44,18 @@ export default function DonationPage() {
         width={timesWidth}
         height={timesHeight}
       />
-      <Container sx={{ backgroundColor: 'white', py: 5 }}>
+      <Container
+        sx={{
+          backgroundColor: 'white',
+          py: 5,
+        }}
+      >
         <Typography variant='h4' component='h1' textAlign='center' gutterBottom>
           Help us reach the Jewish People for the LORD says: All Israel will be
           saved Romans 11:26
         </Typography>
 
-        <Grid container spacing={2}>
+        <Grid container spacing={2} width='80%' margin='auto' paddingLeft={2}>
           <Grid>
             <Link href='https://donate.stripe.com/test_6oEcQG1oM0hHd2M144'>
               <Image

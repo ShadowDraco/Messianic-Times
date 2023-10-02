@@ -10,8 +10,6 @@ export default async function ProductPage() {
   })
   const session = await getServerSession(authOptions)
 
-  if (!session) return 'You are not authorized to view this page'
-
   let prices = await getProducts()
 
   if (!prices) return 'Loading...'

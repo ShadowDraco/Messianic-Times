@@ -104,10 +104,12 @@ export default function LargeButtons() {
                     key={page}
                     onClick={handleCloseNavMenu}
                     variant='contained'
+                    color='error'
                     sx={{
                       my: 2,
-                      color: 'rgb(200, 100, 100)',
+                      color: 'white',
                       display: 'block',
+                  
                     }}
                   >
                     {page}
@@ -118,10 +120,9 @@ export default function LargeButtons() {
 
             <Link href='/donate'>
               <Button
-                sx={{ marginRight: 3 }}
+                sx={{ marginRight: 3, backgroundColor: 'rgb(200, 100, 100)' }}
                 size='large'
                 variant='contained'
-                color='error'
                 endIcon={<Heart />}
               >
                 Donate
@@ -154,7 +155,11 @@ export default function LargeButtons() {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting, i) => (
-                  <Link key={i} href={settingUrls[i]}>
+                  <Link
+                    key={i}
+                    href={settingUrls[i]}
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <Typography textAlign='center'>{setting}</Typography>
                     </MenuItem>
