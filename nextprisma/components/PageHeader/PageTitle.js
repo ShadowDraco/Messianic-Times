@@ -3,7 +3,6 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 export default function PageTitle({ title, img, width, height }) {
-
   return (
     <>
       {/*//? Page Title */}
@@ -16,11 +15,18 @@ export default function PageTitle({ title, img, width, height }) {
           justifyContent: 'center',
           maxWidth: '1350px',
           margin: 'auto',
-          my: 2,
+          marginBottom: 2,
         }}
       >
         {img ? (
-          <Image src={img.src} width={width} height={height} alt='Page Title' />
+          <Image
+            src={img.src}
+            width={width ? width : 600}
+            height={height ? height : 250}
+            alt='Page Title'
+            layout='responsive'
+            style={{ maxWidth: 1345 }}
+          />
         ) : (
           <Typography
             variant='h4'
