@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
@@ -15,6 +16,7 @@ import MenuItem from '@mui/material/MenuItem'
 
 import { Heart } from '../../icons/Icons'
 import Link from 'next/link'
+import GetInvolvedButton from './GetInvolvedButton'
 export default function LargeButtons() {
   const pages = ['Home', 'Read', 'Advertising', 'Get Involved', 'About Us']
   const pageUrls = ['/', '/read', '/advertising', '/get-involved', '/about']
@@ -22,6 +24,7 @@ export default function LargeButtons() {
   const settingUrls = ['/account', '/api/auth/signin', '/logout', '/sendTicket']
 
   const [anchorElNav, setAnchorElNav] = useState(null)
+
   const [anchorElUser, setAnchorElUser] = useState(null)
 
   const handleOpenNavMenu = event => {
@@ -73,17 +76,21 @@ export default function LargeButtons() {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {pages.map((page, i) => (
-                  <Link
-                    key={i}
-                    href={pageUrls[i]}
-                    style={{ textDecoration: 'none', color: 'black' }}
-                  >
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign='center'>{page}</Typography>
-                    </MenuItem>
-                  </Link>
-                ))}
+                {pages.map((page, i) =>
+                  page === 'Get Involved' ? (
+                    <GetInvolvedButton menuItem />
+                  ) : (
+                    <Link
+                      key={i}
+                      href={pageUrls[i]}
+                      style={{ textDecoration: 'none', color: 'black' }}
+                    >
+                      <MenuItem key={page} onClick={handleCloseNavMenu} variant='contained' sx={{backgroundColor: 'white'}}>
+                        <Typography textAlign='center'>{page}</Typography>
+                      </MenuItem>
+                    </Link>
+                  )
+                )}
               </Menu>
             </Box>
 
@@ -91,31 +98,34 @@ export default function LargeButtons() {
               sx={{
                 flexGrow: 1,
                 display: { xs: 'none', md: 'flex' },
-                justifyContent: 'space-evenly',
+                gap: 3,
               }}
             >
-              {pages.map((page, i) => (
-                <Link
-                  key={i}
-                  href={pageUrls[i]}
-                  style={{ textDecoration: 'none', color: 'black' }}
-                >
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    variant='contained'
-                    color='error'
-                    sx={{
-                      my: 2,
-                      color: 'white',
-                      display: 'block',
-                  
-                    }}
+              {pages.map((page, i) =>
+                page === 'Get Involved' ? (
+                  <GetInvolvedButton />
+                ) : (
+                  <Link
+                    key={i}
+                    href={pageUrls[i]}
+                    style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    {page}
-                  </Button>
-                </Link>
-              ))}
+                    <Button
+                      key={page}
+                      onClick={handleCloseNavMenu}
+                      variant='contained'
+                      color='error'
+                      sx={{
+                        my: 2,
+                        color: 'white',
+                        display: 'block',
+                      }}
+                    >
+                      {page}
+                    </Button>
+                  </Link>
+                )
+              )}
             </Box>
 
             <Link href='/donate'>

@@ -50,7 +50,7 @@ export default function page() {
   }
 
   return (
-    <Container sx={{ backgroundColor: 'white', marginY: 2 }}>
+    <Container sx={{ backgroundColor: 'white', marginY: 2, paddingY: 2 }}>
       <Typography variant='h4'>Contact us</Typography>
       <FormControl>
         <InputLabel htmlFor='title'>Title</InputLabel>
@@ -89,23 +89,26 @@ export default function page() {
           inputRef={emailRef}
         ></Input>
       </FormControl>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Typography variant='overline'>Important? </Typography>
         <FormControl>
           <Input type='checkbox' id='important' inputRef={importantRef}></Input>
         </FormControl>
       </Box>
 
-      <LoadingButton
-        loading={loading}
-        loadingPosition='end'
-        endIcon={<ReceiptIcon />}
-        onClick={e => {
-          submitTicket()
-        }}
-      >
-        <span>Send</span>
-      </LoadingButton>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <LoadingButton
+          loading={loading}
+          loadingPosition='end'
+          size='large'
+          endIcon={<ReceiptIcon />}
+          onClick={e => {
+            submitTicket()
+          }}
+        >
+          <span>Send</span>
+        </LoadingButton>
+      </Box>
     </Container>
   )
 }

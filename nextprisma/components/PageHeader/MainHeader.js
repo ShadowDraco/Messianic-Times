@@ -26,7 +26,8 @@ export default function MainHeader() {
     <Box
       className='MainHeaderWrapper'
       sx={{
-        width: '100%',
+        width: '99%',
+        mx: 1,
         textAlign: 'center',
         backgroundColor: 'rgb(24, 46, 66)',
       }}
