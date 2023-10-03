@@ -1,13 +1,13 @@
-import { getServerSession } from 'next-auth';
-import { NextResponse } from 'next/server';
-import { authOptions } from '../../../../../../auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth'
+import { NextResponse } from 'next/server'
+import { authOptions } from '../../../../../../auth/[...nextauth]/route'
 import {
   createToken,
   createUser,
-} from '../../../../../../../../lib/prisma/crud';
-import { hashPassword } from '../../../../../../../../lib/auth-functions/passwords';
+} from '../../../../../../../../lib/prisma/crud'
+import { hashPassword } from '../../../../../../../../lib/auth-functions/passwords'
 
-import sendVerificationEmail from '../../../../../../../../lib/mailgun/sendVerificationEmail';
+import sendVerificationEmail from '../../../../../../../../lib/mailgun/sendVerificationEmail'
 export async function POST(request) {
   //const session = await getServerSession(authOptions);
 
@@ -17,19 +17,19 @@ export async function POST(request) {
     });
   }*/
 
-  const cutUrl = request.url.split('create')[1].split('/');
-  const hashedPassword = await hashPassword(cutUrl[3]);
+  const cutUrl = request.url.split('create')[1].split('/')
+  const hashedPassword = await hashPassword(cutUrl[3])
 
   const newUser = {
     email: cutUrl[1],
     name: cutUrl[2],
     password: hashedPassword,
-  };
-  let createdUser;
-  let createdToken;
+  }
+  let createdUser
+  let createdToken
   try {
-    createdUser = await createUser(newUser);
-    createdToken = await createToken(createdUser.id);
+    createdUser = await createUser(newUser)
+    createdToken = await createToken(createdUser.id)
   } catch (error) {
     return new NextResponse(
       JSON.stringify({
@@ -42,13 +42,13 @@ export async function POST(request) {
           ? error.meta.cause
           : 'user could not be created',
       }
-    );
+    )
   }
 
   try {
-    await sendVerificationEmail(createdUser, createdToken);
+    await sendVerificationEmail(createdUser, createdToken)
   } catch (error) {
-    console.error('ERROR SENDING VERIFICATION EMAIL', error);
+    console.error('ERROR SENDING VERIFICATION EMAIL', error)
     return new NextResponse(
       JSON.stringify({
         error:
@@ -61,11 +61,11 @@ export async function POST(request) {
           ? error.message
           : 'The verification email could not be sent.',
       }
-    );
+    )
   }
 
   return NextResponse.json(
     { success: 'success!', message: 'User created, email sent' },
     { status: 200, statusText: 'success!' }
-  );
+  )
 }
