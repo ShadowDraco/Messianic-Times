@@ -31,6 +31,7 @@ export async function POST(request) {
     createdUser = await createUser(newUser)
     createdToken = await createToken(createdUser.id)
   } catch (error) {
+    console.log(error)
     return new NextResponse(
       JSON.stringify({
         error: 'user could not be created',
