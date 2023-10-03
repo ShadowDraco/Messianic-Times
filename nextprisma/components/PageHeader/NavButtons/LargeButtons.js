@@ -78,14 +78,19 @@ export default function LargeButtons() {
               >
                 {pages.map((page, i) =>
                   page === 'Get Involved' ? (
-                    <GetInvolvedButton menuItem />
+                    <GetInvolvedButton key={i} menuItem />
                   ) : (
                     <Link
                       key={i}
                       href={pageUrls[i]}
                       style={{ textDecoration: 'none', color: 'black' }}
                     >
-                      <MenuItem key={page} onClick={handleCloseNavMenu} variant='contained' sx={{backgroundColor: 'white'}}>
+                      <MenuItem
+                        key={page}
+                        onClick={handleCloseNavMenu}
+                        variant='contained'
+                        sx={{ backgroundColor: 'white' }}
+                      >
                         <Typography textAlign='center'>{page}</Typography>
                       </MenuItem>
                     </Link>
@@ -103,7 +108,7 @@ export default function LargeButtons() {
             >
               {pages.map((page, i) =>
                 page === 'Get Involved' ? (
-                  <GetInvolvedButton />
+                  <GetInvolvedButton key={i} />
                 ) : (
                   <Link
                     key={i}
