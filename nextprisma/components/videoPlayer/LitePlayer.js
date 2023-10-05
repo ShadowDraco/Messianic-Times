@@ -10,7 +10,7 @@ export default function LitePlayer() {
         aspectHeight={9}
         aspectWidth={16}
         playerClass='litePlayerPlayer'
-        id='aNK7_W1VFD4'
+        id='X4S0MYMb4os'
         title='More than a newspaper!'
       />
     </Box>
