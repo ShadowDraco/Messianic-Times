@@ -43,12 +43,14 @@ export default function MainPage({ session }) {
             height={timesWidth / 5}
             alt='Kings University'
             style={{ maxWidth: 350, maxHeight: 250 }}
+            priority
           />
           <Image
             src={MJAA.src}
             width={timesWidth / 4}
             height={timesWidth / 5}
             alt='MJAA'
+            priority
             style={{ maxWidth: 350, maxHeight: 250 }}
           />
         </Box>
@@ -77,6 +79,7 @@ export default function MainPage({ session }) {
             width={timesWidth}
             height={timesHeight}
             layout='responsive'
+            priority
             style={{ maxWidth: '300px' }}
             alt='Contents of latest issue'
           />
@@ -85,6 +88,7 @@ export default function MainPage({ session }) {
           src={LatestPreview.src}
           width={timesWidth}
           height={timesHeight}
+          priority
           layout='responsive'
           style={{ maxWidth: timesWidth > 1000 ? '700px' : '500px' }}
           alt='Preview of latest issue'

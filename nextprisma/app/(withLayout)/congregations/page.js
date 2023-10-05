@@ -23,6 +23,7 @@ export default function page() {
             src={Congregations.src}
             width={Congregations.width}
             height={Congregations.height}
+            priority
             alt='many Congregations to follow'
             layout='responsive'
           />

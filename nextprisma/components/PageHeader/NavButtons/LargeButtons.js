@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
@@ -43,7 +44,16 @@ export default function LargeButtons() {
   }
 
   return (
-    <>
+    <Box
+      sx={{
+        backgroundColor: '#0D99FF',
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: 1,
+        maxWidth: '1330px',
+        margin: 'auto',
+      }}
+    >
       <AppBar position='static'>
         <Container maxWidth='xl'>
           <Toolbar disableGutters>
@@ -185,6 +195,6 @@ export default function LargeButtons() {
           </Toolbar>
         </Container>
       </AppBar>
-    </>
+    </Box>
   )
 }

@@ -8,7 +8,7 @@ export default function page() {
   return (
     <>
       <PageTitle img={MessianicMinistriesWorldWide} />
-      <Container sx={{ width: '100%', backgroundColor: 'white'}}>
+      <Container sx={{ width: '100%', backgroundColor: 'white' }}>
         <Box maxWidth={1350} width='90%' margin='auto' py={3}>
           <Image
             src={Ministries.src}
@@ -16,6 +16,7 @@ export default function page() {
             height={Ministries.height}
             alt='many ministries to follow'
             layout='responsive'
+            priority
           />
         </Box>
       </Container>
