@@ -13,9 +13,9 @@ const AudioPlayer = () => {
   const [song, setSong] = useState(Math.floor(Math.random() * 3))
 
   const playlist = [
-    '/audio/HavaNagila.mp3',
-    '/audio/HisStrengthIsPerfect.mp3',
-    '/audio/TheBeautyOfYAWEH.mp3',
+    '/audio/HavaNagila.ogg',
+    '/audio/HisStrengthIsPerfect.ogg',
+    '/audio/TheBeautyOfYAWEH.ogg',
   ]
 
   const playAudio = () => {
