@@ -13,7 +13,7 @@ import Container from '@mui/material/Container'
 import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-
+import { signIn, signOut } from 'next-auth/react'
 import { Heart } from '../../icons/Icons'
 import Link from 'next/link'
 import GetInvolvedButton from './GetInvolvedButton'
@@ -21,7 +21,12 @@ export default function LargeButtons() {
   const pages = ['Home', 'Read', 'Advertising', 'Get Involved', 'About Us']
   const pageUrls = ['/', '/read', '/advertising', '/get-involved', '/about']
   const settings = ['Account', 'Login', 'Logout', 'Help']
-  const settingUrls = ['/account', '/api/auth/signin', '/logout', '/sendTicket']
+  const settingUrls = [
+    '/account',
+    '/api/auth/signin',
+    '/api/auth/signout',
+    '/sendTicket',
+  ]
 
   const [anchorElNav, setAnchorElNav] = useState(null)
 

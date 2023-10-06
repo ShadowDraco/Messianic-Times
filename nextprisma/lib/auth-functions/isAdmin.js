@@ -1,6 +1,5 @@
-async function isAdmin(session) {
-  if (!session.user) return false
-  if (session.user.email !== 'stormethan10@gmail.com') return false
+function isAdmin(session) {
+  if (session?.user?.email !== 'stormethan10@gmail.com') return false
 
   return true
 }

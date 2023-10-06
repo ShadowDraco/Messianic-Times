@@ -1,15 +1,10 @@
 'use client'
 import React from 'react'
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
-import Link from 'next/link'
 import BreathWrapper from '../../components/motion/breath/BreathWrapper'
 import Image from 'next/image'
-import University from '../../public/assets/adverts/University.webp'
-import MJAA from '../../public/assets/adverts/MJAA.webp'
-
+import Adverts from './Adverts'
 import LatestIssue from '../../public/assets/previews/LatestIssue.webp'
 import LatestPreview from '../../public/assets/previews/LatestPreview.webp'
 import { useWindowContext } from '../Providers'
@@ -30,30 +25,7 @@ export default function MainPage({ session }) {
           Visit our Advertisers
         </Typography>
 
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-evenly',
-            paddingY: 2,
-          }}
-        >
-          <Image
-            src={University.src}
-            width={timesWidth / 4}
-            height={timesWidth / 5}
-            alt='Kings University'
-            style={{ maxWidth: 350, maxHeight: 250 }}
-            priority
-          />
-          <Image
-            src={MJAA.src}
-            width={timesWidth / 4}
-            height={timesWidth / 5}
-            alt='MJAA'
-            priority
-            style={{ maxWidth: 350, maxHeight: 250 }}
-          />
-        </Box>
+        <Adverts timesWidth={timesWidth} timesHeight={timesHeight} />
       </Box>
 
       <Typography
