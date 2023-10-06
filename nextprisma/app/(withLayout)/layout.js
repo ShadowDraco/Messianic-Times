@@ -1,4 +1,5 @@
 import React from 'react'
+
 import MainHeader from '../../components/PageHeader/MainHeader'
 import PageFooter from '../../components/PageFooter/PageFooter'
 import Box from '@mui/material/Box'

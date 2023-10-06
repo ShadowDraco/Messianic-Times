@@ -2,8 +2,7 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import SettingsAvatar from '../../../public/assets/messianic-times/SettingsAvatar.webp'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
@@ -157,10 +156,7 @@ export default function LargeButtons() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title='Open settings'>
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar
-                    alt='Settings Avatar'
-                    src='/assets/messianic-times/avatar.webp'
-                  />
+                  <Avatar alt='Settings Avatar' src={SettingsAvatar.src} />
                 </IconButton>
               </Tooltip>
               <Menu
