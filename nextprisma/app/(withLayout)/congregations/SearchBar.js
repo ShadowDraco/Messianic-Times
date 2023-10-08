@@ -1,20 +1,18 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Box, Input, Autocomplete, TextField } from '@mui/material'
-export default function SearchBar({
-  countries,
-  states,
-  cities,
-  congregations,
-}) {
+export default function SearchBar({ countries, states, congregations }) {
+  const CountryRef = useRef(null)
+  const StateRef = useRef(null)
   const [search, setSearch] = useState(null)
   const [country, setCountry] = useState(null)
   const [city, setCity] = useState(null)
   const [state, setState] = useState(null)
 
   return (
-    <Box>
+    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
       <Autocomplete
+        ref={CountryRef}
         id='country-select-demo'
         sx={{ width: 300 }}
         options={countries}
@@ -39,12 +37,22 @@ export default function SearchBar({
         renderInput={params => (
           <TextField
             {...params}
-            label='Choose a country'
+            label='Country'
             inputProps={{
               ...params.inputProps,
               autoComplete: 'new-password', // disable autocomplete and autofill
             }}
           />
+        )}
+      />
+      <Autocomplete
+        ref={StateRef}
+        disablePortal
+        id='combo-box-demo'
+        options={states}
+        sx={{ width: 300 }}
+        renderInput={params => (
+          <TextField {...params} label='State (US only)' />
         )}
       />
     </Box>

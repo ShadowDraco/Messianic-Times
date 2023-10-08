@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Box,
-  Typography,
-  Button,
-  Stack,
-  List,
-  ListItem,
-} from '@mui/material'
+import { Container, Box, Typography, Button, Stack } from '@mui/material'
 import BoardMemberCard from './BoardMemberCard'
 import PaulCard from './PaulCard'
 import PaulImage from '../../../public/assets/board-members/Paul.webp'
@@ -16,7 +8,9 @@ import JeffImage from '../../../public/assets/board-members/Jeff.webp'
 import JoelImage from '../../../public/assets/board-members/Joel.webp'
 import SusanImage from '../../../public/assets/board-members/Susan2.webp'
 import LitePlayer from '../../../components/videoPlayer/LitePlayer'
+import Image from 'next/image'
 import Link from 'next/link'
+import ArielBanner from '../../../public/assets/adverts/ArielBanner.webp'
 const apos = '&#39;'
 
 export default function AboutPage() {
@@ -41,7 +35,20 @@ export default function AboutPage() {
         >
           We are more than a newspaper!
         </Typography>
-        <LitePlayer />
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Link href='https://www.arielcollege.com/'>
+            <Image
+              src={ArielBanner.src}
+              width={ArielBanner.width}
+              height={ArielBanner.height}
+              layout={'responsive'}
+              alt='Ariel College'
+              style={{ maxWidth: 350, maxHeight: 250 }}
+              priority
+            />
+          </Link>
+          {/*<LitePlayer />*/}
+        </Box>
       </Box>
 
       <Box sx={{ backgroundColor: 'white', py: 3 }}>

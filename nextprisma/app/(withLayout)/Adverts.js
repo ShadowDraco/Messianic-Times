@@ -16,7 +16,7 @@ export default function Adverts({ timesWidth, timesHeight }) {
           flexWrap: 'wrap',
         }}
       >
-        <Link href='https://www.tku.edu/'>
+        <Link href='https://www.tku.edu/' target='_blank'>
           <Image
             src={University.src}
             width={timesWidth / 4}
@@ -26,7 +26,7 @@ export default function Adverts({ timesWidth, timesHeight }) {
             priority
           />
         </Link>
-        <Link href='https://www.arielcollege.com/'>
+        <Link href='https://www.arielcollege.com/' target='_blank'>
           <Image
             src={ArielBanner.src}
             width={timesWidth / 2}
@@ -36,7 +36,7 @@ export default function Adverts({ timesWidth, timesHeight }) {
             priority
           />
         </Link>
-        <Link href='https://mjaa.org'>
+        <Link href='https://mjaa.org' target='_blank'>
           <Image
             src={MJAA.src}
             width={timesWidth / 4}
@@ -56,7 +56,7 @@ export default function Adverts({ timesWidth, timesHeight }) {
           flexWrap: 'wrap',
         }}
       >
-        <Link href='https://www.tku.edu/'>
+        <Link href='https://www.tku.edu/' target='_blank'>
           <Image
             src={University.src}
             width={timesWidth / 4}
@@ -66,7 +66,7 @@ export default function Adverts({ timesWidth, timesHeight }) {
             priority
           />
         </Link>
-        <Link href='https://www.arielcollege.com/'>
+        <Link href='https://www.arielcollege.com/' target='_blank'>
           <Image
             src={ArielBanner.src}
             width={timesWidth / 4}
@@ -76,7 +76,7 @@ export default function Adverts({ timesWidth, timesHeight }) {
             priority
           />
         </Link>
-        <Link href='https://mjaa.org'>
+        <Link href='https://mjaa.org' target='_blank'>
           <Image
             src={MJAA.src}
             width={timesWidth / 4}

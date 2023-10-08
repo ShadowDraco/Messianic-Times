@@ -17,6 +17,7 @@ import { signIn, signOut } from 'next-auth/react'
 import { Heart } from '../../icons/Icons'
 import Link from 'next/link'
 import GetInvolvedButton from './GetInvolvedButton'
+import AdvertiserButton from './AdvertiserButton'
 export default function LargeButtons() {
   const pages = ['Home', 'Read', 'Advertising', 'Get Involved', 'About Us']
   const pageUrls = ['/', '/read', '/advertising', '/get-involved', '/about']
@@ -29,7 +30,6 @@ export default function LargeButtons() {
   ]
 
   const [anchorElNav, setAnchorElNav] = useState(null)
-
   const [anchorElUser, setAnchorElUser] = useState(null)
 
   const handleOpenNavMenu = event => {
@@ -93,6 +93,8 @@ export default function LargeButtons() {
                 {pages.map((page, i) =>
                   page === 'Get Involved' ? (
                     <GetInvolvedButton key={i} menuItem />
+                  ) : page === 'Advertising' ? (
+                    <AdvertiserButton key={i} menuItem />
                   ) : (
                     <Link
                       key={i}
@@ -123,6 +125,8 @@ export default function LargeButtons() {
               {pages.map((page, i) =>
                 page === 'Get Involved' ? (
                   <GetInvolvedButton key={i} />
+                ) : page === 'Advertising' ? (
+                  <AdvertiserButton key={i} />
                 ) : (
                   <Link
                     key={i}

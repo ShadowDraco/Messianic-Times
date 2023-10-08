@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button'
+
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
 import Typography from '@mui/material/Typography'
@@ -9,23 +10,17 @@ import MenuItem from '@mui/material/MenuItem'
 
 import Link from 'next/link'
 
-export default function GetInvolvedButton({ menuItem }) {
-  const handleOpenInvolvedMenu = event => {
-    setAnchorElInvolved(event.currentTarget)
+export default function AdvertiserButton({ menuItem }) {
+  const handleOpenAdvertiserMenu = event => {
+    setAnchorElAdvertiser(event.currentTarget)
   }
 
-  const handleCloseInvolvedMenu = () => {
-    setAnchorElInvolved(null)
+  const handleCloseAdvertiserMenu = () => {
+    setAnchorElAdvertiser(null)
   }
-
-  const involvements = [
-    'Congregation Directory',
-    'Ministry Directory',
-    'Add your congregation!',
-  ]
-  const involvedUrls = ['/congregations', '/ministries', '/add-congregation']
-
-  const [anchorElInvolved, setAnchorElInvolved] = useState(null)
+  const advertisePages = ['Our Advertisers', 'Advertise with Us']
+  const advertiseUrls = ['/advertisers', '/advertising']
+  const [anchorElAdvertiser, setAnchorElAdvertiser] = useState(null)
 
   return (
     <>
@@ -34,21 +29,21 @@ export default function GetInvolvedButton({ menuItem }) {
           size='small'
           variant='contained'
           color='error'
-          onClick={handleOpenInvolvedMenu}
+          onClick={handleOpenAdvertiserMenu}
           sx={{ my: 2 }}
           endIcon={<KeyboardArrowDownIcon />}
         >
-          Get Involved
+          Advertising
         </Button>
       ) : (
-        <MenuItem onClick={handleOpenInvolvedMenu} sx={{ color: 'black' }}>
-          Get Involved ˅
+        <MenuItem onClick={handleOpenAdvertiserMenu} sx={{ color: 'black' }}>
+          Advertising ˅
         </MenuItem>
       )}
       <Menu
         sx={{ mt: '45px' }}
-        id='get-involved-menu'
-        anchorEl={anchorElInvolved}
+        id='get-Advertiser-menu'
+        anchorEl={anchorElAdvertiser}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right',
@@ -58,17 +53,17 @@ export default function GetInvolvedButton({ menuItem }) {
           vertical: 'top',
           horizontal: 'right',
         }}
-        open={Boolean(anchorElInvolved)}
-        onClose={handleCloseInvolvedMenu}
+        open={Boolean(anchorElAdvertiser)}
+        onClose={handleCloseAdvertiserMenu}
       >
-        {involvements.map((involvement, i) => (
+        {advertisePages.map((page, i) => (
           <Link
             key={i}
-            href={involvedUrls[i]}
+            href={advertiseUrls[i]}
             style={{ textDecoration: 'none', color: 'black' }}
           >
-            <MenuItem key={i} onClick={handleCloseInvolvedMenu}>
-              <Typography textAlign='center'>{involvement}</Typography>
+            <MenuItem key={i} onClick={handleCloseAdvertiserMenu}>
+              <Typography textAlign='center'>{page}</Typography>
             </MenuItem>
           </Link>
         ))}
