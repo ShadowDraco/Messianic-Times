@@ -42,26 +42,24 @@ export default function page() {
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'space-evenly',
+          paddingY: 2,
           flexWrap: 'wrap',
-          my: 2,
-          gap: 1,
         }}
       >
         {ads.map((ad, i) => {
           return (
-            <Box width='30%' maxWidth='400px' key={i}>
-              <Link href={ad.url} target='_blank' key={i}>
-                <Image
-                  src={ad.img.src}
-                  width={500}
-                  height={500}
-                  layout='responsive'
-                  alt='advertiser banner'
-                  priority
-                />
-              </Link>
-            </Box>
+            <Link href={ad.url} target='_blank' key={i}>
+              <Image
+                src={ad.img.src}
+                width={500}
+                height={500}
+                layout='responsive'
+                alt='advertiser banner'
+                style={{ maxWidth: 350, maxHeight: 250 }}
+                priority
+              />
+            </Link>
           )
         })}
       </Box>

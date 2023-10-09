@@ -1,6 +1,5 @@
 import { Box, Container } from '@mui/material'
 import React from 'react'
-import Congregations from '../../../public/assets/messianic-times/Congregations.webp'
 import MessianicCongregations from '../../../public/assets/page-titles/MessianicCongregations 1.webp'
 import Image from 'next/image'
 import PageTitle from '../../../components/PageHeader/PageTitle'

@@ -50,9 +50,11 @@ export default function CongregationCard({ church, i }) {
           </Typography>
         </address>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Link href={`tel:${church.phone}`}>
-            <PhoneIcon style={{ color: 'black' }} />
-          </Link>
+          {church.phone !== '' && (
+            <Link href={`tel:${church.phone}`}>
+              <PhoneIcon style={{ color: 'black' }} />
+            </Link>
+          )}
           <Link href={`mailto:${church.email}`}>
             <EmailIcon style={{ color: 'black' }} />
           </Link>

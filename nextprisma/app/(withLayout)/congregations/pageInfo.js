@@ -24,13 +24,13 @@ export const congregations = [
     img: BethSarShalom,
   },
   {
-    name: 'Adat Yeshua Messianic Congregation',
+    name: "Adat Y'shua Messianic Congregation",
     city: 'West Hills',
     state: 'California',
     country: 'United States',
-    url: '',
-    phone: '',
-    email: '',
+    url: 'https://adatyshua.org/',
+    phone: ' (818) 222-0200',
+    email: 'matsuvalleymessianic@gmail.com',
     img: AdatYeshua,
   },
 ]
