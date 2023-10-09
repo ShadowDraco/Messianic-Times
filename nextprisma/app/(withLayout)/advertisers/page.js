@@ -49,7 +49,7 @@ export default function page() {
       >
         {ads.map((ad, i) => {
           return (
-            <Box width='30%' maxWidth='400px'>
+            <Box width='30%' maxWidth='400px' key={i}>
               <Link href={ad.url} target='_blank' key={i}>
                 <Image
                   src={ad.img.src}

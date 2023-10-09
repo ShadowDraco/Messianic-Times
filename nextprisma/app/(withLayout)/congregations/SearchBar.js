@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useRef } from 'react'
 import { Box, Input, Autocomplete, TextField } from '@mui/material'
+import Image from 'next/image'
 export default function SearchBar({ countries, states, congregations }) {
   const CountryRef = useRef(null)
   const StateRef = useRef(null)
@@ -24,9 +25,10 @@ export default function SearchBar({ countries, states, congregations }) {
             sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
             {...props}
           >
-            <img
+            <Image
               loading='lazy'
               width='20'
+              height='10'
               srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
               src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
               alt=''

@@ -31,6 +31,12 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+      },
+    ],
   },
   transpilePackages: ['@mui/system', '@mui/material', '@mui/icons-material'],
   modularizeImports: {
