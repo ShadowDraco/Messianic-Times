@@ -26,6 +26,7 @@ export default function PageTitle({ title, img, width, height }) {
             alt='Page Title'
             layout='responsive'
             style={{ maxWidth: 1345 }}
+            priority
           />
         ) : (
           <Typography

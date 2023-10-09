@@ -1,24 +1,45 @@
 'use client'
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import { Box, Input, Autocomplete, TextField } from '@mui/material'
 import Image from 'next/image'
-export default function SearchBar({ countries, states, congregations }) {
-  const CountryRef = useRef(null)
-  const StateRef = useRef(null)
-  const [search, setSearch] = useState(null)
-  const [country, setCountry] = useState(null)
-  const [city, setCity] = useState(null)
-  const [state, setState] = useState(null)
-
+import { countries, states, congregations } from './pageInfo'
+const cities = congregations.map(congregation => {
+  return congregation.city
+})
+export default function SearchBar({ setCountry, setCity, setState }) {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, py: 3 }}>
       <Autocomplete
-        ref={CountryRef}
+        disablePortal
+        id='cities-box'
+        onChange={e => {
+          setCity(e.target.innerHTML)
+        }}
+        options={cities}
+        sx={{ width: 300 }}
+        renderInput={params => <TextField {...params} label='City' />}
+      />
+      <Autocomplete
+        disablePortal
+        id='combo-box-demo'
+        onChange={e => {
+          setState(e.target.innerHTML)
+        }}
+        options={states}
+        sx={{ width: 300 }}
+        renderInput={params => (
+          <TextField {...params} label='State (US only)' />
+        )}
+      />
+      <Autocomplete
         id='country-select-demo'
         sx={{ width: 300 }}
         options={countries}
         autoHighlight
         getOptionLabel={option => option.label}
+        onChange={e => {
+          setCountry(e.target.innerHTML.split('>')[1])
+        }}
         renderOption={(props, option) => (
           <Box
             component='li'
@@ -33,7 +54,7 @@ export default function SearchBar({ countries, states, congregations }) {
               src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
               alt=''
             />
-            {option.label} ({option.code}) +{option.phone}
+            {option.label}
           </Box>
         )}
         renderInput={params => (
@@ -45,16 +66,6 @@ export default function SearchBar({ countries, states, congregations }) {
               autoComplete: 'new-password', // disable autocomplete and autofill
             }}
           />
-        )}
-      />
-      <Autocomplete
-        ref={StateRef}
-        disablePortal
-        id='combo-box-demo'
-        options={states}
-        sx={{ width: 300 }}
-        renderInput={params => (
-          <TextField {...params} label='State (US only)' />
         )}
       />
     </Box>

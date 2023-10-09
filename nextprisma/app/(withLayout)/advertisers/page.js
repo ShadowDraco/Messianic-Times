@@ -35,6 +35,7 @@ export default function page() {
             height={MJPRBanner.height}
             layout='responsive'
             alt='Messianic Jewish Publications'
+            priority
           />
         </Link>
       </Box>
@@ -57,6 +58,7 @@ export default function page() {
                   height={500}
                   layout='responsive'
                   alt='advertiser banner'
+                  priority
                 />
               </Link>
             </Box>
