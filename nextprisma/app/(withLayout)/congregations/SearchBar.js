@@ -6,6 +6,7 @@ import { countries, states, congregations } from './pageInfo'
 const cities = congregations.map(congregation => {
   return congregation.city
 })
+
 export default function SearchBar({ setCountry, setCity, setState }) {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, py: 3 }}>

@@ -36,18 +36,7 @@ export default function AboutPage() {
           We are more than a newspaper!
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Link href='https://www.arielcollege.com/'>
-            <Image
-              src={ArielBanner.src}
-              width={ArielBanner.width}
-              height={ArielBanner.height}
-              layout={'responsive'}
-              alt='Ariel College'
-              style={{ maxWidth: 350, maxHeight: 250 }}
-              priority
-            />
-          </Link>
-          {/*<LitePlayer />*/}
+          <LitePlayer />
         </Box>
       </Box>
 

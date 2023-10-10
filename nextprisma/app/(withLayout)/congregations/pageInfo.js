@@ -1,7 +1,7 @@
 import AdatHallel from '../../../public/assets/congregations/AdatHallel.webp'
 import BethSarShalom from '../../../public/assets/congregations/BethSarShalom.webp'
 import AdatYeshua from '../../../public/assets/congregations/AdatYeshua.webp'
-
+import Ohav from '../../../public/assets/congregations/Ohav.webp'
 export const congregations = [
   {
     name: 'Adat Hallel Messianic Congregation',
@@ -33,6 +33,16 @@ export const congregations = [
     email: 'matsuvalleymessianic@gmail.com',
     img: AdatYeshua,
   },
+  /*{
+    name: 'Ohav Shalom Messianic Congregation',
+    city: 'Cathedral City',
+    state: 'California',
+    country: 'United States',
+    url: 'https://ohavshalomministries.org/',
+    phone: '(760) 668-5966',
+    email: 'info@ohavshalomministries.org',
+    img: Ohav,
+  },*/
 ]
 
 export const states = [
