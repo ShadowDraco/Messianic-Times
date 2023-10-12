@@ -7,11 +7,8 @@ import CalImage from '../../../public/assets/board-members/Cal.webp'
 import JeffImage from '../../../public/assets/board-members/Jeff.webp'
 import JoelImage from '../../../public/assets/board-members/Joel.webp'
 import SusanImage from '../../../public/assets/board-members/Susan2.webp'
+import FrankImage from '../../../public/assets/board-members/Frank.webp'
 import LitePlayer from '../../../components/videoPlayer/LitePlayer'
-import Image from 'next/image'
-import Link from 'next/link'
-import ArielBanner from '../../../public/assets/adverts/ArielBanner.webp'
-const apos = '&#39;'
 
 export default function AboutPage() {
   return (
@@ -235,6 +232,16 @@ export default function AboutPage() {
               'Founder, Congregation Beth Shechinah',
               'Interim President, Messianic Jewish Alliance of Canada',
               'MJAA, IAMCS, JVMC, ReachII, MI',
+            ]}
+          />
+          <BoardMemberCard
+            image={FrankImage}
+            name='Frank Lowinger (US)'
+            description={[
+              'Rabbi, Congregation Brith Hadoshah Messianic Synagogue',
+              'Executive Committee Member (MJAA)',
+              `Sought after teacher at MJBI`,
+              'Past Chairman, Int’l Alliance of Messianic Cong’s &amp; Synagogues (IAMCS)',
             ]}
           />
         </Box>
