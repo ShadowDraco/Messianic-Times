@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import React from 'react'
 import AudioPlayer from '../audio/AudioPlayer'
 import ContactUsButton from '../Buttons/ContactUsButton'
-export default function MainFooter() {
+export default function MainFooter({ audioVolume }) {
   return (
     <Box
       sx={{
@@ -26,7 +26,7 @@ export default function MainFooter() {
         },
       }}
     >
-      <AudioPlayer />
+      <AudioPlayer audioVolume={audioVolume} />
       <Box>
         <ContactUsButton />
       </Box>

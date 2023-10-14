@@ -6,6 +6,5 @@ import isAdmin from '../../../lib/auth-functions/isAdmin'
 
 export default async function page() {
   const ServerSession = await getServerSession(authOptions)
-
   return <MainPage isAdmin={isAdmin(ServerSession)} />
 }

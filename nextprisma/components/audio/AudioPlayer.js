@@ -5,10 +5,10 @@ import { VolumeUp } from '@mui/icons-material'
 
 import PlayPauseButtons from './PlayPauseButtons'
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ audioVolume, audioAutoPlay }) => {
   const audioRef = useRef()
 
-  const [volume, setVolume] = useState(20)
+  const [volume, setVolume] = useState(audioVolume)
   const [paused, setPaused] = useState(false)
   const [song, setSong] = useState(Math.floor(Math.random() * 3))
 
@@ -39,7 +39,9 @@ const AudioPlayer = () => {
   }
 
   useEffect(() => {
-    playRandomSong()
+    if (audioAutoPlay) {
+      playRandomSong()
+    }
     audioRef.current.volume = volume / 100
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -48,7 +50,7 @@ const AudioPlayer = () => {
       <audio
         ref={audioRef}
         src={playlist[song]}
-        autoPlay
+        autoPlay={audioAutoPlay}
         onEnded={() => {
           playRandomSong()
         }}

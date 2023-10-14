@@ -3,7 +3,10 @@ import React from 'react'
 import MainHeader from '../../components/PageHeader/MainHeader'
 import PageFooter from '../../components/PageFooter/PageFooter'
 import Box from '@mui/material/Box'
-export default function layout({ children }) {
+import { getServerSession } from 'next-auth'
+import { authOptions } from '../api/auth/[...nextauth]/route'
+export default async function layout({ children }) {
+ 
   return (
     <div>
       <MainHeader />
@@ -17,7 +20,7 @@ export default function layout({ children }) {
       >
         {children}
       </Box>
-      <PageFooter />
+      <PageFooter/>
     </div>
   )
 }
