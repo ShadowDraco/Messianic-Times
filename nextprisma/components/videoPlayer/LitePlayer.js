@@ -13,7 +13,7 @@ export default function LitePlayer() {
         cursor: 'pointer',
       }}
     >
-      < LiteYoutubeEmbed id='X4S0MYMb4os' />
+
       /*<LiteYoutubeEmbed id='X4S0MYMb4os' mute={false} lazyImage={true} iframeTitle='More than a newspaper!' imageAltText='More than a newspaper!' />*/
     </Box>
   )
