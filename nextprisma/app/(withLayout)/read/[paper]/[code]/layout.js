@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Choose a Paper',
+  title: 'The Newspaper',
   description: 'Read all of the newspapers you know and love',
 }
 import React from 'react'

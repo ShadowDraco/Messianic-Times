@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import Box from '@mui/material/Box'
-//import { LiteYoutubeEmbed } from 'react-lite-yt-embed'
 
 import YouTube from 'react-youtube'
 import { useWindowContext } from '../../app/Providers'

@@ -101,6 +101,7 @@ export const authOptions = {
           endSubscriptionDate: token.endSubscriptionDate,
           emailPreferences: token.emailPreferences,
           phonePreferences: token.phonePreferences,
+          activated: token.activated,
         },
       }
     },

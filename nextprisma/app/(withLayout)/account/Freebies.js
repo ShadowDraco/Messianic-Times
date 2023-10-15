@@ -6,12 +6,11 @@ import Image from 'next/image'
 import { useWindowContext } from '../../Providers'
 import FreePaperButton from './FreePaperButton'
 import Link from 'next/link'
+import { NewspaperCovers } from '../../../public/assets/papers/NewspaperScreenshots/Newspaper'
 export default function Freebies({ session, update }) {
   if (!session) return ''
   const user = session.user
-  const paperDirectory = `/assets/papers/NewsPaperCovers/${
-    user.whichFreePaper ? user.whichFreePaper : '1'
-  }.webp`
+  const paperDirectory = NewspaperCovers[user.whichFreePaper]
 
   const { timesWidth, timesHeight } = useWindowContext()
   const [editing, setEditing] = useState(false)
@@ -39,7 +38,7 @@ export default function Freebies({ session, update }) {
             <Box className='hoverDarken' sx={{ transition: '1s' }}>
               <Link href={`/trialPaper/${user.whichFreePaper}`}>
                 <Image
-                  src={paperDirectory}
+                  src={paperDirectory.src}
                   width={timesWidth / 3}
                   height={timesHeight * 4}
                   alt={'Free Paper'}

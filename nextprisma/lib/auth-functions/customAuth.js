@@ -39,5 +39,6 @@ export const authorizeUser = async credentials => {
     hasFreePaper: user.hasFreePaper,
     subscriptionType: user.subscriptionType,
     whichFreePaper: user.whichFreePaper,
+    activated: user.activated,
   }
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 
 export default function loading() {
-  return <div>loading all papers</div>
+  return (
+    <div>loading paper...</div>
+  )
 }

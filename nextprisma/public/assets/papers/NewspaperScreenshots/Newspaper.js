@@ -20,6 +20,7 @@ import cover5 from './5.webp'
 
 export const Newspaper1 = [page1, page2, page3, page4, page5, page6]
 export const NewspaperCovers = [cover1, cover2, cover3, cover4, cover5]
+export const NewspaperIds = ['gnhwo/kuyf/']
 export const TrialPaper = [
   trialPage1,
   trialPage2,
