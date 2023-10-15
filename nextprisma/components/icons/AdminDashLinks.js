@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
@@ -9,8 +8,6 @@ import {
   Pay,
   Users,
   Star,
-  Heart,
-  Globe,
   At,
 } from '../icons/Icons'
 
@@ -23,6 +20,7 @@ export default function AdminDashLinks() {
         width: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
+        backgroundColor: 'white',
       }}
     >
       <Link href='/studio'>

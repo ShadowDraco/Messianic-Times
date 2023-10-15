@@ -9,8 +9,9 @@ body {
   scrollbar-gutter: stable;
 }
 
-.yt-lite {
-  height: '100%';
+.hoverDarken:hover {
+  opacity: 90%;
+  background-color: black;
 }
 
 input {

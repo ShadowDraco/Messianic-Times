@@ -37,6 +37,12 @@ export const authOptions = {
         if (session.autoPlay) {
           token.autoPlay = session.autoPlay
         }
+        if (session.hasFreePaper) {
+          token.hasFreePaper = session.hasFreePaper
+        }
+        if (session.whichFreePaper) {
+          token.whichFreePaper = session.whichFreePaper
+        }
         if (session.name) {
           token.name = session.name
           //user.name = session.name;

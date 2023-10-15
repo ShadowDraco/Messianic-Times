@@ -9,7 +9,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 
 export default function page({ isAdmin }) {
   const { data: session, update } = useSession()
-  console.log(session)
+  
   return (
     <Container sx={{ backgroundColor: 'white', margin: 'auto', py: 2 }}>
       <Box
@@ -46,11 +46,11 @@ export default function page({ isAdmin }) {
         </Box>
       )}
 
-      <Box>
+      <Box
+        sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}
+      >
         <EditAccount session={session} update={update} />
-      </Box>
 
-      <Box>
         <Freebies session={session} update={update} />
       </Box>
 
