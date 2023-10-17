@@ -8,8 +8,8 @@ export default function FaithImage({ size, img }) {
     <SyncedBreath width='100%'>
       <Image
         src={img}
-        width={size * 0.15}
-        height={size * 0.1}
+        width={size * 0.3}
+        height={size * 0.22}
         alt={'Sharing Faith link'}
         priority={true}
       />

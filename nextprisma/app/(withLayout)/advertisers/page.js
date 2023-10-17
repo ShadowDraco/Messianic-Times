@@ -27,7 +27,7 @@ export default function page() {
     >
       <Typography variant='h3' textAlign={'center'} mb={3} color='white'>
         {' '}
-        Meet Our Advertisers!
+        Support Our Advertisers!
       </Typography>
 
       <Box

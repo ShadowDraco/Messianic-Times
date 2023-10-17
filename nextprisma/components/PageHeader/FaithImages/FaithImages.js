@@ -11,20 +11,13 @@ import FaithImage from './FaithImage'
 import Link from 'next/link'
 export default function FaithImages() {
   const { timesWidth, timesHeight } = useWindowContext()
-  const [spaceType, setSpaceType] = useState('space-between')
-  useEffect(() => {
-    if (timesWidth < 500) {
-      setSpaceType('space-evenly')
-    } else {
-      setSpaceType('space-between')
-    }
-  }, [timesWidth])
+
   return (
     <Box
       sx={{
         display: 'flex',
-        justifyContent: spaceType,
-
+        justifyContent: 'center',
+        gap: 2,
         paddingY: 1,
         maxWidth: '1350px',
         margin: 'auto',

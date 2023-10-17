@@ -33,16 +33,7 @@ export const congregations = [
     email: 'matsuvalleymessianic@gmail.com',
     img: AdatYeshua,
   },
-  /*{
-    name: 'Ohav Shalom Messianic Congregation',
-    city: 'Cathedral City',
-    state: 'California',
-    country: 'United States',
-    url: 'https://ohavshalomministries.org/',
-    phone: '(760) 668-5966',
-    email: 'info@ohavshalomministries.org',
-    img: Ohav,
-  },*/
+
 ]
 
 export const states = [

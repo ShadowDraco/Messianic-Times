@@ -14,20 +14,6 @@ export default function MainPage({ session }) {
 
   return (
     <>
-      <Box sx={{ paddingY: 3, backgroundColor: '#0D99FF' }}>
-        <Typography
-          variant='h4'
-          color='white'
-          fontWeight={'bold'}
-          textAlign={'center'}
-          paddingBottom={2}
-        >
-          Visit our Advertisers
-        </Typography>
-
-        <Adverts timesWidth={timesWidth} timesHeight={timesHeight} />
-      </Box>
-
       <Typography
         variant='h4'
         color='black'
@@ -65,6 +51,19 @@ export default function MainPage({ session }) {
           style={{ maxWidth: timesWidth > 1000 ? '700px' : '500px' }}
           alt='Preview of latest issue'
         />
+      </Box>
+      <Box sx={{ paddingY: 3, backgroundColor: '#0D99FF' }}>
+        <Typography
+          variant='h4'
+          color='white'
+          fontWeight={'bold'}
+          textAlign={'center'}
+          paddingBottom={2}
+        >
+          Visit our Advertisers
+        </Typography>
+
+        <Adverts timesWidth={timesWidth} timesHeight={timesHeight} />
       </Box>
     </>
   )

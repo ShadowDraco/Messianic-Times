@@ -13,14 +13,14 @@ import Container from '@mui/material/Container'
 import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import { signIn, signOut } from 'next-auth/react'
+
 import { Heart } from '../../icons/Icons'
 import Link from 'next/link'
 import GetInvolvedButton from './GetInvolvedButton'
 import AdvertiserButton from './AdvertiserButton'
 export default function LargeButtons() {
-  const pages = ['Home', 'Read', 'Advertising', 'Get Involved', 'About Us']
-  const pageUrls = ['/', '/read', '/advertising', '/get-involved', '/about']
+  const pages = ['Home', 'Read', 'Advertising', 'About Us']
+  const pageUrls = ['/', '/read', '/advertising', '/about']
   const settings = ['Account', 'Login', 'Logout', 'Help']
   const settingUrls = [
     '/account',
@@ -151,9 +151,41 @@ export default function LargeButtons() {
               )}
             </Box>
 
+            <Link href='/get-involved'>
+              <Button
+                sx={{
+                  marginRight: 3,
+                  backgroundColor: 'white',
+                  color: 'blue',
+                  fontWeight: 'bold',
+                }}
+                size='large'
+                variant='contained'
+              >
+                Messianic Community
+              </Button>
+            </Link>
+            <Link href='/products'>
+              <Button
+                sx={{
+                  marginRight: 3,
+                  backgroundColor: 'orange',
+                  color: 'black',
+                }}
+                size='large'
+                variant='contained'
+              >
+                Subscribe
+              </Button>
+            </Link>
+
             <Link href='/donate'>
               <Button
-                sx={{ marginRight: 3, backgroundColor: 'rgb(200, 100, 100)' }}
+                sx={{
+                  marginRight: 3,
+                  backgroundColor: 'orange',
+                  color: 'rgb(255, 255, 255)',
+                }}
                 size='large'
                 variant='contained'
                 endIcon={<Heart />}
