@@ -20,7 +20,8 @@ export default function NotLoggedIn() {
             my: 5,
             display: 'flex',
             justifyContent: 'space-evenly',
-            gap: 3,
+            gap: 2,
+            flexWrap: 'wrap',
             alignItems: 'center',
           }}
         >

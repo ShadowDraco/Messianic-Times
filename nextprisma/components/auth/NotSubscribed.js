@@ -21,8 +21,9 @@ export default function NotAuthorized() {
             my: 5,
             display: 'flex',
             justifyContent: 'space-evenly',
-            gap: 3,
+            gap: 2,
             alignItems: 'center',
+            flexWrap: 'wrap',
           }}
         >
           <Link href='/products'>
@@ -36,7 +37,7 @@ export default function NotAuthorized() {
             </Button>
           </Link>
           <Link href='/'>
-            <Button variant='contained'>Home page</Button>
+            <Button variant='contained'>Home</Button>
           </Link>
         </Box>
       </Box>

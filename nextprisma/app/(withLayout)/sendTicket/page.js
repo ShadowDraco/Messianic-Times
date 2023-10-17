@@ -4,7 +4,6 @@ import {
   Container,
   Box,
   Typography,
-
   Input,
   FormControl,
   InputLabel,
@@ -49,65 +48,97 @@ export default function page() {
   }
 
   return (
-    <Container sx={{ backgroundColor: 'white', marginY: 2, paddingY: 2 }}>
+    <Container
+      sx={{ backgroundColor: 'white', margin: 'auto', marginY: 2, paddingY: 2 }}
+    >
       <Typography variant='h4'>Contact us</Typography>
-      <FormControl>
-        <InputLabel htmlFor='title'>Title</InputLabel>
-        <Input
-          type='text'
-          id='title'
-          placeholder='title'
-          inputRef={titleRef}
-        ></Input>
-      </FormControl>
-      <FormControl>
-        <InputLabel htmlFor='description'>Description</InputLabel>
-        <Input
-          type='text'
-          id='description'
-          placeholder='description'
-          inputRef={descRef}
-        ></Input>
-      </FormControl>
-
-      <FormControl>
-        <InputLabel htmlFor='name'>Name</InputLabel>
-        <Input
-          type='text'
-          id='name'
-          placeholder='Name'
-          inputRef={nameRef}
-        ></Input>
-      </FormControl>
-      <FormControl>
-        <InputLabel htmlFor='email'>Email</InputLabel>
-        <Input
-          type='text'
-          id='email'
-          placeholder='email'
-          inputRef={emailRef}
-        ></Input>
-      </FormControl>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Typography variant='overline'>Important? </Typography>
+      <Typography variant='body1'>
+        We will get to you as soon as we can. Thank you!
+      </Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 1,
+          flexWrap: 'wrap',
+          my: 2,
+        }}
+      >
         <FormControl>
-          <Input type='checkbox' id='important' inputRef={importantRef}></Input>
+          <InputLabel htmlFor='title'>Title</InputLabel>
+          <Input
+            type='text'
+            id='title'
+            placeholder='title'
+            inputRef={titleRef}
+          ></Input>
+        </FormControl>
+        <FormControl>
+          <InputLabel htmlFor='description'>Description</InputLabel>
+          <Input
+            type='text'
+            id='description'
+            placeholder='description'
+            inputRef={descRef}
+          ></Input>
+        </FormControl>
+
+        <FormControl>
+          <InputLabel htmlFor='name'>Name</InputLabel>
+          <Input
+            type='text'
+            id='name'
+            placeholder='Name'
+            inputRef={nameRef}
+          ></Input>
+        </FormControl>
+        <FormControl>
+          <InputLabel htmlFor='email'>Email</InputLabel>
+          <Input
+            type='text'
+            id='email'
+            placeholder='email'
+            inputRef={emailRef}
+          ></Input>
         </FormControl>
       </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 2,
+          flexWrap: 'wrap',
+        }}
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Typography variant='overline'>Important? </Typography>
+          <FormControl>
+            <Input
+              type='checkbox'
+              id='important'
+              inputRef={importantRef}
+            ></Input>
+          </FormControl>
+        </Box>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <LoadingButton
-          loading={loading}
-          loadingPosition='end'
-          size='large'
-          endIcon={<ReceiptIcon />}
-          onClick={e => {
-            submitTicket()
-          }}
-        >
-          <span>Send</span>
-        </LoadingButton>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <LoadingButton
+            loading={loading}
+            loadingPosition='end'
+            size='large'
+            endIcon={<ReceiptIcon />}
+            onClick={e => {
+              submitTicket()
+            }}
+          >
+            <span>Send</span>
+          </LoadingButton>
+        </Box>
       </Box>
+      <Typography variant='caption' my={2} color='chocolate'>
+        {' '}
+        Please mark it as important only if you require an immediate response.
+      </Typography>
     </Container>
   )
 }
