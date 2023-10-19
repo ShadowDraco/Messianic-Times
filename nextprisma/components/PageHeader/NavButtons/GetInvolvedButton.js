@@ -31,18 +31,17 @@ export default function GetInvolvedButton({ menuItem }) {
     <>
       {!menuItem ? (
         <Button
-          size='small'
           variant='contained'
-          color='error'
+          size='small'
           onClick={handleOpenInvolvedMenu}
-          sx={{ my: 2 }}
+          sx={{ my: 2, color: 'blue', backgroundColor: 'white' }}
           endIcon={<KeyboardArrowDownIcon />}
         >
-          Get Involved
+          Messianic Community
         </Button>
       ) : (
         <MenuItem onClick={handleOpenInvolvedMenu} sx={{ color: 'black' }}>
-          Get Involved ˅
+          Messianic Community ˅
         </MenuItem>
       )}
       <Menu

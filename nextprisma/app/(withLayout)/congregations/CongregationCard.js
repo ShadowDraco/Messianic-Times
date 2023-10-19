@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { Box, Typography } from '@mui/material'
 export default function CongregationCard({ church, i }) {
   return (
-    <Box sx={{ px: 1, backgroundColor: 'rgb(24, 46, 66)', maxWidth: '47% ' }}>
+    <Box sx={{ px: 1, backgroundColor: 'rgb(24, 46, 66)', width: '47%' }}>
       <Box
         sx={{
           display: 'flex',

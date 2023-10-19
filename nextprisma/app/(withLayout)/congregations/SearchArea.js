@@ -22,6 +22,7 @@ export default function SearchArea() {
     if (city !== '') return church.city === city
     return true
   }
+  console.log(city)
   return (
     <>
       <SearchBar

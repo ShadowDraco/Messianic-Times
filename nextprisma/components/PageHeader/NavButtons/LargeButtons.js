@@ -18,9 +18,18 @@ import { Heart } from '../../icons/Icons'
 import Link from 'next/link'
 import GetInvolvedButton from './GetInvolvedButton'
 import AdvertiserButton from './AdvertiserButton'
+import { useWindowContext } from '../../../app/Providers'
 export default function LargeButtons() {
-  const pages = ['Home', 'Read', 'Advertising', 'About Us']
-  const pageUrls = ['/', '/read', '/advertising', '/about']
+  const { timesWidth } = useWindowContext()
+  console.log(timesWidth)
+  const pages = [
+    'Home',
+    'Read',
+    'Advertising',
+    'About Us',
+    'Messianic Community',
+  ]
+  const pageUrls = ['/', '/read', '/advertising', '/about', '']
   const settings = ['Account', 'Login', 'Logout', 'Help']
   const settingUrls = [
     '/account',
@@ -91,7 +100,7 @@ export default function LargeButtons() {
                 }}
               >
                 {pages.map((page, i) =>
-                  page === 'Get Involved' ? (
+                  page === 'Messianic Community' ? (
                     <GetInvolvedButton key={i} menuItem />
                   ) : page === 'Advertising' ? (
                     <AdvertiserButton key={i} menuItem />
@@ -123,7 +132,9 @@ export default function LargeButtons() {
               }}
             >
               {pages.map((page, i) =>
-                page === 'Get Involved' ? (
+                timesWidth < 1100 && page === 'Home' ? (
+                  ''
+                ) : page === 'Messianic Community' ? (
                   <GetInvolvedButton key={i} />
                 ) : page === 'Advertising' ? (
                   <AdvertiserButton key={i} />
@@ -151,33 +162,23 @@ export default function LargeButtons() {
               )}
             </Box>
 
-            <Link href='/get-involved'>
-              <Button
-                sx={{
-                  marginRight: 3,
-                  backgroundColor: 'white',
-                  color: 'blue',
-                  fontWeight: 'bold',
-                }}
-                size='large'
-                variant='contained'
-              >
-                Messianic Community
-              </Button>
-            </Link>
-            <Link href='/products'>
-              <Button
-                sx={{
-                  marginRight: 3,
-                  backgroundColor: 'orange',
-                  color: 'black',
-                }}
-                size='large'
-                variant='contained'
-              >
-                Subscribe
-              </Button>
-            </Link>
+            {timesWidth > 1015 || timesWidth < 880 ? (
+              <Link href='/products'>
+                <Button
+                  sx={{
+                    marginRight: 3,
+                    backgroundColor: 'orange',
+                    color: 'black',
+                  }}
+                  size='large'
+                  variant='contained'
+                >
+                  Subscribe
+                </Button>
+              </Link>
+            ) : (
+              ''
+            )}
 
             <Link href='/donate'>
               <Button

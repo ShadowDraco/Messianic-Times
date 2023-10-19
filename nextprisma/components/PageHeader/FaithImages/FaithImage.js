@@ -12,6 +12,8 @@ export default function FaithImage({ size, img }) {
         height={size * 0.22}
         alt={'Sharing Faith link'}
         priority={true}
+        layout='responsive'
+        style={{ maxWidth: '70%'}}
       />
     </SyncedBreath>
   )
