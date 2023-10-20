@@ -21,7 +21,7 @@ import AdvertiserButton from './AdvertiserButton'
 import { useWindowContext } from '../../../app/Providers'
 export default function LargeButtons() {
   const { timesWidth } = useWindowContext()
-  console.log(timesWidth)
+
   const pages = [
     'Home',
     'Read',

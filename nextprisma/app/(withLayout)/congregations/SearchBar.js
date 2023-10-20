@@ -28,9 +28,7 @@ export default function SearchBar({ setCountry, setCity, setState }) {
         }}
         options={states}
         sx={{ width: 300 }}
-        renderInput={params => (
-          <TextField {...params} label='State (US only)' />
-        )}
+        renderInput={params => <TextField {...params} label='(US) State' />}
       />
       <Autocomplete
         id='country-select-demo'
