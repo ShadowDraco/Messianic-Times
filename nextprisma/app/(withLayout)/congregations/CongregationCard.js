@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { Box, Typography } from '@mui/material'
-export default function CongregationCard({ church, i }) {
+export default function CongregationCard({ church, i, imageDirectory }) {
   return (
     <Box sx={{ px: 1, backgroundColor: 'rgb(24, 46, 66)', width: '47%' }}>
       <Box
@@ -17,12 +17,19 @@ export default function CongregationCard({ church, i }) {
           backgroundColor: 'white',
         }}
       >
-        <Link href={church.url} target='_blank'>
-          <Typography fontWeight={'bold'}>{church.name}</Typography>{' '}
-        </Link>
-        <Link href={church.url} target='_blank'>
-          <ArrowRightAltIcon fontSize='large' style={{ color: 'black' }} />{' '}
-        </Link>
+        {church.url === '' ? (
+          <Typography fontWeight={'bold'}>{church.name}</Typography>
+        ) : (
+          <>
+            {' '}
+            <Link href={church.url} target='_blank'>
+              <Typography fontWeight={'bold'}>{church.name}</Typography>{' '}
+            </Link>
+            <Link href={church.url} target='_blank'>
+              <ArrowRightAltIcon fontSize='large' style={{ color: 'black' }} />{' '}
+            </Link>
+          </>
+        )}
       </Box>
       <Box
         sx={{
@@ -36,9 +43,9 @@ export default function CongregationCard({ church, i }) {
       >
         <Box sx={{ maxWidth: '30% ' }}>
           <Image
-            src={church.img.src}
-            width={church.img.width}
-            height={church.img.height}
+            src={`/assets/congregations/${church.img}`}
+            width={125}
+            height={125}
             alt={church.name}
             layout='responsive'
             priority={i < 20}

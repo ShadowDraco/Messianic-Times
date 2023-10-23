@@ -1,15 +1,10 @@
 'use client'
 import React, { useState } from 'react'
-import { Box } from '@mui/material'
-import SearchBar from './SearchBar'
 import CongregationCard from './CongregationCard'
-import { congregations } from './pageInfo'
-export default function SearchArea() {
-  const [search, setSearch] = useState(null)
-  const [country, setCountry] = useState('')
-  const [city, setCity] = useState('')
-  const [state, setState] = useState('')
+import Box from '@mui/material/Box'
+import SearchBar from './SearchBar'
 
+export default function SearchArea({ congregations, imageDirectory}) {
   const countryFilter = church => {
     if (country !== '') return church.country === country
     return true
@@ -22,7 +17,11 @@ export default function SearchArea() {
     if (city !== '') return church.city === city
     return true
   }
-  console.log(city)
+
+  const [country, setCountry] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+
   return (
     <>
       <SearchBar
@@ -30,7 +29,6 @@ export default function SearchArea() {
         setCountry={setCountry}
         setState={setState}
       />
-
       <Box
         sx={{
           display: 'flex',
@@ -45,7 +43,7 @@ export default function SearchArea() {
             cityFilter(church) &&
             stateFilter(church)
           )
-            return <CongregationCard church={church} key={i} />
+            return <CongregationCard church={church} key={i} imageDirectory={imageDirectory}/>
         })}
       </Box>
     </>

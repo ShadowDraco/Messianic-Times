@@ -1,5 +1,5 @@
-import { Box, Container, Typography } from '@mui/material'
-import React from 'react'
+import Box from '@mui/material/Box'
+
 import MessianicMinistriesWorldWide from '../../../public/assets/page-titles/MessianicMinistriesWorldWide.webp'
 import Image from 'next/image'
 import PageTitle from '../../../components/PageHeader/PageTitle'
@@ -35,8 +35,8 @@ export default async function page() {
             flexWrap: 'wrap',
           }}
         >
-          {imageFilenames.map((el, i) => (
-            <Link href={urlsInOrder[i]} key={el} target='_blank'>
+          {imageFilenames.map((file, i) => (
+            <Link href={urlsInOrder[i]} key={file} target='_blank'>
               <Image
                 width={500}
                 height={500}
@@ -44,7 +44,7 @@ export default async function page() {
                 alt={altNames[i]}
                 style={{ maxWidth: 350, maxHeight: 250 }}
                 priority
-                src={`/assets/ministries/${el}`}
+                src={`/assets/ministries/${file}`}
               />
             </Link>
           ))}
