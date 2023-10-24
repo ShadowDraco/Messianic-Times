@@ -3,12 +3,13 @@ import University from '../../public/assets/adverts/University.webp'
 import MJAA from '../../public/assets/adverts/MJAA.webp'
 import ArielBanner from '../../public/assets/adverts/ArielBanner.webp'
 import MJPR from '../../public/assets/adverts/MJPR.webp'
+import IMJA1 from '../../public/assets/adverts/IMJA1.png'
 import Ariel from '../../public/assets/adverts/ariel-ad.webp'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
 export default function Adverts({ timesWidth, timesHeight }) {
-  const imageSize = 5.5
+  const imageSize = 7
   return (
     <>
       <Box
@@ -29,14 +30,15 @@ export default function Adverts({ timesWidth, timesHeight }) {
             priority
           />
         </Link>
-        <Link href='https://www.arielcollege.com/' target='_blank'>
+
+        <Link href='https://imja.org' target='_blank'>
           <Image
-            src={ArielBanner.src}
+            src={IMJA1.src}
             width={timesWidth / imageSize}
             height={timesWidth / imageSize}
-            alt='Ariel College'
-            style={{ maxWidth: 350, maxHeight: 250 }}
+            alt='International Messianic Jewish Alliance'
             priority
+            style={{ maxWidth: 350, maxHeight: 250 }}
           />
         </Link>
 
@@ -68,6 +70,16 @@ export default function Adverts({ timesWidth, timesHeight }) {
             alt='Messianic Jewish Publishers and Resources'
             priority
             style={{ maxWidth: 350, maxHeight: 250 }}
+          />
+        </Link>
+        <Link href='https://www.arielcollege.com/' target='_blank'>
+          <Image
+            src={ArielBanner.src}
+            width={timesWidth / imageSize}
+            height={timesWidth / imageSize}
+            alt='Ariel College'
+            style={{ maxWidth: 350, maxHeight: 250 }}
+            priority
           />
         </Link>
       </Box>

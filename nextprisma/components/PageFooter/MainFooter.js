@@ -26,7 +26,7 @@ export default function MainFooter({ audioVolume }) {
         },
       }}
     >
-      <AudioPlayer audioVolume={audioVolume} /> JOSHUA AARON
+      <AudioPlayer audioVolume={audioVolume} />
       <Box>
         <ContactUsButton />
       </Box>
