@@ -18,8 +18,8 @@ export default function AdvertiserButton({ menuItem }) {
   const handleCloseAdvertiserMenu = () => {
     setAnchorElAdvertiser(null)
   }
-  const advertisePages = ['Advertise with Us', 'Our Advertisers']
-  const advertiseUrls = ['/advertising', '/advertisers']
+  const advertisePages = ['Start Advertising', 'Advertise with Us', 'Our Advertisers']
+  const advertiseUrls = ['/start-advertising', '/advertising', '/advertisers']
   const [anchorElAdvertiser, setAnchorElAdvertiser] = useState(null)
 
   return (

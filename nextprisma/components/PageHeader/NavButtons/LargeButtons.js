@@ -168,7 +168,8 @@ export default function LargeButtons() {
                   sx={{
                     marginRight: 3,
                     backgroundColor: 'orange',
-                    color: 'black',
+                    color: 'rgb(24, 46, 66)',
+                    fontWeight: 'bold',
                   }}
                   size='large'
                   variant='contained'
