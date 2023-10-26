@@ -67,172 +67,175 @@ export default function LargeButtons() {
         margin: 'auto',
       }}
     >
-      <AppBar position='static'>
-        <Container maxWidth='xl'>
-          <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size='large'
-                aria-label='account of current user'
-                aria-controls='menu-appbar'
-                aria-haspopup='true'
-                onClick={handleOpenNavMenu}
-                color='inherit'
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id='menu-appbar'
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                {pages.map((page, i) =>
-                  page === 'Messianic Community' ? (
-                    <GetInvolvedButton key={i} menuItem />
-                  ) : page === 'Advertising' ? (
-                    <AdvertiserButton key={i} menuItem />
-                  ) : (
-                    <Link
-                      key={i}
-                      href={pageUrls[i]}
-                      style={{ textDecoration: 'none', color: 'black' }}
-                    >
-                      <MenuItem
-                        key={page}
-                        onClick={handleCloseNavMenu}
-                        variant='contained'
-                        sx={{ backgroundColor: 'white' }}
-                      >
-                        <Typography textAlign='center'>{page}</Typography>
-                      </MenuItem>
-                    </Link>
-                  )
-                )}
-              </Menu>
-            </Box>
-
-            <Box
+      <AppBar position='static' sx={{ px: 1 }}>
+        <Toolbar disableGutters>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+            }}
+          >
+            <IconButton
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
+              onClick={handleOpenNavMenu}
+              color='inherit'
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id='menu-appbar'
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                flexGrow: 1,
-                display: { xs: 'none', md: 'flex' },
-                gap: 3,
+                display: { xs: 'block', md: 'none' },
               }}
             >
               {pages.map((page, i) =>
-                timesWidth < 1100 && page === 'Home' ? (
-                  ''
-                ) : page === 'Messianic Community' ? (
-                  <GetInvolvedButton key={i} />
+                page === 'Messianic Community' ? (
+                  <GetInvolvedButton key={i} menuItem />
                 ) : page === 'Advertising' ? (
-                  <AdvertiserButton key={i} />
+                  <AdvertiserButton key={i} menuItem />
                 ) : (
                   <Link
                     key={i}
                     href={pageUrls[i]}
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <Button
+                    <MenuItem
                       key={page}
                       onClick={handleCloseNavMenu}
                       variant='contained'
-                      color='error'
-                      sx={{
-                        my: 2,
-                        color: 'white',
-                        display: 'block',
-                      }}
+                      sx={{ backgroundColor: 'white' }}
                     >
-                      {page}
-                    </Button>
+                      <Typography textAlign='center'>{page}</Typography>
+                    </MenuItem>
                   </Link>
                 )
               )}
-            </Box>
+            </Menu>
+          </Box>
 
-            {timesWidth > 1015 || timesWidth < 880 ? (
-              <Link href='/products'>
-                <Button
-                  sx={{
-                    marginRight: 3,
-                    backgroundColor: 'orange',
-                    color: 'rgb(24, 46, 66)',
-                    fontWeight: 'bold',
-                  }}
-                  size='large'
-                  variant='contained'
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              gap: 3,
+            }}
+          >
+            {pages.map((page, i) =>
+              timesWidth < 1100 && page === 'Home' ? (
+                ''
+              ) : page === 'Messianic Community' ? (
+                <GetInvolvedButton key={i} />
+              ) : page === 'Advertising' ? (
+                <AdvertiserButton key={i} />
+              ) : (
+                <Link
+                  key={i}
+                  href={pageUrls[i]}
+                  style={{ textDecoration: 'none', color: 'black' }}
                 >
-                  Subscribe
-                </Button>
-              </Link>
-            ) : (
-              ''
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    variant='contained'
+                    color='error'
+                    sx={{
+                      my: 2,
+                      color: 'white',
+                      display: 'block',
+                    }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
+              )
             )}
+          </Box>
 
-            <Link href='/donate'>
+          {timesWidth > 1015 || timesWidth < 880 ? (
+            <Link href='/products'>
               <Button
                 sx={{
                   marginRight: 3,
                   backgroundColor: 'orange',
-                  color: 'rgb(255, 255, 255)',
+                  color: 'rgb(24, 46, 66)',
+                  fontWeight: 'bold',
                 }}
-                size='large'
+                size={timesWidth > 700 ? 'large' : 'small'}
                 variant='contained'
-                endIcon={<Heart />}
               >
-                Donate
+                Subscribe
               </Button>
             </Link>
+          ) : (
+            ''
+          )}
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title='Open settings'>
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt='Settings Avatar' src={SettingsAvatar.src} />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id='menu-appbar'
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting, i) => (
-                  <Link
-                    key={i}
-                    href={settingUrls[i]}
-                    style={{ textDecoration: 'none', color: 'black' }}
-                  >
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign='center'>{setting}</Typography>
-                    </MenuItem>
-                  </Link>
-                ))}
-              </Menu>
-            </Box>
-          </Toolbar>
-        </Container>
+          <Link href='/donate'>
+            <Button
+              sx={{
+                marginRight: 0,
+                backgroundColor: 'orange',
+                color: 'rgb(255, 255, 255)',
+              }}
+              size={timesWidth > 700 ? 'large' : 'small'}
+              variant='contained'
+              endIcon={<Heart />}
+            >
+              Donate
+            </Button>
+          </Link>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title='Open settings'>
+              <IconButton onClick={handleOpenUserMenu} sx={{ mx: 1 }}>
+                <Avatar alt='Settings Avatar' src={SettingsAvatar.src} />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id='menu-appbar'
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting, i) => (
+                <Link
+                  key={i}
+                  href={settingUrls[i]}
+                  style={{ textDecoration: 'none', color: 'black' }}
+                >
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign='center'>{setting}</Typography>
+                  </MenuItem>
+                </Link>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
       </AppBar>
     </Box>
   )
