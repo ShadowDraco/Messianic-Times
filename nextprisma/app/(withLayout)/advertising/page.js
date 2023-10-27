@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Collage2 from '../../../public/assets/adverts/Collage2.webp'
 import { Box, Container, Typography } from '@mui/material'
+import Link from 'next/link'
 export default function page() {
   return (
     <Container sx={{ my: 2 }}>
@@ -25,14 +26,22 @@ export default function page() {
         />
       </Box>
 
-      <Typography
-        variant='h2'
-        fontWeight={'bold'}
-        color='white'
-        textAlign={'center'}
-      >
-        advertising@messianictimes.com
-      </Typography>
+      
+        <Link
+          href='mailto:advertising@messianictimes.com'
+          sx={{ textDecoration: 'none' }}
+        >
+          {' '}
+          <Typography
+            variant='h4'
+            fontWeight={'bold'}
+            color='white'
+            textAlign={'center'}
+          >
+            advertising@messianictimes.com
+          </Typography>
+        </Link>
+     
     </Container>
   )
 }

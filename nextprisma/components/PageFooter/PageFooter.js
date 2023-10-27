@@ -52,6 +52,7 @@ export default function PageFooter() {
             display: 'flex',
             gap: 2,
             alignItems: 'center',
+            flexWrap: 'wrap',
           }}
         >
           <Typography variant={'body1'} color={'white'}>
@@ -60,7 +61,12 @@ export default function PageFooter() {
             pieces, book, music and film reviews, informative articles and a
             directory of Messianic Jewish congregations.
           </Typography>
-          <Typography>Copyright © 2023 Messianic Times</Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+            <Button></Button>
+          </Box>
+          <Typography variant='caption'>
+            Copyright © 2023 Messianic Times
+          </Typography>
         </Box>
       </Container>
     </>
