@@ -1,4 +1,4 @@
-'use client'
+
 import React from 'react'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -6,10 +6,9 @@ import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import { Copyright } from '@mui/icons-material'
+
 import Link from 'next/link'
 
-import { useWindowContext } from '../../app/Providers'
 const footers = [
   {
     title: 'The Messianic Times',
@@ -33,7 +32,7 @@ const footers = [
 ]
 
 export default function PageFooter() {
-  const { timesWidth, timesHeight } = useWindowContext()
+ 
   return (
     <>
       <Container
