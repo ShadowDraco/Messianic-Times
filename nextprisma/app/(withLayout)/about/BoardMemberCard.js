@@ -25,6 +25,7 @@ export default function BoardMemberCard({ image, description, name }) {
           layout='responsive'
           alt='Board member'
           style={{ maxHeight: 200, minWidth: 100 }}
+          priority
         />
         <CardContent>
           <Typography

@@ -41,6 +41,7 @@ export default function Freebies({ session, update }) {
                   height={timesHeight * 4}
                   alt={'Free Paper'}
                   style={{ maxWidth: 200, maxHeight: 300 }}
+                  priority
                 />
               </Link>
             </Box>

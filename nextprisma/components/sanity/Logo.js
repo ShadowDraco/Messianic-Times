@@ -10,6 +10,7 @@ export default function Logo() {
       width={50}
       alt='MT Logo'
       src={MTLogoImage}
+      priority
     />
   )
 }

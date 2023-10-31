@@ -63,6 +63,7 @@ export default function DonationPage() {
                 width={100}
                 height={25}
                 alt='donate with google'
+                priority
               />
             </Link>
           </Grid>
@@ -74,6 +75,7 @@ export default function DonationPage() {
                 width={100}
                 height={25}
                 alt='donate with Link'
+                priority
               />
             </Link>
           </Grid>
@@ -85,6 +87,7 @@ export default function DonationPage() {
                 width={100}
                 height={25}
                 alt='donate with cash app'
+                priority
               />
             </Link>
           </Grid>
@@ -96,6 +99,7 @@ export default function DonationPage() {
                 width={200}
                 height={25}
                 alt='donate with cards'
+                priority
               />
             </Link>
           </Grid>
@@ -107,6 +111,7 @@ export default function DonationPage() {
                 width={100}
                 height={25}
                 alt='donate with paypal'
+                priority
               />
             </Link>
           </Grid>
@@ -120,6 +125,7 @@ export default function DonationPage() {
               onClick={e => {
                 handleVenmoPopper(e)
               }}
+              priority
             />
           </Grid>
         </Grid>
@@ -140,6 +146,7 @@ export default function DonationPage() {
                   height={VenmoQR.height / 3}
                   layout='responsive'
                   alt='venmo qr code'
+                  priority
                 />
               </Box>
             </Fade>

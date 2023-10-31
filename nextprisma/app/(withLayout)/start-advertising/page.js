@@ -26,6 +26,7 @@ export default function page() {
           }
           layout={'responsive'}
           style={{ maxWidth: '800px' }}
+          priority
         />
       </Box>
 
