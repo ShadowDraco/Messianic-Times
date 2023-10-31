@@ -1,10 +1,5 @@
 import React from 'react'
-import { Container, Box, Button } from '@mui/material'
-import BasicCreateUserForm from '../../../components/auth/BasicCreateUserForm'
-export default function page() {
-  return (
-    <Container>
-      <BasicCreateUserForm />
-    </Container>
-  )
+import HomeLoadingSkeleton from '../../../components/loading/HomeLoadingSkeleton'
+export default function loading() {
+  return <HomeLoadingSkeleton />
 }

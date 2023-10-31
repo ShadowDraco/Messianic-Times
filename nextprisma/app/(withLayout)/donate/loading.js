@@ -1,7 +1,5 @@
 import React from 'react'
-
-export default async function loading() {
-  return (
-    <div>loading donation options...</div>
-  )
+import ProductsLoadingSkeleton from '../../../components/loading/ProductsLoadingSkeleton'
+export default function loading() {
+  return <ProductsLoadingSkeleton />
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import HomeLoadingSkeleton from '../../../../components/loading/HomeLoadingSkeleton'
 export default function loading() {
-  return <div>Loading preview of Sharing our Faith!</div>
+  return <HomeLoadingSkeleton />
 }

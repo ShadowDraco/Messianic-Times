@@ -22,8 +22,9 @@ export default function GetInvolvedButton({ menuItem }) {
     'Congregation Directory',
     'Ministry Directory',
     'Add your congregation!',
+    'Media', 
   ]
-  const involvedUrls = ['/congregations', '/ministries', '/add-congregation']
+  const involvedUrls = ['/congregations', '/ministries', '/add-congregation', '/media']
 
   const [anchorElInvolved, setAnchorElInvolved] = useState(null)
 
