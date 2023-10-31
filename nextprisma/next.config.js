@@ -36,6 +36,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'flagcdn.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
     ],
   },
   transpilePackages: ['@mui/system', '@mui/material', '@mui/icons-material'],
