@@ -61,6 +61,11 @@ export default defineType({
       title: 'Description',
       type: 'string',
     }),
+    defineField({
+      name: 'release_months',
+      title: '2 Month Window',
+      type: 'string',
+    }),
   ],
 
   preview: {

@@ -20,7 +20,7 @@ export default async function page() {
   const session = await getServerSession(authOptions)
 
   const query = groq`
-    *[_type == "post"] {
+    *[_type == "post"] | order(publishedAt asc){
     ...,
     categories[]->
     }

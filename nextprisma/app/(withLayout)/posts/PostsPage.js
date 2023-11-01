@@ -15,8 +15,8 @@ import Image from 'next/image'
 export default function PostsPage({ posts, session }) {
   if (!session) return 'You are not logged in'
 
-  if (!posts) return 'There was an error fetching posts'
-  console.log(posts[0])
+  if (!posts) return 'There was an error fetching articles'
+
   return (
     <Container sx={{ backgroundColor: 'white', my: 2, py: 2 }}>
       <Box
