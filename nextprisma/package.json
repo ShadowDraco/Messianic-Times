@@ -50,6 +50,7 @@
     "react-dom": "18.2.0",
     "react-pageflip": "^2.0.3",
     "react-player": "^2.13.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-youtube": "^10.1.0",
     "react-zoom-pan-pinch": "^3.1.0",
     "sanity": "^3.15.1",

@@ -1,13 +1,15 @@
 import React from 'react'
-import { groq } from 'next-sanity'
-import { client } from '../../../../sanity/lib/client'
-import DefaultArticleView from '../../../../components/sanity/Content/Articles/DefaultArticleView'
+
+import DefaultArticleView from '../../../../../components/sanity/Content/Articles/DefaultArticleView'
 import Link from 'next/link'
 import { Button, Container, Typography } from '@mui/material'
-import imageUrlBuilder from '@sanity/image-url'
-import SettingsAvatar from '../../../../public/assets/messianic-times/SettingsAvatar.webp'
-import SubscribeForMore from '../../../../components/auth/SubscribeForMore'
 
+import SettingsAvatar from '../../../../public/assets/messianic-times/SettingsAvatar.webp'
+import SubscribeForMore from '../../../../../components/auth/SubscribeForMore'
+
+import imageUrlBuilder from '@sanity/image-url'
+import { groq } from 'next-sanity'
+import { client } from '../../../../../sanity/lib/client'
 const builder = imageUrlBuilder(client)
 
 function urlFor(source) {
@@ -72,15 +74,14 @@ export default async function page({ params }) {
         {post.title}
       </Typography>
       <DefaultArticleView post={post} />
-      
+
       <SubscribeForMore />
-      
+
       <Link href='/posts'>
         <Button sx={{ my: 3 }} variant='outlined'>
           Back
         </Button>
       </Link>
-
     </Container>
   )
 }

@@ -3,8 +3,8 @@ import React from 'react'
 import { groq } from 'next-sanity'
 import dynamic from 'next/dynamic'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '../../api/auth/[...nextauth]/route'
-import { client } from '../../../sanity/lib/client'
+import { authOptions } from '../../../api/auth/[...nextauth]/route'
+import { client } from '../../../../sanity/lib/client'
 import imageUrlBuilder from '@sanity/image-url'
 
 const builder = imageUrlBuilder(client)
