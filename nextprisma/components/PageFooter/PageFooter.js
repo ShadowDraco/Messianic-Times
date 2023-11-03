@@ -1,38 +1,10 @@
-
 import React from 'react'
 import Container from '@mui/material/Container'
-import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-
-import Link from 'next/link'
-
-const footers = [
-  {
-    title: 'The Messianic Times',
-    description: ['About us', 'Contact us'],
-    url: '/about',
-  },
-  {
-    title: 'Features',
-    description: ['Paper', 'Recipes', 'Account'],
-    url: '/account',
-  },
-  {
-    title: 'Messianic Directories',
-    description: ['Churches', ''],
-    url: '/congregations',
-  },
-  /*  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },*/
-]
+import FooterButtons from './FooterButtons'
 
 export default function PageFooter() {
- 
   return (
     <>
       <Container
@@ -52,6 +24,7 @@ export default function PageFooter() {
             gap: 2,
             alignItems: 'center',
             flexWrap: 'wrap',
+            my: 3,
           }}
         >
           <Typography variant={'body1'} color={'white'}>
@@ -60,13 +33,11 @@ export default function PageFooter() {
             pieces, book, music and film reviews, informative articles and a
             directory of Messianic Jewish congregations.
           </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-            <Button></Button>
-          </Box>
-          <Typography variant='caption'>
-            Copyright © 2023 Messianic Times
-          </Typography>
+          <FooterButtons />
         </Box>
+        <Typography variant='caption'>
+          Copyright © 2023 Messianic Times
+        </Typography>
       </Container>
     </>
   )

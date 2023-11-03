@@ -32,11 +32,13 @@ export default function page() {
 
       <Box
         sx={{
-          mt: 4,
           backgroundColor: 'rgb(24, 46, 66)',
           py: 2,
           display: { xs: 'none', md: 'flex' },
           justifyContent: 'center',
+          maxWidth: 800,
+          margin: 'auto',
+          mt: 4,
         }}
       >
         <Typography
@@ -77,7 +79,7 @@ export default function page() {
         </Typography>
       </Box>
 
-      <Box sx={{ backgroundColor: '#3499D9' }}>
+      <Box sx={{ backgroundColor: '#3499D9', maxWidth: 800, margin: 'auto' }}>
         <Box
           sx={{
             display: 'flex',
