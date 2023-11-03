@@ -31,14 +31,18 @@ export default function PostsPage({ posts, session }) {
           return (
             <Card key={post._id} sx={{ maxWidth: 345 }}>
               <Link href={`/post/${post.slug.current}`}>
-                <CardMedia
-                  sx={{
-                    height: 140,
+                <Image
+                  width={200}
+                  height={200}
+                  style={{
+                    maxHeight: 140,
                     objectFit: 'cover',
                     objectPosition: 'center',
                   }}
-                  image={post.image}
-                  title={post.title}
+                  layout='responsive'
+                  src={post.image}
+                  alt={post.title}
+                  priority
                 />
               </Link>
               <CardContent>

@@ -4,7 +4,7 @@ import DefaultArticleView from '../../../../../components/sanity/Content/Article
 import Link from 'next/link'
 import { Button, Container, Typography } from '@mui/material'
 
-import SettingsAvatar from '../../../../public/assets/messianic-times/SettingsAvatar.webp'
+import SettingsAvatar from '../../../../../public/assets/messianic-times/SettingsAvatar.webp'
 import SubscribeForMore from '../../../../../components/auth/SubscribeForMore'
 
 import imageUrlBuilder from '@sanity/image-url'

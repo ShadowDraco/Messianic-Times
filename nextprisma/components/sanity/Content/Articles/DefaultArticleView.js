@@ -8,7 +8,11 @@ export default function DefaultArticleView({ post }) {
 
   return (
     <Box sx={{ my: 2 }}>
-      <Grid container gap={1} sx={{ margin: 'auto', width: '80%', maxWidth: 700 }}>
+      <Grid
+        container
+        gap={1}
+        sx={{ margin: 'auto', width: '80%', maxWidth: 700 }}
+      >
         <Grid item xs>
           <Typography color='black'>{post.author.name}</Typography>
         </Grid>
@@ -29,6 +33,7 @@ export default function DefaultArticleView({ post }) {
           alt={post.title}
           layout={'responsive'}
           style={{ maxWidth: 700, maxHeight: 570 }}
+          priority
         />
       </Box>
 

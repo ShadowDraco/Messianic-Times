@@ -17,13 +17,14 @@ function urlFor(source) {
 const query = groq`
   *[_type == 'post']
   {
-    ...
+    ...,
+    author->
   }
 `
 const posts = await client.fetch(query)
 
 posts.map(post => {
-  return (post.image = urlFor(post.mainImage).width(500).url())
+  return (post.image = urlFor(post.mainImage).width(800).url())
 })
 
 export default async function layout({ children }) {
