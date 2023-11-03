@@ -6,7 +6,6 @@ import { groq } from 'next-sanity'
 import { client } from '../../../sanity/lib/client'
 import PostCarousel from './PostCarousel'
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import imageUrlBuilder from '@sanity/image-url'
 const builder = imageUrlBuilder(client)
 
