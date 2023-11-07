@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Box, Typography, Container, Button } from '@mui/material'
+import { Box, Typography, Button } from '@mui/material'
 import Link from 'next/link'
 import EditAccount from './EditAccount'
 import Freebies from './Freebies'
@@ -9,16 +9,25 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 
 export default function page({ isAdmin }) {
   const { data: session, update } = useSession()
-  
+
   return (
-    <Container sx={{ backgroundColor: 'white', margin: 'auto', py: 2 }}>
+    <Box
+      sx={{
+        backgroundColor: 'white',
+        margin: 'auto',
+        py: 2,
+        my: 2,
+        maxWidth: '130px',
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          width: '100%',
+
           flexWrap: 'wrap',
           textAlign: 'center',
+          px: 3,
         }}
       >
         <Typography variant='h4' component='h4' my={3}>
@@ -57,6 +66,6 @@ export default function page({ isAdmin }) {
       <Box sx={{ backgroundColor: '#002540', my: 2 }}>
         {isAdmin && <AdminDashLinks />}
       </Box>
-    </Container>
+    </Box>
   )
 }

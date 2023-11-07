@@ -1,5 +1,10 @@
 import React from 'react'
-import HomeLoadingSkeleton from '../../../components/loading/HomeLoadingSkeleton'
-export default function loading() {
-  return <HomeLoadingSkeleton />
+import { Container } from '@mui/material'
+import BasicCreateUserForm from '../../../components/auth/BasicCreateUserForm'
+export default function page() {
+  return (
+    <Container sx={{ backgroundColor: 'white', my: 2, py: 2}}>
+      <BasicCreateUserForm />
+    </Container>
+  )
 }
