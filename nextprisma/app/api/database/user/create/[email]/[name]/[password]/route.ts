@@ -30,17 +30,16 @@ export async function POST(request) {
     createdUser = await createUser(newUser)
     createdToken = await createToken(createdUser.id)
   } catch (error) {
-    console.log(error)
     return new NextResponse(
       JSON.stringify({
-        error: 'user could not be created',
+        error: `User could not be created. Did you already sign up with this email?`,
         success: 'failed',
       }),
       {
         status: 400,
         statusText: error?.meta?.cause
           ? error.meta.cause
-          : 'user could not be created',
+          : 'user could not be created... something went wrong',
       }
     )
   }

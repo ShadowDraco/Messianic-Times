@@ -28,6 +28,10 @@ export default function BasicCreateUserForm() {
     if (response?.statusText) {
       setSuccessMessage(response.statusText)
     }
+
+    if (response?.error) {
+       setSuccessMessage(response.error)
+    }
   }
 
   return (
