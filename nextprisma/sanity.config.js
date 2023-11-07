@@ -24,7 +24,7 @@ function getPreviewUrl(doc, schemaType) {
   //! process.env.SANITY_PREVIEW_URL
 
   return doc?.slug?.current
-    ? `http://localhost:3000/previews/${schemaType}/${doc._id}`
+    ? `https://nextprisma-topaz.vercel.app/previews/${schemaType}/${doc._id}`
     : window.location.host
 }
 

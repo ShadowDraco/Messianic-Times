@@ -44,10 +44,6 @@ export default function FooterButtons() {
     setAnchorElNav(null)
   }
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
-  }
-
   return (
     <Box
       sx={{
@@ -64,11 +60,11 @@ export default function FooterButtons() {
         <Toolbar disableGutters>
           <Box
             sx={{
-              flexGrow: 1,
+        
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'center',
-              gap: 3,
+              gap: 1,
             }}
           >
             {pages.map((page, i) =>
