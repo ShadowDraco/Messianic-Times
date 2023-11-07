@@ -26,6 +26,7 @@ export default function BasicCreateUserForm() {
         method: 'POST',
       }
     )
+    console.log(response)
     if (response?.message) {
       setSuccessMessage(response.message)
     }
@@ -73,12 +74,14 @@ export default function BasicCreateUserForm() {
       <Typography
         variant='h6'
         color={
-          successMessage === 'User created > Please Check your Email <'
+          successMessage === 'User created > Please Check your Email <' ||
+          successMessage === 'success!'
             ? 'green'
             : 'red'
         }
       >
-        {successMessage}
+        {successMessage}{' '}
+        {successMessage === 'success!' && '> Please check your email! <'}
       </Typography>
     </Box>
   )
