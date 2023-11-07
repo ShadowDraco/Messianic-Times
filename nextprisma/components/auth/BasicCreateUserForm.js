@@ -15,6 +15,7 @@ export default function BasicCreateUserForm() {
   const [successMessage, setSuccessMessage] = useState('')
 
   const handleCreateUser = async () => {
+    setSuccessMessage('. . .')
     const email = emailRef.current.value
     const name = nameRef.current.value
     const password = passwordRef.current.value
@@ -30,7 +31,7 @@ export default function BasicCreateUserForm() {
     }
 
     if (response?.error) {
-       setSuccessMessage(response.error)
+      setSuccessMessage(response.error)
     }
   }
 
@@ -41,7 +42,7 @@ export default function BasicCreateUserForm() {
         Join The Messianic Times to gain access to subscriptions and many new
         features!{' '}
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
         <FormControl>
           <InputLabel htmlFor='create-email'>Email: </InputLabel>{' '}
           <Input inputRef={emailRef} id='create-email' placeholder='email' />
@@ -65,7 +66,14 @@ export default function BasicCreateUserForm() {
         >
           Join!
         </Button>
-        <Typography color={successMessage === 'success!' ? 'green' : 'red'}>
+        <Typography
+          variant='h6'
+          color={
+            successMessage === 'User created > Please Check your Email <'
+              ? 'green'
+              : 'red'
+          }
+        >
           {successMessage}
         </Typography>
       </Box>

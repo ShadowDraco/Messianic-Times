@@ -66,7 +66,7 @@ export async function POST(request) {
   return NextResponse.json(
     {
       success: 'success!',
-      message: 'User created, > Please Check your Email <',
+      message: 'User created > Please Check your Email <',
     },
     { status: 200, statusText: 'success!' }
   )
