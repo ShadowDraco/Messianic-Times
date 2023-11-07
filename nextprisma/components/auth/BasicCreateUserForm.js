@@ -31,7 +31,7 @@ export default function BasicCreateUserForm() {
   }
 
   return (
-    <Box className='my-2'>
+    <Box sx={{ my: 2 }}>
       <Typography variant='h6'>Sign up!</Typography>
       <Typography variant='body1' color='black' sx={{ py: 2 }}>
         Join The Messianic Times to gain access to subscriptions and many new

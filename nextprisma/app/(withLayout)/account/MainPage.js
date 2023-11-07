@@ -17,7 +17,7 @@ export default function page({ isAdmin }) {
         margin: 'auto',
         py: 2,
         my: 2,
-        maxWidth: '130px',
+        maxWidth: '1300px',
       }}
     >
       <Box
