@@ -20,13 +20,14 @@ export default function BasicCreateUserForm() {
     const name = nameRef.current.value
     const password = passwordRef.current.value
 
-    let response = await fetch(
+    let res = await fetch(
       `/api/database/user/create/${email}/${name}/${password}`,
       {
         method: 'POST',
       }
     )
-    console.log(response)
+    const response = await res.json()
+
     if (response?.message) {
       setSuccessMessage(response.message)
     }
@@ -80,8 +81,7 @@ export default function BasicCreateUserForm() {
             : 'red'
         }
       >
-        {successMessage}{' '}
-        {successMessage === 'success!' && '> Please check your email! <'}
+        {successMessage}
       </Typography>
     </Box>
   )
