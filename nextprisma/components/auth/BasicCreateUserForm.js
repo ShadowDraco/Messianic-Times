@@ -26,6 +26,9 @@ export default function BasicCreateUserForm() {
         method: 'POST',
       }
     )
+    if (response?.message) {
+      setSuccessMessage(response.message)
+    }
     if (response?.statusText) {
       setSuccessMessage(response.statusText)
     }
@@ -66,17 +69,17 @@ export default function BasicCreateUserForm() {
         >
           Join!
         </Button>
-        <Typography
-          variant='h6'
-          color={
-            successMessage === 'User created > Please Check your Email <'
-              ? 'green'
-              : 'red'
-          }
-        >
-          {successMessage}
-        </Typography>
       </Box>
+      <Typography
+        variant='h6'
+        color={
+          successMessage === 'User created > Please Check your Email <'
+            ? 'green'
+            : 'red'
+        }
+      >
+        {successMessage}
+      </Typography>
     </Box>
   )
 }
