@@ -2,23 +2,14 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-import SettingsAvatar from '../../public/assets/messianic-times/SettingsAvatar.webp'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import Menu from '@mui/material/Menu'
-import MenuIcon from '@mui/icons-material/Menu'
-import Avatar from '@mui/material/Avatar'
-import Tooltip from '@mui/material/Tooltip'
-import MenuItem from '@mui/material/MenuItem'
-
-import { Heart } from '../icons/Icons'
 import Link from 'next/link'
 import GetInvolvedButton from '../PageHeader/NavButtons/GetInvolvedButton'
 import AdvertiserButton from '../PageHeader/NavButtons/AdvertiserButton'
 import { useWindowContext } from '../../app/Providers'
 export default function FooterButtons() {
+  const [anchorElNav, setAnchorElNav] = useState(null)
   const { timesWidth } = useWindowContext()
 
   const pages = [
@@ -60,7 +51,6 @@ export default function FooterButtons() {
         <Toolbar disableGutters>
           <Box
             sx={{
-        
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'center',

@@ -13,7 +13,6 @@ export default function MainHeader() {
       className='MainHeaderWrapper'
       sx={{
         width: '100%',
-        mx: 1,
         textAlign: 'center',
         backgroundColor: 'rgb(24, 46, 66)',
       }}
