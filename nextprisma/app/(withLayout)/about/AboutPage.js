@@ -15,7 +15,6 @@ export default function AboutPage() {
     <Box
       sx={{
         backgroundColor: 'white',
-
         paddingBottom: 3,
         maxWidth: 1347,
         margin: 'auto',
@@ -165,10 +164,13 @@ export default function AboutPage() {
             image={PaulImage}
             name='Paul Lieberman'
             description={[
-              'Messianic Rabbi Joel Liberman, D.Min',
-              'President, Messianic Jewish Alliance of America',
-              `Int\'l Alliance of Messianic Con\'s & Synagogues`,
-              'Tree of Life Messianic Jewish Congregation',
+              'Rabbi, Ohav Shalom Messianic Congregation,',
+              'President, International Messianic Jewish Alliance,',
+              `Past Executive Director, Alliance for Israel Advocacy,`,
+              'Past President, Messianic Jewish Alliance of America,',
+              'Past Executive Director, The Joseph Project,',
+              'Past Chairman, Messianic Political Action Committee,',
+              'Chairman of the Board of Directors: The Messianic Times',
             ]}
             marginAuto
           />

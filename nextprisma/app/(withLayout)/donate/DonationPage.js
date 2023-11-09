@@ -1,50 +1,56 @@
-'use client'
-
 import React from 'react'
-import { Container, Typography, Box } from '@mui/material'
+import { Typography, Box } from '@mui/material'
 
-import MakeADifference from '../../../public/assets/page-titles/MakeADifference.webp'
-import PageTitle from '../../../components/PageHeader/PageTitle'
-
-import { useWindowContext } from '../../Providers'
 import StripePayments from './StripePayments'
 import NonStripePayments from './NonStripePayments'
+import DonationPageBackground from '../../../public/assets/messianic-times/DonatePageBackground.webp'
 
 export default function DonationPage() {
-  const { timesWidth, timesHeight } = useWindowContext()
-
   return (
-    <>
-      <PageTitle
-        img={MakeADifference}
-        width={timesWidth}
-        height={timesHeight}
-      />
-      <Container
-        sx={{
-          backgroundColor: 'white',
-          py: 5,
-        }}
-      >
-        <Box sx={{ backgroundColor: 'rgba(100, 100, 250, 1)' }}>
-          <Typography
-            variant='h4'
-            component='h1'
-            textAlign='center'
-            fontWeight={'bold'}
-            gutterBottom
+    <Box
+      sx={{
+        my: 1,
+        py: 3,
+      }}
+      style={{
+        backgroundColor: 'white',
+        backgroundImage: `url(${DonationPageBackground.src})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+      }}
+    >
+      <Box sx={{ backgroundColor: '' }}>
+        <Typography
+          variant='h4'
+          component='h1'
+          textAlign='center'
+          fontWeight={'bold'}
+          color='white'
+          gutterBottom
+        >
+          Help us reach the{' '}
+          <span style={{ color: 'blue', WebkitTextStroke: '1px black' }}>
+            Jewish People
+          </span>{' '}
+          for the LORD says:{' '}
+          <span
+            style={{
+              color: 'rgb(255, 180, 50)',
+              WebkitTextStroke: '1px black',
+            }}
           >
-            Help us reach the{' '}
-            <span style={{ color: 'white' }}>Jewish People</span> for the LORD
-            says: <span style={{ color: 'rgb(255, 180, 50)' }}>All Israel</span>{' '}
-            will be saved Romans 11:26
-          </Typography>
-        </Box>
+            All Israel
+          </span>{' '}
+          will be saved Romans 11:26
+        </Typography>
+      </Box>
 
-        <StripePayments />
+      <Box sx={{ height: 80 }}></Box>
 
-        <NonStripePayments />
-      </Container>
-    </>
+      <StripePayments />
+
+      <NonStripePayments />
+    </Box>
   )
 }
