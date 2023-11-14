@@ -7,7 +7,6 @@ import Image from 'next/image'
 
 import VenmoQR from '../../../public/assets/payments/qr.webp'
 import VenmoImage from '../../../public/assets/payments/venmo.webp'
-import PayPalDonate from '../../../public/assets/payments/PayPalDonate.webp'
 
 import { Box, Fade, Popper } from '@mui/material'
 
@@ -24,18 +23,6 @@ export default function NonStripePayments() {
 
   return (
     <Grid container spacing={2} width='80%' margin='auto' paddingLeft={2}>
-      <Grid>
-        <Link href='https://www.paypal.com/donate/?hosted_button_id=HVZKAQMFWPNXY'>
-          <Image
-            src={PayPalDonate.src}
-            width={100}
-            height={25}
-            alt='donate with paypal'
-            priority
-          />
-        </Link>
-      </Grid>
-
       <Grid>
         <Image
           src={VenmoImage.src}

@@ -2,7 +2,6 @@ import React from 'react'
 import { Typography, Box } from '@mui/material'
 
 import StripePayments from './StripePayments'
-import NonStripePayments from './NonStripePayments'
 import DonationPageBackground from '../../../public/assets/messianic-times/DonatePageBackground.webp'
 
 export default function DonationPage() {
@@ -30,14 +29,21 @@ export default function DonationPage() {
           gutterBottom
         >
           Help us reach the{' '}
-          <span style={{ color: 'blue', WebkitTextStroke: '1px black' }}>
+          <span
+            style={{
+              color: 'blue',
+
+              fontWeight: 'bolder',
+            }}
+          >
             Jewish People
           </span>{' '}
           for the LORD says:{' '}
           <span
             style={{
               color: 'rgb(255, 180, 50)',
-              WebkitTextStroke: '1px black',
+
+              fontWeight: 'bolder',
             }}
           >
             All Israel
@@ -46,11 +52,22 @@ export default function DonationPage() {
         </Typography>
       </Box>
 
+      <Box sx={{ height: 160 }}></Box>
+
+            <Typography sx={{my: 5}} variant='h4' color='white' textAlign={'center'}>
+        The impact of your donation ...
+      </Typography>
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <StripePayments />
+      </Box>
       <Box sx={{ height: 80 }}></Box>
-
-      <StripePayments />
-
-      <NonStripePayments />
     </Box>
   )
 }
