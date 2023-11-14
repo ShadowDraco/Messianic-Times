@@ -1,26 +1,25 @@
-import React from 'react'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '../../api/auth/[...nextauth]/route'
-import dynamic from 'next/dynamic'
+'use client'
+import { Box } from '@mui/material'
+import { Helmet } from 'react-helmet'
 
-import { getProducts } from '../../../lib/stripe/stripe'
 export default async function ProductPage() {
-  const Pricing = dynamic(() => import('./Pricing'), {
-    ssr: false,
-  })
-  const session = await getServerSession(authOptions)
-
-  let prices = await getProducts()
-
-  if (!prices) return 'Loading...'
-
-  const orderPrices = () => {
-    return prices.sort((a, b) => {
-      if (a.unit_amount > b.unit_amount) return 1
-      if (a.unit_amount < b.unit_amount) return -1
-      if (a.unit_amount === b.unit_amount) return 0
-    })
-  }
-
-  return <Pricing prices={orderPrices()} />
+  return (
+    <Box
+      sx={{
+        maxWidth: 1350,
+        margin: 'auto',
+        my: 2,
+        py: 5,
+        backgroundColor: '#172854',
+      }}
+    >
+      <Helmet>
+        <script async src='https://js.stripe.com/v3/pricing-table.js'></script>
+      </Helmet>
+      <stripe-pricing-table
+        pricing-table-id='prctbl_1OCBoGIVYQQQD7CtG3Wonlad'
+        publishable-key='pk_test_51NgyVcIVYQQQD7CtIiSDJJQbaYOuPY2RpEq9oYSh42rFXqGwwqNxWAoKnfRvTJ84hxEk6GsVrwhprA8EQMBCyi9R00WCKB7KfU'
+      ></stripe-pricing-table>
+    </Box>
+  )
 }
