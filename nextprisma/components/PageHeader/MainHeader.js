@@ -6,6 +6,7 @@ import LargeButtons from './NavButtons/LargeButtons'
 import FaithImages from './FaithImages/FaithImages'
 import Image from 'next/image'
 import timesArt from '../../public/assets/messianic-times/timesArt2.webp'
+import Adverts3 from '../../app/(withLayout)/Adverts3'
 
 export default function MainHeader() {
   return (
@@ -42,7 +43,8 @@ export default function MainHeader() {
 
       {/*//? Faith Images */}
 
-      <FaithImages />
+      {/*   <FaithImages />*/}
+      <Adverts3 />
 
       {/*//? Nav Buttons */}
 

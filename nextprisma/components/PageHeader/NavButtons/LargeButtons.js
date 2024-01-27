@@ -19,17 +19,12 @@ import Link from 'next/link'
 import GetInvolvedButton from './GetInvolvedButton'
 import AdvertiserButton from './AdvertiserButton'
 import { useWindowContext } from '../../../app/Providers'
+import BreathWrapper from '../../motion/breath/BreathWrapper'
 export default function LargeButtons() {
   const { timesWidth } = useWindowContext()
 
-  const pages = [
-    'Home',
-    'Read',
-    'Advertising',
-    'About Us',
-    'Messianic Community',
-  ]
-  const pageUrls = ['/', '/read', '/advertising', '/about', '']
+  const pages = ['Look Inside', 'Advertise', 'About Us', 'Messianic Community']
+  const pageUrls = ['/read', '/advertising', '/about', '']
   const settings = ['Account', 'Login', 'Logout', 'Help']
   const settingUrls = [
     '/account',
@@ -104,9 +99,28 @@ export default function LargeButtons() {
               }}
             >
               {pages.map((page, i) =>
-                page === 'Messianic Community' ? (
+                page === 'Look Inside' ? (
+                  <Box backgroundColor={'green'}>
+                    <BreathWrapper>
+                      <Link
+                        key={i}
+                        href={pageUrls[i]}
+                        style={{ textDecoration: 'none', color: 'black' }}
+                      >
+                        <MenuItem
+                          key={page}
+                          onClick={handleCloseNavMenu}
+                          variant='contained'
+                          sx={{ backgroundColor: 'white' }}
+                        >
+                          <Typography textAlign='center'>{page}</Typography>
+                        </MenuItem>
+                      </Link>
+                    </BreathWrapper>
+                  </Box>
+                ) : page === 'Messianic Community' ? (
                   <GetInvolvedButton key={i} menuItem />
-                ) : page === 'Advertising' ? (
+                ) : page === 'Advertise' ? (
                   <AdvertiserButton key={i} menuItem />
                 ) : (
                   <Link
@@ -138,6 +152,28 @@ export default function LargeButtons() {
             {pages.map((page, i) =>
               timesWidth < 1100 && page === 'Home' ? (
                 ''
+              ) : page === 'Look Inside' ? (
+                <BreathWrapper>
+                  <Link
+                    key={i}
+                    href={pageUrls[i]}
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <Button
+                      key={page}
+                      onClick={handleCloseNavMenu}
+                      variant='contained'
+                      color='success'
+                      sx={{
+                        my: 2,
+                        color: 'white',
+                        display: 'block',
+                      }}
+                    >
+                      {page}
+                    </Button>
+                  </Link>
+                </BreathWrapper>
               ) : page === 'Messianic Community' ? (
                 <GetInvolvedButton key={i} />
               ) : page === 'Advertising' ? (
@@ -152,7 +188,7 @@ export default function LargeButtons() {
                     key={page}
                     onClick={handleCloseNavMenu}
                     variant='contained'
-                    color='error'
+                    color='success'
                     sx={{
                       my: 2,
                       color: 'white',

@@ -18,41 +18,47 @@ export default function Adverts({ timesWidth, timesHeight }) {
           display: 'flex',
           flexDirection: 'column',
           flexWrap: 'wrap',
-          justifyContent: 'space-evenly',
-          gap: 5,
           paddingY: 2,
         }}
       >
-        <Link href='https://www.tku.edu/' target='_blank'>
+        <Link href='https://www.ariel.org/' target='_blank'>
           <Image
-            src={University.src}
+            src={Ariel.src}
             width={timesWidth / imageSize}
             height={timesWidth / imageSize}
-            alt='Kings University'
-            style={{ maxWidth: 200, maxHeight: 70 }}
+            alt='Ariel Ministries'
+            style={{ maxWidth: 200, maxHeight: 200 }}
             priority
           />
         </Link>
-
-        <Link href='https://imja.org' target='_blank'>
+        <Link href='https://www.messianicjewish.net/' target='_blank'>
           <Image
-            src={IMJA1.src}
+            src={MJPR.src}
             width={timesWidth / imageSize}
             height={timesWidth / imageSize}
-            alt='International Messianic Jewish Alliance'
+            alt='Messianic Jewish Publishers and Resources'
             priority
-            style={{ maxWidth: 200, maxHeight: 70 }}
+            style={{ maxWidth: 200, maxHeight: 200 }}
           />
         </Link>
-
-        <Link href='https://mjaa.org' target='_blank'>
+        <Link href='https://www.arielcollege.com/' target='_blank'>
           <Image
-            src={MJAA.src}
+            src={ArielBanner.src}
             width={timesWidth / imageSize}
             height={timesWidth / imageSize}
-            alt='MJAA'
+            alt='Ariel College'
+            style={{ maxWidth: 200, maxHeight: 200 }}
             priority
-            style={{ maxWidth: 200, maxHeight: 70 }}
+          />
+        </Link>
+        <Link href='https://www.cmj-usa.org/' target='_blank'>
+          <Image
+            src={CMJ.src}
+            width={timesWidth / imageSize}
+            height={timesWidth / imageSize}
+            alt='CMJ USA'
+            style={{ maxWidth: 200, maxHeight: 200 }}
+            priority
           />
         </Link>
       </Box>
