@@ -161,6 +161,7 @@ export default function LargeButtons() {
                   >
                     <Button
                       key={page}
+                      fullWidth
                       onClick={handleCloseNavMenu}
                       variant='contained'
                       color='success'
@@ -189,6 +190,7 @@ export default function LargeButtons() {
                     onClick={handleCloseNavMenu}
                     variant='contained'
                     color='success'
+                    fullWidth
                     sx={{
                       my: 2,
                       color: 'white',

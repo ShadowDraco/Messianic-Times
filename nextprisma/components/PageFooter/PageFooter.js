@@ -30,7 +30,7 @@ export default function PageFooter() {
           <Typography
             variant={'body1'}
             color={'white'}
-            maxWidth={{ xs: '90%', md: '90%', lg: '50%' }}
+            maxWidth={{ xs: '90%' }}
           >
             With the Messianic Times you can: read news from the worldwide
             Messianic community, Israeli current events and analysis, opinion
