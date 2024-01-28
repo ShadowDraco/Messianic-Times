@@ -8,6 +8,7 @@ export default function PageTitle({ title, img, width, height }) {
       sx={{
         margin: 'auto',
         width: '100%',
+        my: 2,
         maxWidth: 1348,
       }}
     >

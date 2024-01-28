@@ -12,7 +12,7 @@ export default async function page() {
   const session = await getServerSession(authOptions)
 
   if (!session) return <NotLoggedIn />
-  if (isAdmin(session)) return <NotAuthorized />
+  if (!isAdmin(session)) return <NotAuthorized />
   const allTickets = await prisma.ticket.findMany()
 
   const tableTicket = {

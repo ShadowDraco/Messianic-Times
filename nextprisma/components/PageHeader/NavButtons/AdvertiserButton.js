@@ -20,7 +20,7 @@ export default function AdvertiserButton({ menuItem }) {
   }
   const advertisePages = [
     'Start Advertising',
-    'Advertise with Us',
+    'Learn More',
     'Our Advertisers',
   ]
   const advertiseUrls = ['/start-advertising', '/advertising', '/advertisers']
@@ -32,16 +32,16 @@ export default function AdvertiserButton({ menuItem }) {
         <Button
           size='small'
           variant='contained'
-          color='error'
+          color='success'
           onClick={handleOpenAdvertiserMenu}
           sx={{ my: 2 }}
           endIcon={<KeyboardArrowDownIcon />}
         >
-          Advertising
+          Advertise
         </Button>
       ) : (
         <MenuItem onClick={handleOpenAdvertiserMenu} sx={{ color: 'black' }}>
-          Advertising ˅
+          Advertise
         </MenuItem>
       )}
       <Menu

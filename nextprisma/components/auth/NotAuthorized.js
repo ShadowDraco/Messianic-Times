@@ -17,7 +17,7 @@ export default function NotAuthorized() {
           You are not authorized to view this page
         </Typography>
         <Typography variant='caption' color='yellow'>
-          Don not forget to confirm your email after signing up
+          Do not forget to confirm your email after signing up
         </Typography>
         <Box
           sx={{

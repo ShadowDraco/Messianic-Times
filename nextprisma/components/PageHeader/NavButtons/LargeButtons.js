@@ -176,7 +176,7 @@ export default function LargeButtons() {
                 </BreathWrapper>
               ) : page === 'Messianic Community' ? (
                 <GetInvolvedButton key={i} />
-              ) : page === 'Advertising' ? (
+              ) : page === 'Advertise' ? (
                 <AdvertiserButton key={i} />
               ) : (
                 <Link
