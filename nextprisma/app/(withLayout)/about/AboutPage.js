@@ -64,7 +64,7 @@ export default function AboutPage() {
 
       <Box sx={{ backgroundColor: 'white', py: 1 }}>
         <Typography variant='h4' color='rgb(24, 46, 66)' textAlign={'center'}>
-          What we do
+          What We Do
         </Typography>
       </Box>
 
@@ -78,20 +78,20 @@ export default function AboutPage() {
           flexWrap: 'wrap',
         }}
       >
+        <Button variant='contained'>Global Messianic-Jewish Newspaper</Button>
         <Button variant='contained'>Prison ministry</Button>
-
-        <Button variant='contained'>Connect many Congregations</Button>
+        <Button variant='contained'>Messianic Community</Button>
         <Button variant='contained'>
-          Scholarship fund for messianic Jewish leaders
+          Scholarship fund for Messianic Jewish leaders
         </Button>
         <Button variant='contained'>
-          Give a voice for messianic Judaism from various backgrounds
+          A Worldwide voice for Messianic Judaism
         </Button>
       </Box>
 
       <Box sx={{ backgroundColor: 'rgb(24, 46, 66)', py: 3 }}>
         <Typography variant='h3' color='white' textAlign={'center'}>
-          Meet our board of directors
+          Meet our Board of Directors
         </Typography>
       </Box>
       <Box
@@ -110,7 +110,7 @@ export default function AboutPage() {
             Advertising Director:
           </Typography>
           <Typography variant='body1' color='white'>
-            Madeline Fisher
+            Madelaine Fisher
           </Typography>
           <Typography variant='body1' color='white'>
             advertising@messianictimes.com
@@ -132,7 +132,7 @@ export default function AboutPage() {
             Editorial Coordinator:
           </Typography>
           <Typography variant='body1' color='white'>
-            Sheila Fisher
+            Kayla Levy
           </Typography>
           <Typography variant='body1' color='white'>
             editor@messianictimes.com

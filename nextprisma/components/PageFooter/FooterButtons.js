@@ -65,7 +65,6 @@ export default function FooterButtons() {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  size='small'
                   fullWidth
                   variant='contained'
                   color='error'

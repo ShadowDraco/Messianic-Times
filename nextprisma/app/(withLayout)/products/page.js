@@ -16,6 +16,7 @@ export default async function ProductPage() {
       <Helmet>
         <script async src='https://js.stripe.com/v3/pricing-table.js'></script>
       </Helmet>
+      <h1>Digital subscription .... </h1>
       <stripe-pricing-table
         pricing-table-id='prctbl_1OCBoGIVYQQQD7CtG3Wonlad'
         publishable-key='pk_test_51NgyVcIVYQQQD7CtIiSDJJQbaYOuPY2RpEq9oYSh42rFXqGwwqNxWAoKnfRvTJ84hxEk6GsVrwhprA8EQMBCyi9R00WCKB7KfU'
